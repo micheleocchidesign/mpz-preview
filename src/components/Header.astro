@@ -1,0 +1,71 @@
+---
+---
+
+<header class="site-header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="/"><img src="/MPZ_logo_horiz_fullcolor.svg" alt="Logo" /></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/chi-sono">Chi Sono</a></li>
+                <li><a href="/servizi">Servizi</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/eventi">Eventi</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 1.5rem 0;
+        background-color: var(--bg-light);
+    }
+
+    .header-container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+    }
+
+    .logo img{
+        height: 50px;
+    }
+
+    .main-nav ul {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-nav a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-family: var(--font-body);
+        font-weight: 500;
+        font-size: 0.938rem;
+        transition: color 0.3s ease;
+    }
+
+    .main-nav a:hover {
+        color: var(--brand-primary);
+    }
+
+    @media (max-width: 768px) {
+        .main-nav {
+            display: none; /* Simplification for now */
+        }
+    }
+</style>
