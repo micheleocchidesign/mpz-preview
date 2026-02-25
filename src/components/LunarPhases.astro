@@ -1,0 +1,45 @@
+<div class="lunar-wrapper">
+  <svg id="Livello_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 191.64" class="lunar-svg">
+    <path id="ph1" class="moon-phase" d="M146.34,172.14c-26.7-16.67-42.64-45.2-42.64-76.32s15.94-59.66,42.64-76.32c.83-.52,1.33-1.42,1.33-2.4s-.5-1.88-1.33-2.4C130.93,5.08,113.46,0,95.82,0,42.98,0,0,42.98,0,95.82s42.98,95.82,95.82,95.82c17.65,0,35.12-5.08,50.52-14.7.83-.52,1.33-1.42,1.33-2.4s-.5-1.88-1.33-2.4Z"/>
+    <path id="ph2" class="moon-phase" d="M373.58,95.82c0-25.68,11.33-50.32,31.09-67.6.61-.54.97-1.31.97-2.13s-.35-1.59-.97-2.13c-17.66-15.45-39.97-23.96-62.8-23.96-52.83,0-95.82,42.98-95.82,95.82s42.98,95.82,95.82,95.82c22.83,0,45.14-8.51,62.8-23.96.61-.54.97-1.31.97-2.13s-.35-1.59-.97-2.13c-19.75-17.28-31.09-41.92-31.09-67.6Z"/>
+    <path id="ph3" class="moon-phase" d="M610.78,0c-52.83,0-95.82,42.98-95.82,95.82s42.98,95.82,95.82,95.82,95.82-42.98,95.82-95.82S663.61,0,610.78,0Z"/>
+    <path id="ph4" class="moon-phase" d="M852.49,0c-13.31,0-26.38,2.81-38.84,8.36-1.02.45-1.68,1.47-1.68,2.58s.66,2.13,1.68,2.58c32.57,14.5,53.62,46.8,53.62,82.29s-21.05,67.79-53.62,82.29c-1.02.45-1.68,1.47-1.68,2.58s.66,2.13,1.68,2.58c12.47,5.55,25.54,8.36,38.84,8.36,52.83,0,95.82-42.98,95.82-95.82S905.32,0,852.49,0Z"/>
+    <path id="ph5" class="moon-phase" d="M1104.18,0c-11.69,0-23.42,2.28-34.88,6.77-1.16.46-1.89,1.62-1.78,2.87.1,1.25,1.02,2.28,2.24,2.53,39.48,8.18,68.13,43.41,68.13,83.77s-28.49,75.32-67.74,83.65c-1.22.26-2.13,1.29-2.23,2.54-.1,1.25.63,2.41,1.8,2.86,11.4,4.41,22.99,6.64,34.47,6.64,52.83,0,95.82-42.98,95.82-95.82S1157.02,0,1104.18,0Z"/>
+  </svg>
+</div>
+
+<style>
+  .lunar-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+  }
+
+  .lunar-svg {
+    width: 100%;
+    max-width: 400px; /* Regola la grandezza qui */
+    height: auto;
+  }
+
+  .moon-phase {
+  fill: var(--brand-gold, #e9d8c9);
+  opacity: 0.05;
+  /* 7 secondi è un buon tempo per gestire tutta la sequenza */
+  animation: moonCycle 6s infinite ease-in-out;
+}
+
+/* Ogni luna parte con un piccolo ritardo */
+#ph1 { animation-delay: 0s; }
+#ph2 { animation-delay: 0.5s; }
+#ph3 { animation-delay: 1s; }
+#ph4 { animation-delay: 1.5s; }
+#ph5 { animation-delay: 2s; }
+  
+  @keyframes moonCycle {
+    0% { opacity: 0.05; }   /* Spenta all'inizio */
+    20% { opacity: 1; }    /* Si accende e rimane accesa... */
+    40% { opacity: 1; }    /* ...fino a questo punto */
+    70% { opacity: 0.05;}  /* Poi si spegne */
+    100% { opacity: 0.05; } /* Rimane spenta fino alla fine del ciclo */
+  }
+</style>

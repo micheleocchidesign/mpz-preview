@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import LunarPhases from "../components/LunarPhases.astro";
 ---
 
 <BaseLayout title="Marta Paola Zola | Naturopata Olistica">
     <main class="home-main">
-        <!-- HERO SECTION (Updated from index.astro) -->
+        <!-- HERO SECTION -->
         <section class="hero">
             <div class="hero-bg">
                 <div class="bg-left"></div>
@@ -88,7 +89,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
         </section>
 
-        <!-- SVG Divider between About and Services -->
+        <!-- CTA SECTION - DISCOVERY CALL -->
+        <section class="cta-banner">
+            <div class="cta-container">
+                <LunarPhases />
+                <h2 class="cta-text">
+                    Vuoi capire se il mio approccio è adatto a te? <br />
+                    Parliamone in una chiamata conoscitiva gratuita di 30 minuti.
+                </h2>
+                <a href="#contatti" class="btn-primary btn-cta">PRENOTA</a>
+            </div>
+        </section>
+
+        <!-- SVG Divider between CTA and Services -->
         <div class="svg-divider invert-v">
             <svg
                 data-name="Layer 1"
@@ -225,7 +238,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     section {
-        padding: 5rem 1.5rem; /* Ridotto leggermente per i divisori */
+        padding: 5rem 1.5rem;
         position: relative;
     }
 
@@ -241,7 +254,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         position: relative;
         display: block;
         width: calc(100% + 1.3px);
-        height: 60px; /* Smooth but not too high */
+        height: 60px;
     }
 
     .shape-fill-light {
@@ -261,7 +274,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .invert-v svg {
-        transform: scaleY(-1); /* Ribalta l'onda verticalmente */
+        transform: scaleY(-1);
     }
 
     .section-overline {
@@ -336,7 +349,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         display: flex;
         align-items: center;
         padding-bottom: 0;
-		background-color: var(--accent-3);
+        background-color: var(--accent-3);
     }
 
     .hero-bg {
@@ -348,32 +361,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         display: grid;
         grid-template-columns: 40% 60%;
         z-index: 1;
-		padding-bottom: 40px;
+        padding-bottom: 40px;
     }
 
     .bg-left {
         background: url("/mare.webp");
         background-size: cover;
         background-position: center;
-		/* Applica l'animazione: 15 secondi totale, loop infinito */
-    	animation: slideShow 15s infinite ease-in-out;
+        animation: slideShow 15s infinite ease-in-out;
     }
 
-	/* --- LOOP IMMAGINI DI SFONDO --- */
-	@keyframes slideShow {
-		0%, 30% {
-			background-image: url("/mare.webp");
-		}
-		33%, 63% {
-			background-image: url("/monstera.webp");
-		}
-		66%, 96% {
-			background-image: url("/nuraghe.webp");
-		}
-		100% {
-			background-image: url("/mare.webp");
-		}
-	}
+    @keyframes slideShow {
+        0%,
+        30% {
+            background-image: url("/mare.webp");
+        }
+        33%,
+        63% {
+            background-image: url("/monstera.webp");
+        }
+        66%,
+        96% {
+            background-image: url("/nuraghe.webp");
+        }
+        100% {
+            background-image: url("/mare.webp");
+        }
+    }
 
     .bg-right {
         background-color: var(--accent-3);
@@ -472,8 +486,55 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         max-width: 500px;
     }
 
-    /* --- SERVICES --- */
+    /* --- CTA BANNER --- */
+    .cta-banner {
+        background-color: #3e4b44;
+        padding: 4rem 1.5rem;
+        text-align: center;
+        color: var(
+            --bg-lighter
+        ); /* Usiamo il nuovo light token per maggior contrasto */
+    }
 
+    .cta-container {
+        max-width: 80vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cta-banner :global(.lunar-wrapper) {
+        padding: 0;
+        margin-bottom: -1rem;
+    }
+
+    .cta-banner :global(.moon-phase) {
+        fill: var(--brand-gold);
+    }
+
+    .cta-text {
+        font-family: var(--font-headings);
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        line-height: 1.4;
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+        max-width: 80vw;
+    }
+
+    .btn-cta {
+        background-color: var(--brand-gold);
+        color: var(--text-dark);
+        font-weight: 700;
+    }
+
+    .btn-cta:hover {
+        background-color: var(--bg-lighter);
+        color: var(--brand-primary);
+    }
+
+    /* --- SERVICES --- */
     .services-section {
         background-color: var(--accent-5-bg);
     }
@@ -495,12 +556,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .service-card {
-        margin: 0 auto;
         background-color: white;
         padding: 2.5rem 2rem;
         border-radius: 12px;
         text-decoration: none;
         color: inherit;
+        position: relative;
         transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
             box-shadow 0.4s ease;
         display: flex;
@@ -550,13 +611,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .service-title {
-		z-index: 3;
+        z-index: 3;
         position: absolute;
-		margin:0 !important;
-		font-family: var(--font-headings);
-        font-size: 3rem;
+        left: 2rem;
+        margin: 0 !important;
+        font-family: var(--font-headings);
+        font-size: 2.2rem;
         color: var(--bg-light);
-        margin-bottom: 1rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
 
     .service-excerpt {
@@ -673,6 +735,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         .services-grid {
             grid-template-columns: 1fr;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
         }
     }
 </style>
