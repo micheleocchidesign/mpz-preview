@@ -111,7 +111,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 </div>
                 <div class="services-grid">
                     <a href="/servizi/naturopatia" class="service-card">
-                        <div class="service-icon">01</div>
+                        <div class="service-image-wrapper">
+                            <img
+                                src="https://images.unsplash.com/photo-1547401372-0ac4589c4d3e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9vdHN8ZW58MHx8MHx8fDI%3D"
+                                alt="Percorso Radici - Naturopatia"
+                                class="service-img"
+                            />
+                        </div>
                         <h3 class="service-title">Percorso <br /> "Radici"</h3>
                         <p class="service-excerpt">
                             Un'analisi approfondita del tuo stato di benessere
@@ -120,7 +126,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         <span class="service-link">Dettagli →</span>
                     </a>
                     <a href="/servizi/floriterapia" class="service-card">
-                        <div class="service-icon">02</div>
+                        <div class="service-image-wrapper">
+                            <img
+                                src="https://images.unsplash.com/photo-1731119414875-799ff8cdbbdd?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Incontro La prima semina - Floriterapia"
+                                class="service-img"
+                            />
+                        </div>
                         <h3 class="service-title">
                             Incontro singolo <br />"La prima semina"
                         </h3>
@@ -240,17 +252,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         fill: var(--accent-3);
     }
 
-	.shape-fill-pinkish{
-		fill: var(--accent-5-bg);
-	}
+    .shape-fill-pinkish {
+        fill: var(--accent-5-bg);
+    }
 
     .top-wave .shape-fill {
         fill: var(--bg-light);
     }
 
-	.invert-v svg {
-		transform: scaleY(-1); /* Ribalta l'onda verticalmente */
-	}
+    .invert-v svg {
+        transform: scaleY(-1); /* Ribalta l'onda verticalmente */
+    }
 
     .section-overline {
         display: block;
@@ -323,7 +335,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         overflow: hidden;
         display: flex;
         align-items: center;
-        padding: 0;
+        padding-bottom: 0;
+		background-color: var(--accent-3);
     }
 
     .hero-bg {
@@ -335,13 +348,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         display: grid;
         grid-template-columns: 40% 60%;
         z-index: 1;
+		padding-bottom: 40px;
     }
 
     .bg-left {
-        background: url("https://images.unsplash.com/photo-1677588843702-db132be05f78?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGJvaG98ZW58MHx8MHx8fDA%3D");
+        background: url("/mare.webp");
         background-size: cover;
         background-position: center;
+		/* Applica l'animazione: 15 secondi totale, loop infinito */
+    	animation: slideShow 15s infinite ease-in-out;
     }
+
+	/* --- LOOP IMMAGINI DI SFONDO --- */
+	@keyframes slideShow {
+		0%, 30% {
+			background-image: url("/mare.webp");
+		}
+		33%, 63% {
+			background-image: url("/monstera.webp");
+		}
+		66%, 96% {
+			background-image: url("/nuraghe.webp");
+		}
+		100% {
+			background-image: url("/mare.webp");
+		}
+	}
 
     .bg-right {
         background-color: var(--accent-3);
@@ -354,7 +386,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         height: 100%;
         display: grid;
         grid-template-columns: 40% 60%;
-        padding-top: 80px;
+        padding: 80px 0px;
     }
 
     .col-img {
@@ -370,7 +402,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         border-radius: 500px 500px 0 0;
         overflow: hidden;
         transform: translateX(20%);
-		border: solid 2px var(--brand-gold);
+        border: solid 2px var(--brand-gold);
         box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.35);
     }
 
@@ -463,14 +495,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .service-card {
+        margin: 0 auto;
         background-color: white;
-        padding: 3rem 2rem;
-        border-radius: 8px;
+        padding: 2.5rem 2rem;
+        border-radius: 12px;
         text-decoration: none;
         color: inherit;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+            box-shadow 0.4s ease;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .service-image-wrapper {
+        position: relative;
+        width: calc(100% + 4rem);
+        margin: -2.5rem -2rem 2rem -2rem;
+        aspect-ratio: 16/10;
+        overflow: hidden;
+    }
+
+    .service-image-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: background-color 0.4s ease;
+        z-index: 1;
+    }
+
+    .service-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     .service-card:hover {
@@ -478,18 +541,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
     }
 
-    .service-icon {
-        font-family: var(--font-headings);
-        font-size: 2rem;
-        color: var(--brand-gold);
-        margin-bottom: 1.5rem;
-        opacity: 0.5;
+    .service-card:hover .service-img {
+        transform: scale(1.05);
+    }
+
+    .service-card:hover .service-image-wrapper::after {
+        background-color: rgba(0, 0, 0, 0.1);
     }
 
     .service-title {
-        font-family: var(--font-headings);
-        font-size: 1.5rem;
-        color: var(--brand-primary);
+		z-index: 3;
+        position: absolute;
+		margin:0 !important;
+		font-family: var(--font-headings);
+        font-size: 3rem;
+        color: var(--bg-light);
         margin-bottom: 1rem;
     }
 
