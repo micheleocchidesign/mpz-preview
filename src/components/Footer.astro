@@ -1,0 +1,210 @@
+---
+const year = 2026;
+---
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- Branding & Info -->
+            <div class="footer-info">
+                <a href="/" class="footer-logo-link">
+                    <img
+                        src="/MPZ_logo_horiz_fullcolor_negative.svg"
+                        alt="Marta Paola Zola Logo"
+                        class="footer-logo-img"
+                    />
+                </a>
+                <p class="footer-tagline">Naturopata Olistica</p>
+                <p class="footer-vat">P.IVA 12345678901</p>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="/#chi-sono">Chi Sono</a></li>
+                    <li><a href="/#servizi">Servizi</a></li>
+                    <li><a href="/#contatti">Contatti</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Social -->
+            <div class="footer-legal">
+                <ul>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/cookie-policy">Cookie Policy</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a
+                        href="https://www.instagram.com/martapaolazola/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="social-icon"
+                        >
+                            <rect
+                                width="20"
+                                height="20"
+                                x="2"
+                                y="2"
+                                rx="5"
+                                ry="5"></rect>
+                            <path
+                                d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                            ></path>
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {year} Marta Paola Zola. Tutti i diritti riservati.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .main-footer {
+        background-color: var(--text-dark);
+        color: var(--bg-light);
+        padding: 5rem 1.5rem 2rem;
+        font-family: var(--font-body);
+    }
+
+    .footer-container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .footer-logo-link {
+        display: inline-block;
+    }
+
+    .footer-logo-img {
+        height: 45px; /* Regola l'altezza desiderata */
+        width: auto;
+        display: block;
+    }
+
+    .footer-tagline {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+    }
+
+    .footer-vat {
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+
+    .footer-title {
+        font-family: var(--font-headings);
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: var(--brand-gold);
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+    }
+
+    .footer-grid ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-grid ul li {
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-grid ul li a {
+        color: var(--bg-light);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        opacity: 0.8;
+    }
+
+    .footer-grid ul li a:hover {
+        color: var(--brand-gold);
+        opacity: 1;
+    }
+
+    .footer-social {
+        margin-top: 1.5rem;
+    }
+
+    .footer-social a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--bg-light);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        opacity: 0.8;
+    }
+
+    .footer-social a:hover {
+        color: var(--brand-gold);
+        opacity: 1;
+    }
+
+    .social-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        text-align: center;
+        font-size: 0.9rem;
+        opacity: 0.6;
+    }
+
+    @media (max-width: 900px) {
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .footer-info {
+            grid-column: span 2;
+            text-align: center;
+        }
+        .footer-nav,
+        .footer-legal {
+            text-align: center;
+        }
+        .footer-social a {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+        .footer-info {
+            grid-column: span 1;
+        }
+    }
+</style>

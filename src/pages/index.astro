@@ -26,13 +26,13 @@ import LunarPhases from "../components/LunarPhases.astro";
                 <div class="col-text">
                     <div class="text-content">
                         <h1 class="hero-title">
-                            Riscopri la tua <br />natura autentica
+                            Respira, cambia il modo in cui stai nella tua vita, rimetti radici in te stessa.
                         </h1>
                         <p class="hero-description">
-                            Accompagno le persone in un percorso di benessere
-                            consapevole, attraverso rimedi naturali e un
-                            approccio olistico personalizzato per ritrovare
-                            equilibrio e vitalità.
+                            <b>Ciao, sono Marta.
+							Benvenuta in uno spazio protetto.</b><br/>
+							Grazie a un approccio di Naturopatia integrata ti accompagno a sentire le tue radici, per sentirti a casa nel corpo e nelle emozioni. 
+
                         </p>
                         <div class="hero-actions">
                             <a href="#servizi" class="btn-primary"
@@ -91,29 +91,30 @@ import LunarPhases from "../components/LunarPhases.astro";
 
         <!-- CTA SECTION - DISCOVERY CALL -->
         <section class="cta-banner">
-            <div class="cta-container">
-                <LunarPhases />
-                <h2 class="cta-text">
-                    Vuoi capire se il mio approccio è adatto a te? <br />
-                    Parliamone in una chiamata conoscitiva gratuita di 30 minuti.
-                </h2>
-                <a href="#contatti" class="btn-primary btn-cta">PRENOTA</a>
-            </div>
-        </section>
+    
+    <div class="svg-divider mask-top">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.17,148.84,27.8,216.54,28.9V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+            class="fill-about"></path>
+        </svg>
+    </div>
 
-        <!-- SVG Divider between CTA and Services -->
-        <div class="svg-divider invert-v">
-            <svg
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1200 120"
-                preserveAspectRatio="none"
-            >
-                <path
-                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,35.26,69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-1.11,1200,42.47V0Z"
-                    class="shape-fill-pinkish"></path>
-            </svg>
-        </div>
+    <div class="cta-container">
+        <LunarPhases />
+        <h2 class="cta-text">
+            Vuoi capire se il mio approccio è adatto a te? <br />
+            Parliamone in una chiamata conoscitiva gratuita di 30 minuti.
+        </h2>
+        <a href="#contatti" class="btn-primary btn-cta">PRENOTA</a>
+    </div>
+
+    <div class="svg-divider mask-bottom">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,35.26,69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-1.11,1200,42.47V0Z" 
+            class="fill-services"></path>
+        </svg>
+    </div>
+</section>
 
         <!-- SERVIZI SECTION -->
         <section class="services-section" id="servizi">
@@ -343,7 +344,7 @@ import LunarPhases from "../components/LunarPhases.astro";
     /* --- HERO --- */
     .hero {
         position: relative;
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
         overflow: hidden;
         display: flex;
@@ -359,7 +360,7 @@ import LunarPhases from "../components/LunarPhases.astro";
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 37% 63%;
         z-index: 1;
         padding-bottom: 40px;
     }
@@ -399,8 +400,8 @@ import LunarPhases from "../components/LunarPhases.astro";
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: 40% 60%;
-        padding: 80px 0px;
+        grid-template-columns: 38% 62%;
+        padding: 60px 0px;
     }
 
     .col-img {
@@ -430,17 +431,17 @@ import LunarPhases from "../components/LunarPhases.astro";
     .col-text {
         display: flex;
         align-items: center;
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
     }
 
     .text-content {
-        max-width: 500px;
+        max-width: 650px;
     }
 
     .hero-title {
         font-family: "Yeseva One", serif;
-        font-size: clamp(2.8rem, 5vw, 4.2rem);
+        font-size: clamp(2rem, 4.5vw, 3rem);
         color: var(--brand-primary);
         line-height: 1.1;
         margin-bottom: 2rem;
@@ -487,14 +488,53 @@ import LunarPhases from "../components/LunarPhases.astro";
     }
 
     /* --- CTA BANNER --- */
-    .cta-banner {
-        background-color: #3e4b44;
-        padding: 4rem 1.5rem;
-        text-align: center;
-        color: var(
-            --bg-lighter
-        ); /* Usiamo il nuovo light token per maggior contrasto */
-    }
+	.cta-banner {
+		background-image: linear-gradient(rgba(62, 75, 68, 0.8), rgba(62, 75, 68, 0.8)), 
+						url("https://images.unsplash.com/photo-1482385916434-814664df9c5b?q=80&w=3193&auto=format&fit=crop");
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		
+		/* Reset padding: lo spazio è gestito dai divider */
+		padding: 0; 
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 500px; /* Assicura che si veda abbastanza foto */
+		text-align: center;
+		color: var(--bg-light);
+	}
+
+	.cta-container {
+		max-width: 800px;
+		margin: 4rem auto; /* Spazio verticale interno */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		z-index: 2;
+	}
+
+	/* Gestione dei Divider come Maschere */
+	.mask-top svg {
+		height: 40px; /* Regola quanto deve essere profonda l'onda */
+	}
+
+	.mask-bottom svg {
+		height: 60px;
+		transform: scaleY(-1); /* Inverte l'onda per "chiudere" verso il basso */
+	}
+
+	.fill-about {
+		fill: var(--bg-light); /* Colore della sezione Chi Sono */
+	}
+
+	.fill-services {
+		fill: var(--accent-5-bg); /* Colore della sezione Servizi */
+	}
 
     .cta-container {
         max-width: 80vw;
