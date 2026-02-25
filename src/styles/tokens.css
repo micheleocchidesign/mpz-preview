@@ -8,11 +8,11 @@
 
     /* Accent Colors */
     --accent-1: #bc8e84;
+    --accent-1-bg: #F1E7E5;
     --accent-2: #96a291;
     --accent-3: #e9d8c9;
     --accent-4: #3e4b44;
     --accent-5: #c98e5f;
-    --accent-5-bg: #F1E7E5;
 
     /* Typography */
     --font-headings: 'Yeseva One', serif;

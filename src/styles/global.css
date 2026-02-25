@@ -1,0 +1,39 @@
+.hero-title {
+    font-family: "Yeseva One", serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    color: var(--brand-primary);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+.hero-description {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+.section-overline {
+    display: block;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 12px;
+    color: var(--brand-gold);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+   .section-title {
+        font-family: var(--font-headings);
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--brand-primary);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .section-text {
+        font-family: var(--font-body);
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--text-dark);
+        margin-bottom: 2rem;
+    }
