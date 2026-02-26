@@ -47,21 +47,9 @@ import WavyDivider from "../components/WavyDivider.astro";
                     </div>
                 </div>
             </div>
+			<!-- SVG Divider between Hero and About -->
+        <WavyDivider position="bottom" color="var(--bg-light)" />
         </section>
-
-        <!-- SVG Divider between Hero and About -->
-        <div class="svg-divider top-wave">
-            <svg
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1200 120"
-                preserveAspectRatio="none"
-            >
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.17,148.84,27.8,216.54,28.9V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="shape-fill-accent"></path>
-            </svg>
-        </div>
 
         <!-- CHI SONO SECTION -->
         <section class="about-section" id="chi-sono">
@@ -107,7 +95,7 @@ import WavyDivider from "../components/WavyDivider.astro";
                 <a href="#contatti" class="btn-primary btn-cta">PRENOTA</a>
             </div>
 
-            <WavyDivider position="bottom" color="var(--bg-light)" />
+            <WavyDivider position="bottom" color="var(--accent-1-bg)" />
         </section>
 
         <!-- SERVIZI SECTION -->
@@ -154,22 +142,10 @@ import WavyDivider from "../components/WavyDivider.astro";
             </div>
         </section>
 
-        <!-- SVG Divider between Services and Contact -->
-        <div class="svg-divider">
-            <svg
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1200 120"
-                preserveAspectRatio="none"
-            >
-                <path
-                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,35.26,69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-1.11,1200,42.47V0Z"
-                    class="shape-fill-pinkish"></path>
-            </svg>
-        </div>
-
         <!-- CONTATTI SECTION -->
         <section class="contact-section" id="contatti">
+			<!-- SVG Divider between Services and Contact -->
+			<WavyDivider position="top" color="var(--accent-1-bg)" />
             <div class="contact-container">
                 <div class="contact-header">
                     <span class="section-overline">Contatti</span>
@@ -237,40 +213,7 @@ import WavyDivider from "../components/WavyDivider.astro";
         position: relative;
     }
 
-    /* --- SVG DIVIDERS --- */
-    .svg-divider {
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        background-color: transparent;
-    }
 
-    .svg-divider svg {
-        position: relative;
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 60px;
-    }
-
-    .shape-fill-light {
-        fill: var(--bg-light);
-    }
-
-    .shape-fill-accent {
-        fill: var(--accent-3);
-    }
-
-    .shape-fill-pinkish {
-        fill: var(--accent-1-bg);
-    }
-
-    .top-wave .shape-fill {
-        fill: var(--bg-light);
-    }
-
-    .invert-v svg {
-        transform: scaleY(-1);
-    }
 
     .btn-primary {
         display: inline-block;
@@ -317,7 +260,6 @@ import WavyDivider from "../components/WavyDivider.astro";
         display: flex;
         align-items: center;
         padding-bottom: 0;
-        background-color: var(--accent-3);
     }
 
     .hero-bg {
@@ -329,7 +271,7 @@ import WavyDivider from "../components/WavyDivider.astro";
         display: grid;
         grid-template-columns: 37% 63%;
         z-index: 1;
-        padding-bottom: 40px;
+        padding-bottom: 0px;
     }
 
     .bg-left {

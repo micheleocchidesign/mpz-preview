@@ -37,3 +37,9 @@
         color: var(--text-dark);
         margin-bottom: 2rem;
     }
+
+    .chiaro { color: var(--bg-light); }
+    .beige { color: var(--accent-3); }
+    .dorato { color: var(--brand-gold); }
+    .scuro { color: var(--text-dark); }
+    .salvia { color: var(--accent-2); }
