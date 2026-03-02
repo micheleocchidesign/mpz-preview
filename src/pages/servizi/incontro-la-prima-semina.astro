@@ -5,26 +5,25 @@ import BookCallBanner from "../../components/BookCallBanner.astro";
 const base = import.meta.env.BASE_URL;
 
 const inclusions = [
-    "4 incontri individuali (90 minuti ciascuno)",
+    "1 incontro individuale (90 minuti)",
     "Anamnesi approfondita fisica ed emotiva",
-    "Tecniche integrate di naturopatia classica, riflessologia plantare, massaggi, embodiment, somatica, costellazioni familiari, coaching",
-    "Piano personalizzato: rimedi naturali, pratiche ed esercizi da fare a casa (se lo vorrai)",
+    "Osservazione integrata: naturopatia classica, riflessologia plantare, embodiment, somatica, coaching",
     "“Parole medicina” per l'ascolto profondo",
-    "Sintesi finale a ogni incontro con i punti cardine"
+    "Sintesi finale con i punti cardine"
 ];
 
 const faqs = [
     {
-        q: "Quanto dura il percorso?",
-        a: "Il percorso prevede almeno 4 incontri, consiglio di farli ravvicinati (ogni settimana o ogni 10 giorni) per mantenere la continuità. L'ultimo può essere un follow-up dopo un mese. Ogni percorso poi, come ogni persona, è diverso: se vorrai, potrai scegliere di proseguire nei mesi successivi con consulti singoli oppure con pacchetti di incontri (ad esempio, ai cambi di stagione oppure all’occorrenza quando senti di averne bisogno). Valutiamo insieme cosa ti serve."
+        q: "In cosa l’incontro singolo è diverso dalla call conoscitiva gratuita?",
+        a: "La call gratuita è uno spazio breve di 30 minuti per capire se c'è affinità e rispondere a domande prima di prenotare un incontro o un percorso. La Prima Semina è un incontro vero e proprio: c'è anamnesi, lavoro corporeo, una restituzione pratica."
     },
     {
-        q: "Devo portare qualcosa agli incontri?",
-        a: "Solo te stessa e la disponibilità ad ascoltarti."
+        q: "Devo già sapere di cosa ho bisogno?",
+        a: "No, spesso chi arriva alla Prima Semina ha proprio la sensazione di non saperlo e il desiderio di trovare chiarezza, individuare una direzione. Va benissimo così: partiamo da lì."
     },
     {
-        q: "Ho già fatto altri percorsi olistici, in cosa è diverso?",
-        a: "Prima di tutto, nel valore di molte tecniche e competenze diverse integrate tra loro, attraverso la mia esperienza personale e professionale. Poi, uno degli aspetti a cui tengo molto è la concretezza: rimaniamo ancorate alla quotidianità, con un approccio pratico e radicato, che entra nella vita di tutti i giorni e che tiene conto delle esperienze che vivi durante il cambiamento (anche nei momenti di vulnerabilità). Non ci sarà nulla di dogmatico, perché credo nella responsabilità: ti offro uno spazio aperto in cui capire come radicarti in te stessa e stare meglio, con la consapevolezza dei ritmi corporei ed emotivi."
+        q: "Posso unire la naturopatia integrata ad altri percorsi?",
+        a: "Sì, la naturopatia integrata con un percorso di psicoterapia, lavorando in parallelo, è spesso molto utile. Posso anche consigliarti le professioniste a cui mi affido per lavorare insieme, quando ci sono delle necessità che vanno oltre le mie competenze. Credo sia un atto di responsabilità reciproca tra professionista e cliente."
     },
     {
         q: "Sto seguendo una terapia medica, posso fare un consulto di naturopatia integrata?",
@@ -60,7 +59,7 @@ const faqs = [
                     <div class="text-content">
                         <span class="section-overline">Naturopatia integrata per il benessere femminile</span>
                         <h1 class="hero-title">
-                            Percorso Radici
+                            Incontro La Prima Semina
                         </h1>
                         <p class="hero-description">
                             Un incontro per tornare a casa: nel corpo, nelle emozioni, in te stessa. Il punto di partenza di tutto.
@@ -77,19 +76,19 @@ const faqs = [
 
         <section class="for-whom">
             <div class="container">
-                <h2 class="section-title">Questo percorso è per te se...</h2>
+                <h2 class="section-title">La Prima Semina è per te se...</h2>
                 <div class="pain-points-grid">
                     <div class="pain-card">
-                        <p>Cerchi di ascoltarti, ma non riesci a interpretare i messaggi che ti sta mandando il tuo corpo.  Sei già abituata a lavorare su te stessa, cerchi di prenderti cura di tutto ciò che sei, ma senti che c'è una disconnessione tra quello che hai capito con la testa e quello che invece continui a sentire nel corpo. Ti chiedi come puoi riuscire a integrare tutto verso una crescita personale.</p>
+                        <p>Senti che il corpo ti sta mandando dei segnali: stanchezza, tensioni, sintomi che si ripresentano, un malessere diffuso che non riesci a inquadrare. Vorresti finalmente capire cosa sta cercando di dirti, invece di farlo sparire. Sai che non vuoi pi&ugrave; solo "resistere".</p>
                     </div>
                     <div class="pain-card">
-                        <p>Stai spesso male e sei arrivata al limite. Cerchi una soluzione diversa: non sapresti come descriverla, adesso, ma non è ciò che hai provato finora. Sai che non vuoi più “resistere” e nemmeno risolvere tutti i segnali del corpo facendoli sparire. Per prima cosa vorresti stare meglio, certo, ma vuoi anche trovare un modo diverso di stare nella tua vita e uno spazio di ascolto protetto.</p>
+                        <p>Hai gi&agrave; fatto dei percorsi di lavoro su te stessa, ma senti che c'&egrave; ancora qualcosa che non si muove. Sei curiosa di esplorare un approccio integrato, che tenga insieme corpo, emozioni e storia personale &mdash; vuoi capire se questo &egrave; il posto giusto per farlo.</p>
                     </div>
                     <div class="pain-card">
-                        <p>Senti che il corpo si manifesta in modo sempre più intenso, ma ti è stato detto che non è niente: stanchezza cronica, mal di pancia, crampi allo stomaco, reflusso, mal di testa, problemi legati al ciclo (ad esempio amenorrea o dismenorrea), tensioni che non se ne vanno, disturbi che finora non sei riuscita davvero a inquadrare. Vuoi ascoltare quello che il tuo corpo sta cercando di dirti, ma hai bisogno di una guida che ti faccia sentire compresa e che ti aiuti a tradurre quei segnali.</p>
+                        <p>Non sei pronta a impegnarti subito in un percorso lungo e va benissimo cos&igrave;. Hai bisogno di fermarti, fare ordine, sentirti vista. La Prima Semina &egrave; tutto questo: un momento per te, senza che ci sia gi&agrave; bisogno di sapere dove vuoi arrivare.</p>
                     </div>
                     <div class="pain-card">
-                        <p>Vuoi riappropriarti del tuo tempo. Hai la sensazione di vivere sempre in rincorsa, di non avere mai abbastanza spazio per te, ma soprattutto di non avere altre possibilità dentro di te, anche se sai che non è vero. Vorresti rallentare ma hai paura di non farcela, di restare indietro, di cosa succederebbe se ti fermassi. Desideri trovare il tuo ritmo, non quello che il mondo ti impone, ma ti domandi se è possibile.</p>
+                        <p>Vuoi semplicemente ascoltarti, in questo preciso momento della tua vita. Non serve attraversare una crisi per darti il permesso di farlo.</p>
                     </div>
                 </div>
             </div>
@@ -102,74 +101,44 @@ const faqs = [
                     <img src="https://images.unsplash.com/photo-1590415024718-798cdaab96dd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3Byb3V0fGVufDB8fDB8fHwy" alt="Radici e natura" class="img-rounded" />
                 </div>
                 <div class="approach-text">
-                    <h2 class="section-title">Perché il percorso Radici</h2>
-                    <p>Molti percorsi olistici ti chiedono subito di "lasciar andare" e "fluire", ma se stai arrivando 
-                        dalla confusione, dal dolore e dalla sfiducia, hai bisogno prima di <strong>fare ordine</strong>, 
-                        o meglio di <strong>essere veramente tu</strong>. Io inizio da lì: insieme <strong>facciamo chiarezza</strong>, ascoltiamo 
-                        i sintomi, le emozioni, i vissuti. Partiamo da te e costruiamo una mappa del cambiamento. 
-                        Poi, toccando i punti che ti servono, possiamo lasciar andare, smuovere, cambiare. 
-                        Ho presente che cosa significa vivere sempre “in modalità fare”, sentirti in colpa se 
-                        rallenti, non riuscire a dare un nome alle sensazioni che provi. Sono qui 
-                        per accompagnarti a farlo, insieme.</p>
-                    <p>Nel mio <strong>approccio</strong> unisco competenze <strong>coaching</strong> e di <strong>naturopatia classica</strong> 
-                        (come <strong>fitoterapia</strong> e <strong>medicina tradizionale cinese</strong>), <strong>riflessologia plantare, 
-                        massaggi al femminile, embodiment, somatica, femminile sacro, yoga</strong> e 
-                        un’osservazione sistemica attraverso le <strong>costellazioni familiari</strong>. Non 
-                        guardiamo solo cosa fa male oggi, ma allarghiamo lo sguardo: cosa sta 
-                        cercando di dirti il tuo corpo? E le emozioni? Cosa hai ereditato da 
-                        chi c’era prima di te? Sì, perch&eacute; ti porti dentro dei vissuti che non sono solo i tuoi.</p>
-                    <p>Ci tengo a darti <strong>strumenti pratici</strong>, non solo comprensione e supporto: osservazioni su abitudini, 
-                        energia e ciclo mestruale, piccoli esercizi da fare a casa, pratiche corporee, 
-                        rilassamento, rimedi naturali. Il mio approccio è profondo e radicato nella vita di tutti i giorni. 
-                        Ti accompagno in modo graduale attraverso il cambiamento: arrivare al limite è anche 
-                        un’opportunità per <strong>rimettere radici in te stessa</strong>, non avere paura del tempo, trovare un equilibrio.</p>
+                    <h2 class="section-title">Perch&eacute;&nbsp;un'incontro singolo</h2>
+                    <p>&Egrave; un incontro in cui possiamo fare ordine, costruire una mappa, portare chiarezza l&igrave; dove c'&egrave; confusione.</p>
+                    <p>Spesso arriviamo a un primo incontro con una sensazione difficile da spiegare &mdash; 
+                        una serie di sintomi, stanchezza, qualcosa che continua a tornare. Quello che 
+                        succede quando ci prendiamo davvero il tempo di ascoltarci &egrave; spesso 
+                        sorprendente: connessioni che non avevamo visto, schemi che si ripetono, 
+                        risorse che non sapevamo di avere. Qualcosa dentro si muove, si apre, respira.</p>
+                    <p>Molti percorsi olistici ti invitano subito a lasciar andare: ma se 
+                        stai arrivando dalla confusione o dalla sfiducia, pu&ograve; 
+                        sembrare impossibile. Prima hai bisogno di fare ordine. 
+                        Io inizio sempre da l&igrave;, sia in un incontro singolo 
+                        che in un percorso pi&ugrave; lungo.</p>
+                        <p>
+                            Attraverso un approccio di naturopatia integrata, che unisce 
+                            anamnesi approfondita, riflessologia, embodiment e coaching, 
+                            tracciamo insieme una mappa di dove sei adesso. Partiamo da te: 
+                            da quello che senti nel corpo, da quello che stai attraversando, 
+                            da ci&ograve; che vuole finalmente essere ascoltato.
+                        </p>
                 </div>
             </div>
         </section>
 
         <section class="how-it-works">
             <div class="container container-narrow">
-                <h2 class="section-title text-center">Il viaggio insieme</h2>
-                <p>Il Percorso Radici si sviluppa in <strong>4 incontri personalizzati di un'ora e mezza</strong> che costruiamo insieme a partire dalla tua storia, dai tuoi bisogni e da quello che il tuo corpo ti sta comunicando.</p>
-                <div class="steps-wrapper">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>1° incontro: Anamnesi e primo ascolto</h3>
-                            <p>Ci prendiamo il tempo per conoscerti: parliamo dei tuoi sintomi fisici ed emotivi, 
-                                dei tuoi vissuti, di cosa ti ha portata qui, per avere un’anamnesi accurata. 
-                                Tracciamo un mappa di lavoro, sempre all’interno della cornice della medicina 
-                                naturale e del coaching. Osserviamo anche i tuoi piedi (dal vivo o con foto) 
-                                secondo i principi della riflessologia e concludiamo con una breve pratica. 
-                                È un primo incontro pratico e profondo, dove iniziamo a fare ordine e scegliamo su cosa lavorare.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2-4</div>
-                        <div class="step-content">
-                            <h3>Incontri 2, 3 e 4: Lavoro Integrato</h3>
-                            <p>Negli incontri successivi, che saranno possibilmente ravvicinati, lavoriamo 
-                                sul percorso che abbiamo costruito insieme. Tu mi porti quello che hai osservato, 
-                                vissuto, come hanno agito i rimedi che ti ho consigliato. Io integro con 
-                                pratiche di embodiment e somatica, movimenti per sbloccare tensioni nel corpo, 
-                                tecniche naturopatiche, costellazioni familiari e massaggi (in presenza). 
-                                In questi incontri la parte dedicata al rilassamento e all'ascolto profondo 
-                                è maggiore rispetto al primo.</p>
-                        </div>
-                    </div>
-                </div>
-                <p>A conclusione di ogni incontro ti lascio anche delle <strong>"parole medicina"</strong> o <strong>“frasi medicina”</strong>: 
-                    ti restituisco parole che affiorano durante il consulto, dal lavoro corporeo ed emotivo, 
-                    in modo che possano accompagnarti con il loro senso di potere e di possibilità.</p>
-                <p>Consiglio sempre di fissare <strong>incontri ravvicinati</strong> (idealmente settimanali o ogni 10 giorni): 
-                    l'esperienza mi ha insegnato che la <strong>continuità</strong> porta risultati molto più efficaci.</p>
+                <h2 class="section-title text-center">Come funziona</h2>
+                <p>Ci prendiamo il tempo per conoscerti: parliamo dei tuoi sintomi fisici ed emotivi, 
+                    dei tuoi vissuti, di cosa ti ha portata qui. Ti faccio delle domande e ascolto 
+                    cosa dice il tuo corpo, anche attraverso una breve pratica di embodiment o somatica.</p>
+                <p>A conclusione dell'incontro ti restituisco ci&ograve; che &egrave; emerso: i punti cardine, le connessioni,&nbsp; le "parole medicina". Sono parole che affiorano durante il nostro lavoro insieme e che puoi portare con te, come una guida.</p>
+                <p>L&igrave; dove qualcosa si &egrave; aperto, inizia il cambiamento.</p>
             </div>
         </section>
 
         <section class="pricing-section">
             <div class="container pricing-grid">
                 <div class="pricing-card">
-                    <h2 class="section-title">Percorso Radici</h2>
+                    <h2 class="section-title">La Prima Semina</h2>
                     <ul class="inclusions-list">
                         {inclusions.map(item => <li>{item}</li>)}
                     </ul>
@@ -181,11 +150,6 @@ const faqs = [
                 </div>
 
                 <div class="pricing-description">
-                    <div class="desc-block">
-                        <p class="lead-text">Ogni consulto è un momento per te, un tempo in cui aumentare la consapevolezza dei tuoi ritmi corporei ed emotivi.</p>
-                        <p>Cambia il modo in cui stai nella tua vita: non stravolgimenti, ma consapevolezze, gesti e strumenti che ti sostengono, con naturalezza. Puoi imparare a non avere paura del tempo, a fidarti della <strong>ciclicità</strong>, a dare spazio a ciò che senti e ciò che sei.</p>
-                    </div>
-
                     <div class="location-info">
                         <h3>Online o in Presenza</h3>
                         <p>Il percorso può avvenire online o in presenza: l'approccio è sempre lo stesso e il valore del lavoro insieme non cambia.</p>
@@ -193,7 +157,7 @@ const faqs = [
                         <div class="modality-grid">
                             <div class="modality">
                                 <h4>Online</h4>
-                                <p>Lavoriamo attraverso l'osservazione del corpo, la parola, pratiche guidate di embodiment e somatica. È altrettanto efficace, in modalità differenti, anche a distanza.</p>
+                                <p>Lavoriamo attraverso l'osservazione del corpo, la parola, pratiche guidate di embodiment e somatica. È altrettanto efficace, in modalità differenti, anche a distanza. Nel caso di consulto online assicurati di avere una buona connessione per la videochiamata e di poter stare in un posto tranquillo e privato.</p>
                             </div>
                             <div class="modality">
                                 <h4>In presenza</h4>
@@ -204,7 +168,17 @@ const faqs = [
                 </div>
             </div>
         </section>
-
+        <section class="trial-cta">
+            <div class="container container-narrow text-center">
+                <div class="trial-box">
+                    <p class="trial-text">
+                        Se sentirai di voler proseguire con il Percorso Radici, 
+                        il costo dell&rsquo;incontro singolo verr&agrave; scalato dal percorso completo</strong>
+                    </p>
+                    <a href={base + "/servizi/percorso-radici"} class="btn-primary">Scopri di più</a>
+                </div>
+            </div>
+        </section>
         <section class="faq-section">
             <div class="container container-narrow">
                 <h2 class="section-title text-center">Domande Frequenti</h2>
@@ -220,8 +194,10 @@ const faqs = [
         </section>
 
         <BookCallBanner 
-            title="Non sei sicura che sia il percorso adatto a te?" 
-            topDividerColor="var(--bg-light)"
+            title="Non sei ancora sicura che sia ciò che fa per te? Prenota una call conoscitiva gratuita e scopriamolo insieme." 
+            topDividerColor="var(--bg-lighter)"
+            showBottomDivider={false}
+            imgParallax="https://images.unsplash.com/photo-1619968987472-4d1b2784592e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbGlzdGljfGVufDB8MHwwfHx8Mg%3D%3D"
         />
     </main>
 </BaseLayout>
@@ -372,7 +348,7 @@ const faqs = [
     .price { font-size: 3rem; font-family: var(--font-headings); display: block; margin: 2rem 0 0.5rem; }
 
     .pricing-section {
-        padding: 8rem 1.5rem;
+        padding: 0rem 1.5rem 5rem 0rem;
         background-color: var(--bg-light);
     }
 
@@ -444,6 +420,18 @@ const faqs = [
         font-size: 0.9rem;
         opacity: 0.8;
         margin-top: 1rem;
+    }
+
+        .trial-cta {
+        background-color: var(--bg-light);
+        padding-top: 0; /* Riduce lo spazio superiore per stare vicino ai prezzi */
+    }
+
+    .trial-text {
+        font-size: 1.1rem;
+        color: var(--brand-primary);
+        margin-bottom: 2rem;
+        line-height: 1.6;
     }
 
     /* FAQ */

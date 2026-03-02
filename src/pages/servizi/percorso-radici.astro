@@ -77,7 +77,7 @@ const faqs = [
 
         <section class="for-whom">
             <div class="container">
-                <h2 class="section-title">Questo percorso è per te se...</h2>
+                <h2 class="section-title">Radici &egrave; per te se...</h2>
                 <div class="pain-points-grid">
                     <div class="pain-card">
                         <p>Senti che il corpo ti sta mandando dei segnali: stanchezza, tensioni, sintomi che si ripresentano, un malessere diffuso che non riesci a inquadrare. Vorresti finalmente capire cosa sta cercando di dirti, invece di farlo sparire. Sai che non vuoi pi&ugrave; solo "resistere".</p>
@@ -102,7 +102,7 @@ const faqs = [
                     <img src="https://images.unsplash.com/photo-1551087255-eaec2139931d?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Radici e natura" class="img-rounded" />
                 </div>
                 <div class="approach-text">
-                    <h2 class="section-title">Perché il percorso Radici</h2>
+                    <h2 class="section-title">Perch&eacute; il percorso Radici</h2>
                     <p>Molti percorsi olistici ti chiedono subito di "lasciar andare" e "fluire", ma se stai arrivando 
                         dalla confusione, dal dolore e dalla sfiducia, hai bisogno prima di <strong>fare ordine</strong>, 
                         o meglio di <strong>essere veramente tu</strong>. Io inizio da lì: insieme <strong>facciamo chiarezza</strong>, ascoltiamo 
@@ -128,6 +128,7 @@ const faqs = [
         </section>
 
         <section class="how-it-works">
+            <WavyDivider position="top" color="var(--bg-lighter)" />
             <div class="container container-narrow">
                 <h2 class="section-title text-center">Il viaggio insieme</h2>
                 <p>Il Percorso Radici si sviluppa in <strong>4 incontri personalizzati di un'ora e mezza</strong> che costruiamo insieme a partire dalla tua storia, dai tuoi bisogni e da quello che il tuo corpo ti sta comunicando.</p>
@@ -193,7 +194,7 @@ const faqs = [
                         <div class="modality-grid">
                             <div class="modality">
                                 <h4>Online</h4>
-                                <p>Lavoriamo attraverso l'osservazione del corpo, la parola, pratiche guidate di embodiment e somatica. È altrettanto efficace, in modalità differenti, anche a distanza.</p>
+                                <p>Lavoriamo attraverso l'osservazione del corpo, la parola, pratiche guidate di embodiment e somatica. È altrettanto efficace, in modalità differenti, anche a distanza. Nel caso di consulto online assicurati di avere una buona connessione per la videochiamata e di poter stare in un posto tranquillo e privato.</p>
                             </div>
                             <div class="modality">
                                 <h4>In presenza</h4>
@@ -204,8 +205,22 @@ const faqs = [
                 </div>
             </div>
         </section>
+        <section class="trial-cta">
+            <div class="container container-narrow text-center">
+                <div class="trial-box">
+                    <p class="trial-text">
+                        Se vuoi conoscere il mio approccio <strong>prima di impegnarti nel percorso completo</strong>, 
+                        puoi prenotare un primo <strong>incontro singolo</strong> a € XXX,xx. <br/>
+                        <strong>Se decidi di continuare, lo scaliamo dal costo del percorso completo.</strong>
+                    </p>
+                    <a href={base + "/servizi/incontro-la-prima-semina"} class="btn-primary">Scopri di più</a>
+                </div>
+            </div>
+            
+        </section>
 
         <section class="faq-section">
+            <WavyDivider position="top" color="var(--bg-light)" />
             <div class="container container-narrow">
                 <h2 class="section-title text-center">Domande Frequenti</h2>
                 <div class="faq-list">
@@ -220,8 +235,10 @@ const faqs = [
         </section>
 
         <BookCallBanner 
-            title="Non sei sicura che sia il percorso adatto a te?" 
-            topDividerColor="var(--bg-light)"
+            title="Non sei ancora sicura che sia ciò che fa per te? Prenota una call conoscitiva gratuita e scopriamolo insieme." 
+            topDividerColor="var(--bg-lighter)"
+            showBottomDivider={false}
+            imgParallax="https://images.unsplash.com/photo-1619968987472-4d1b2784592e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbGlzdGljfGVufDB8MHwwfHx8Mg%3D%3D"
         />
     </main>
 </BaseLayout>
@@ -372,7 +389,7 @@ const faqs = [
     .price { font-size: 3rem; font-family: var(--font-headings); display: block; margin: 2rem 0 0.5rem; }
 
     .pricing-section {
-        padding: 8rem 1.5rem;
+        padding: 0rem 1.5rem 5rem 0rem;
         background-color: var(--bg-light);
     }
 
@@ -444,6 +461,20 @@ const faqs = [
         font-size: 0.9rem;
         opacity: 0.8;
         margin-top: 1rem;
+    }
+
+    .trial-cta {
+        background-color: var(--bg-light);
+        padding-top: 0; /* Riduce lo spazio superiore per stare vicino ai prezzi */
+    }
+
+
+
+    .trial-text {
+        font-size: 1.1rem;
+        color: var(--brand-primary);
+        margin-bottom: 2rem;
+        line-height: 1.6;
     }
 
     /* FAQ */
