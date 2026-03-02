@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import WavyDivider from "../../components/WavyDivider.astro";
 import BookCallBanner from "../../components/BookCallBanner.astro";
+const base = import.meta.env.BASE_URL;
 
 const inclusions = [
     "4 incontri individuali (90 minuti ciascuno)",
@@ -176,7 +177,7 @@ const faqs = [
                         <span class="price">€ XXX,xx</span>
                         <p class="payment-info">Possibilità di rateizzazione in 2 rate mensili</p>
                     </div>
-                    <a href="/contatti" class="btn-primary-neg">Richiedi il percorso</a>
+                    <a href={base + "/contatti"} class="btn-primary-neg">Richiedi il percorso</a>
                 </div>
 
                 <div class="pricing-description">
