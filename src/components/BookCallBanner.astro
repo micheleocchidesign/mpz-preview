@@ -1,0 +1,126 @@
+---
+import LunarPhases from "./LunarPhases.astro";
+import WavyDivider from "./WavyDivider.astro";
+
+interface Props {
+  title?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  showTopDivider?: boolean;    // mostra o nasconde onda superiore
+  showBottomDivider?: boolean; // mostra o nasconde onda inferiore
+  topDividerColor?: string;
+  bottomDividerColor?: string;
+  imgParallax?: string;
+  overlayColor?: string;
+}
+
+const { 
+  title = "Vuoi capire se il mio approccio è adatto a te? Parliamone in una chiamata conoscitiva gratuita di 30 minuti.", 
+  buttonText = "PRENOTA", 
+  buttonLink = "#contatti", 
+  showTopDivider = true,
+  showBottomDivider = true,
+  topDividerColor = "var(--bg-light)",
+  bottomDividerColor = "var(--bg-light)",
+  imgParallax = "https://images.unsplash.com/photo-1482385916434-814664df9c5b?q=80&w=3193&auto=format&fit=crop",
+  overlayColor ="var(--accent-4)"
+} = Astro.props;
+---
+
+<section class="cta-banner" style={`--bg-img: url('${imgParallax}'); --overlay-col: ${overlayColor};`}>
+  {showTopDivider && <WavyDivider position="top" color={topDividerColor} />}
+
+  <div class="cta-container">
+    <div class="lunar-accent">
+        <LunarPhases />
+    </div>
+    
+    <h2 class="cta-text" set:html={title} />
+    
+    <a href={buttonLink} class="btn-primary btn-cta">
+      {buttonText}
+    </a>
+  </div>
+
+  {showBottomDivider && <WavyDivider position="bottom" color={bottomDividerColor} />}
+</section>
+
+<style>
+  .cta-banner {
+        background-image: 
+            linear-gradient(
+                color-mix(in srgb, var(--overlay-col) 80%, transparent),
+                color-mix(in srgb, var(--overlay-col) 80%, transparent)
+            ),
+            var(--bg-img);
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 500px; /* Assicura che si veda abbastanza foto */
+        text-align: center;
+        color: var(--bg-light);
+    }
+
+    .cta-banner :global(.lunar-wrapper) {
+        padding: 0;
+        margin-bottom: -1rem;
+    }
+
+    .cta-banner :global(.moon-phase) {
+        fill: var(--brand-gold);
+    }
+
+  .cta-container {
+        max-width: 80vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        z-index: 2;
+    }
+
+  .lunar-accent {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  /* Modifichiamo i colori delle lune per farle risaltare sull'oro/verde */
+  .lunar-accent :global(.moon-phase) {
+    fill: var(--brand-gold);
+  }
+
+  .cta-text {
+        font-family: var(--font-headings);
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        line-height: 1.4;
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+        max-width: 80vw;
+    }
+
+    .btn-cta {
+        background-color: var(--brand-gold);
+        color: var(--text-dark);
+        font-weight: 700;
+    }
+
+    .btn-cta:hover {
+        background-color: var(--bg-lighter);
+        color: var(--brand-primary);
+    }
+
+  /* Supporto per mobile dove fixed background può dare problemi */
+  @media (max-width: 768px) {
+    .cta-banner {
+      background-attachment: scroll;
+      min-height: 500px;
+    }
+  }
+</style>

@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WavyDivider from "../components/WavyDivider.astro";
 import SpacerIcon from "../components/SpacerIcon.astro";
+import BookCallBanner from "../components/BookCallBanner.astro";
 ---
 
 <BaseLayout
@@ -39,7 +40,7 @@ import SpacerIcon from "../components/SpacerIcon.astro";
 
     <!-- APPROCCIO SECTION -->
     <section class="approach-section">
-        <div class="container container-narrow">
+        <div class="container-narrow">
             <h2 class="section-title text-center">Il mio approccio</h2>
             <p>
                 Unisco naturopatia, coaching, tecniche corporee e uno sguardo
@@ -145,7 +146,7 @@ import SpacerIcon from "../components/SpacerIcon.astro";
     <section class="bio-extended-section" id="chi-sono-completo">
         <WavyDivider position="top" color="var(--bg-light)" />
         <div class="container">
-            <h2 class="section-title text-center beige">Chi sono</h2>
+            <h2 class="section-title chiaro">Chi sono</h2>
             <div class="bio-extended-grid">
                 <div class="bio-extended-text">
                     <p>
@@ -232,34 +233,17 @@ import SpacerIcon from "../components/SpacerIcon.astro";
                 </p>
             </div>
         </div>
-        <WavyDivider position="bottom" color="var(--bg-lighter)" />
+        <WavyDivider position="bottom" color="var(--bg-light)" />
     </section>
 
     <!-- COSA MI GUIDA SECTION -->
     <section class="values-section">
         <div class="container">
-            <h2 class="section-title text-center beige">Cosa mi guida</h2>
+            <h2 class="section-title text-center">Cosa mi guida</h2>
 
             <div class="values-grid">
                 <!-- Libertà -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="32"
-                            height="32"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
-                            ></path><path
-                                d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
-                            ></path>
-                        </svg>
-                    </div>
                     <h3>Libertà</h3>
                     <p>
                         Voglio vivere con fluidità, seguendo i miei ritmi, in un
@@ -271,22 +255,6 @@ import SpacerIcon from "../components/SpacerIcon.astro";
 
                 <!-- Coerenza -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="32"
-                            height="32"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ><path
-                                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-                            ></path>
-                        </svg>
-                    </div>
                     <h3>Coerenza</h3>
                     <p>
                         Non potrei accompagnare altre persone verso un benessere
@@ -298,22 +266,6 @@ import SpacerIcon from "../components/SpacerIcon.astro";
 
                 <!-- Cura -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="32"
-                            height="32"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ><path
-                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
-                            ></path>
-                        </svg>
-                    </div>
                     <h3>Cura</h3>
                     <p>
                         Cura per me stessa e per chi si affida a me, per le
@@ -324,21 +276,6 @@ import SpacerIcon from "../components/SpacerIcon.astro";
 
                 <!-- Equità -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="32"
-                            height="32"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ><circle cx="12" cy="12" r="10"></circle><path
-                                d="M12 2v20"></path><path d="M2 12h20"></path>
-                        </svg>
-                    </div>
                     <h3>Equità</h3>
                     <p>
                         Credo nel cerchio, nella condivisione, in un tempo
@@ -348,22 +285,6 @@ import SpacerIcon from "../components/SpacerIcon.astro";
 
                 <!-- Integrità -->
                 <div class="value-card">
-                    <div class="value-icon">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="32"
-                            height="32"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ><path
-                                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
-                            ></path>
-                        </svg>
-                    </div>
                     <h3>Integrità</h3>
                     <p>
                         Portare tutte le parti di me, quella pratica e quella
@@ -373,41 +294,35 @@ import SpacerIcon from "../components/SpacerIcon.astro";
                     </p>
                 </div>
             </div>
-
-            <div class="vision-closing text-center container-narrow">
+        </div>
+        <div class="values-manifesto container">
+            <div class="manifesto-content">
                 <p>
-                    Abbiamo bisogno di tempi che rispettano i nostri ritmi
-                    naturali: la società che abbiamo costruito è sempre meno
-                    umana. Riconoscere ciò che per noi non va bene è già una
-                    possibilità di cambiamento, di evoluzione: cerco di guardare
-                    le cose in una prospettiva antica e futura, ciclica. E credo
-                    che noi donne possiamo attuare questo cambiamento nelle
-                    piccole cose, nelle scelte quotidiane, nella qualità delle
-                    reti che creiamo.
+                    Abbiamo bisogno di tempi che rispettano i nostri <strong>ritmi naturali</strong>: 
+                    la società che abbiamo costruito è sempre meno umana.
+                    Riconoscere ciò che per noi non va bene è già una possibilità di cambiamento, 
+                    di evoluzione: cerco di guardare le cose in una prospettiva antica e futura, ciclica.
+                    Riconoscere ciò che per noi non va bene è già una possibilità di cambiamento, 
+                    di evoluzione: cerco di guardare le cose in una prospettiva antica e futura, ciclica.
                 </p>
             </div>
         </div>
     </section>
+    <BookCallBanner 
+        title="Ti aspetto per iniziare questo viaggio insieme. Prenota la tua chiamata gratuita." 
+        buttonText="INIZIA ORA" 
+        buttonLink="/contatti"
+        showBottomDivider={false}
+        imgParallax="https://images.unsplash.com/photo-1523501859272-afa857e87881?q=80&w=1624&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        overlayColor="var(--text-dark)"
+    />
 </BaseLayout>
 
 <style>
-    .container {
-        max-width: var(--container-width);
-        margin: 0 auto;
-        padding: 0 1.5rem;
-    }
-
-    .container-narrow {
-        max-width: 800px;
-    }
-
-    .text-center {
-        text-align: center;
-    }
 
     /* HERO */
     .about-hero {
-        background-color: var(--accent-3);
+        background-color: var(--accent-1-bg);
         padding: 10rem 0 8rem;
         position: relative;
     }
@@ -454,7 +369,7 @@ import SpacerIcon from "../components/SpacerIcon.astro";
     .approach-section,
     .bio-extended-text p {
         font-family: var(--font-body);
-        font-size: 1.125rem;
+        /*font-size: 1.125rem;*/
         line-height: 1.8;
         color: var(--text-dark);
         margin-bottom: 1.2rem;
@@ -479,9 +394,9 @@ import SpacerIcon from "../components/SpacerIcon.astro";
 
     /* BIO EXTENDED */
     .bio-extended-section {
-        padding: 4rem 0;
+        padding: 6rem 0;
         position: relative;
-        background-color: var(--accent-1); /* Cambiamo bg per dare stacco */
+        background-color: var(--accent-2); /* Cambiamo bg per dare stacco */
         color: var(--bg-light);
     }
 
@@ -490,22 +405,22 @@ import SpacerIcon from "../components/SpacerIcon.astro";
         grid-template-columns: 2fr 1fr;
         gap: 6rem;
         /*align-items: center;*/
-        margin: 4rem 0;
+        margin: 1rem 0;
     }
 
     .bio-portrait-large {
         border-radius: 300px 300px 4px 4px;
         overflow: hidden;
         box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+        will-change: transform;
     }
 
     .bio-final {
         font-family: var(--font-headings);
         font-size: 2.2rem;
-        color: var(--bg-light);
+        color: var(--accent-4);
         text-align: center;
-        margin-top: 3rem !important;
-        font-style: italic;
+        margin: 5rem !important;
         line-height: 1.4;
     }
 
@@ -538,57 +453,80 @@ import SpacerIcon from "../components/SpacerIcon.astro";
 
     /* VALUES SECTION */
     .values-section {
-        padding: 10rem 0;
-        background-color: var(--accent-4);
+        padding: 4rem 0;
+        background-color: var(--bg-light);
         position: relative;
     }
 
     .values-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 3rem;
-        margin: 5rem 0 8rem;
+        grid-template-columns: repeat(6, 1fr); /* Griglia a 6 per gestire i sottomultipli di 2 e 3 */
+        gap: 2.5rem;
+        margin: 5rem 0 3rem;
     }
 
+    /* Le prime 3 card occupano 2 colonne ciascuna (totale 6) */
     .value-card {
-        padding: 4rem 3rem;
+        grid-column: span 2;
+        padding: 2.5rem 2.5rem;
         background-color: var(--bg-lighter);
+        border: 1px solid var(--accent-3);
         border-radius: 12px;
-        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-            box-shadow 0.4s ease;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative; /* Indispensabile per posizionare il ::before */
+        overflow: hidden;    /* Taglia l'immagine se esce dai bordi arrotondati */
+        z-index: 1;          /* Crea un contesto di stratificazione */
+    }
+    .value-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Carichiamo l'immagine */
+    background-image: url('/sfondo-card-valori.jpg');
+    
+    /* Regoliamo la trasparenza (0.1 = 10% di opacità) */
+    opacity: .2; 
+    
+    /* Centriamo e scaliamo l'immagine */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Lo mettiamo dietro al testo */
+    z-index: -1; 
+    
+    /* Transizione morbida per il hover */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+    /* Trucco per le ultime 2 card: le centriamo */
+    /* La quarta card parte dalla colonna 2 */
+    .value-card:nth-child(4) {
+        grid-column: 2 / span 2;
+    }
+    /* La quinta card parte dalla colonna 4 */
+    .value-card:nth-child(5) {
+        grid-column: 4 / span 2;
     }
 
     .value-card:hover {
         transform: translateY(-12px);
-        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
-    }
-
-    .value-icon {
-        color: var(--brand-primary);
-        margin-bottom: 2.5rem;
-        padding: 1.5rem;
-        background-color: var(--accent-3);
-        border-radius: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
-
-    .value-card:hover .value-icon {
-        background-color: var(--brand-gold);
-        transform: scale(1.1);
     }
 
     .value-card h3 {
         font-family: var(--font-headings);
-        font-size: 1.8rem;
-        color: var(--brand-primary);
+        font-size: 2.3rem;
+        color: var(--bg-lighter);
+        background-color: var(--brand-gold);
+        padding:5px 10px;
         margin-bottom: 1.5rem;
     }
 
@@ -599,42 +537,42 @@ import SpacerIcon from "../components/SpacerIcon.astro";
         margin: 0;
     }
 
-    .vision-closing {
-        margin: 8rem auto 0;
-        padding: 6rem 5rem;
-        background-color: var(--bg-lighter);
-        color: var(--brand-primary);
-        border-radius: 12px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
-    }
+    /* MANIFESTO FINALE (DOPPO I VALORI) */
+.values-manifesto {
+    margin-top: 0rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
 
-    .vision-closing p {
-        font-size: 1.6rem;
-        line-height: 1.8;
-        font-style: italic;
-        margin: 0;
-        position: relative;
-        z-index: 2;
-        font-family: var(--font-headings);
-    }
+.manifesto-content p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-body);
+}
 
-    .vision-closing::before {
-        content: "“";
-        position: absolute;
-        top: -1rem;
-        left: 2rem;
-        font-size: 15rem;
-        font-family: var(--font-headings);
-        color: var(--brand-primary);
-        opacity: 0.05;
-        line-height: 1;
-    }
+.manifesto-highlight {
+    font-family: var(--font-headings);
+    font-style: italic;
+    font-size: 1.5rem !important;
+    color: var(--brand-primary);
+    margin-top: 2.5rem;
+    position: relative;
+    padding-top: 2rem;
+}
 
-    .beige {
-        color: var(--accent-3) !important;
-    }
+/* Linea decorativa per separare l'ultima riflessione */
+.manifesto-highlight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 30%;
+    height: 1px;
+    background: var(--brand-gold);
+    opacity: 0.5;
+}
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
@@ -643,10 +581,6 @@ import SpacerIcon from "../components/SpacerIcon.astro";
         .approach-grid,
         .bio-extended-grid,
         .personal-grid,
-        .values-grid {
-            grid-template-columns: 1fr !important;
-            text-align: center;
-        }
         .hero-intro-text,
         .hero-content,
         .bio-extended-text,
@@ -663,11 +597,54 @@ import SpacerIcon from "../components/SpacerIcon.astro";
             border-top: 4px solid var(--brand-gold);
         }
 
-        .vision-closing {
-            padding: 4rem 2rem;
+        .values-grid {
+            grid-template-columns: repeat(4, 1fr); /* Passiamo a una base 4 */
         }
-        .vision-closing p {
-            font-size: 1.25rem;
+        .value-card {
+            grid-column: span 2 !important; /* Tutte occupano metà spazio */
+        }
+        /* L'ultima card (la 5°) va a capo e si centra occupando le due colonne centrali */
+        .value-card:nth-child(5) {
+            grid-column: 2 / span 2 !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .values-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        .value-card, 
+        .value-card:nth-child(4), 
+        .value-card:nth-child(5) {
+            grid-column: span 1 !important;
         }
     }
 </style>
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    // Registriamo il plugin per Astro
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Usiamo matchMedia per attivare l'effetto solo su schermi grandi
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1024px)", () => {
+        // Selezioniamo gli elementi
+        const section = document.querySelector(".bio-extended-grid");
+        const image = document.querySelector(".bio-portrait-large");
+
+        if (section && image) {
+            ScrollTrigger.create({
+                trigger: section,
+                start: "top 10%", // Quando l'inizio della sezione arriva al 15% della finestra
+                end: "bottom 90%", // Si sgancia quando la fine della sezione raggiunge l'85%
+                pin: image,       // L'elemento da bloccare
+                pinSpacing: false, // Evita che GSAP crei spazi bianchi extra
+                scrub: true,       // Rende il movimento fluido
+                // markers: true,  // Togli il commento a questa riga per vedere i punti di inizio/fine durante i test
+            });
+        }
+    });
+</script>

@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LunarPhases from "../components/LunarPhases.astro";
 import WavyDivider from "../components/WavyDivider.astro";
+import BookCallBanner from "../components/BookCallBanner.astro";
 ---
 
 <BaseLayout title="Marta Paola Zola | Naturopata Olistica">
@@ -83,20 +84,7 @@ import WavyDivider from "../components/WavyDivider.astro";
         </section>
 
         <!-- CTA SECTION - DISCOVERY CALL -->
-        <section class="cta-banner">
-            <WavyDivider position="top" color="var(--bg-light)" />
-
-            <div class="cta-container">
-                <LunarPhases />
-                <h2 class="cta-text">
-                    Vuoi capire se il mio approccio è adatto a te? <br />
-                    Parliamone in una chiamata conoscitiva gratuita di 30 minuti.
-                </h2>
-                <a href="#contatti" class="btn-primary btn-cta">PRENOTA</a>
-            </div>
-
-            <WavyDivider position="bottom" color="var(--accent-1-bg)" />
-        </section>
+        <BookCallBanner bottomDividerColor="var(--accent-1-bg)"/>
 
         <!-- SERVIZI SECTION -->
         <section class="services-section" id="servizi">
@@ -106,7 +94,7 @@ import WavyDivider from "../components/WavyDivider.astro";
                     <h2 class="section-title">Percorsi personalizzati</h2>
                 </div>
                 <div class="services-grid">
-                    <a href="/servizi/naturopatia" class="service-card">
+                    <a href="/servizi/percorso-radici" class="service-card">
                         <div class="service-image-wrapper">
                             <img
                                 src="https://images.unsplash.com/photo-1547401372-0ac4589c4d3e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9vdHN8ZW58MHx8MHx8fDI%3D"
@@ -121,7 +109,7 @@ import WavyDivider from "../components/WavyDivider.astro";
                         </p>
                         <span class="service-link">Dettagli →</span>
                     </a>
-                    <a href="/servizi/floriterapia" class="service-card">
+                    <a href="/servizi/incontro-la-prima-semina" class="service-card">
                         <div class="service-image-wrapper">
                             <img
                                 src="https://images.unsplash.com/photo-1731119414875-799ff8cdbbdd?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -149,10 +137,10 @@ import WavyDivider from "../components/WavyDivider.astro";
             <div class="contact-container">
                 <div class="contact-header">
                     <span class="section-overline">Contatti</span>
-                    <h2 class="section-title">Inizia il tuo percorso</h2>
+                    <h2 class="section-title">Iniziamo a camminare insieme</h2>
                     <p class="section-text">
-                        Scrivimi per informazioni o per prenotare una
-                        consulenza. Sarò felice di accompagnarti.
+                        Se senti che è arrivato il momento di rimettere radici in te stessa, scrivimi.
+                        Sarò felice di ascoltare la tua storia e capire come posso accompagnarti nel tuo viaggio di benessere.
                     </p>
                 </div>
                 <form
@@ -182,6 +170,16 @@ import WavyDivider from "../components/WavyDivider.astro";
                         />
                     </div>
                     <div class="form-group">
+                        <label for="reason">Di cosa hai bisogno?</label>
+                        <select id="reason" name="reason" required>
+                            <option value="" disabled selected>Seleziona un'opzione</option>
+                            <option value="percorso-radici">Percorso "Radici" (Naturopatia)</option>
+                            <option value="floriterapia">Incontro singolo (Floriterapia)</option>
+                            <option value="chiamata-conoscitiva">Chiamata conoscitiva gratuita</option>
+                            <option value="altro">Altro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="message">Messaggio</label>
                         <textarea
                             id="message"
@@ -189,6 +187,15 @@ import WavyDivider from "../components/WavyDivider.astro";
                             rows="5"
                             required
                             placeholder="Come posso aiutarti?"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="privacy" required />
+                            <span class="checkmark"></span>
+                            <span class="privacy-text">
+                                Accetto la <a href="/privacy">Privacy Policy</a> e il trattamento dei dati personali.
+                            </span>
+                        </label>
                     </div>
                     <button type="submit" class="btn-primary"
                         >Invia Messaggio</button
@@ -211,44 +218,6 @@ import WavyDivider from "../components/WavyDivider.astro";
     section {
         padding: 5rem 1.5rem;
         position: relative;
-    }
-
-
-
-    .btn-primary {
-        display: inline-block;
-        padding: 1.125rem 2.8rem;
-        background-color: var(--brand-primary);
-        color: white;
-        text-decoration: none;
-        font-family: var(--font-body);
-        border-radius: 4px;
-        text-transform: uppercase;
-        letter-spacing: 0.2rem;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-        font-size: 12px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .btn-primary:hover {
-        background-color: var(--brand-gold);
-        transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-        display: inline-block;
-        padding: 1rem 0;
-        color: var(--brand-primary);
-        text-decoration: none;
-        font-family: var(--font-body);
-        font-weight: 600;
-        border-bottom: 2px solid var(--brand-gold);
-        transition: border-color 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-        border-color: var(--brand-primary);
     }
 
     /* --- HERO --- */
@@ -382,35 +351,9 @@ import WavyDivider from "../components/WavyDivider.astro";
     }
 
     /* --- CTA BANNER --- */
-    .cta-banner {
-        background-image: linear-gradient(
-                rgba(62, 75, 68, 0.8),
-                rgba(62, 75, 68, 0.8)
-            ),
-            url("https://images.unsplash.com/photo-1482385916434-814664df9c5b?q=80&w=3193&auto=format&fit=crop");
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 500px; /* Assicura che si veda abbastanza foto */
-        text-align: center;
-        color: var(--bg-light);
-    }
+    
 
-    .cta-container {
-        max-width: 800px;
-        margin: 4rem auto; /* Spazio verticale interno */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        z-index: 2;
-    }
+    
 
     /* Gestione dei Divider come Maschere */
     .mask-top svg {
@@ -432,43 +375,11 @@ import WavyDivider from "../components/WavyDivider.astro";
         fill: var(--accent-1-bg); /* Colore della sezione Servizi */
     }
 
-    .cta-container {
-        max-width: 80vw;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
+    
 
-    .cta-banner :global(.lunar-wrapper) {
-        padding: 0;
-        margin-bottom: -1rem;
-    }
+    
 
-    .cta-banner :global(.moon-phase) {
-        fill: var(--brand-gold);
-    }
-
-    .cta-text {
-        font-family: var(--font-headings);
-        font-size: clamp(1.5rem, 3vw, 2.2rem);
-        line-height: 1.4;
-        margin-bottom: 2.5rem;
-        font-weight: 400;
-        max-width: 80vw;
-    }
-
-    .btn-cta {
-        background-color: var(--brand-gold);
-        color: var(--text-dark);
-        font-weight: 700;
-    }
-
-    .btn-cta:hover {
-        background-color: var(--bg-lighter);
-        color: var(--brand-primary);
-    }
+    
 
     /* --- SERVICES --- */
     .services-section {
@@ -612,12 +523,56 @@ import WavyDivider from "../components/WavyDivider.astro";
         font-family: var(--font-body);
         outline: none;
         transition: border-color 0.3s ease;
-        background: white;
+        background: var(--bg-lighter);
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
         border-color: var(--brand-gold);
+    }
+
+    /* Stile specifico per il Select (Dropdown) */
+    .form-group select {
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        font-family: var(--font-body);
+        background-color: var(--bg-lighter);
+        cursor: pointer;
+        outline: none;
+    }
+
+    .form-group select:focus {
+        border-color: var(--brand-gold);
+    }
+
+    /* Checkbox e Privacy */
+    .checkbox-group {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .checkbox-container {
+        display: flex;
+        gap: 0.8rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .checkbox-container input {
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+        accent-color: var(--brand-primary);
+    }
+
+    .privacy-text a {
+        color: var(--brand-primary);
+        text-decoration: underline;
+        font-weight: 600;
     }
 
     /* --- RESPONSIVE --- */

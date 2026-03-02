@@ -1,3 +1,59 @@
+.btn-primary {
+        display: inline-block;
+        padding: 1.125rem 2.8rem;
+        background-color: var(--brand-primary);
+        color: white;
+        text-decoration: none;
+        font-family: var(--font-body);
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        font-size: 12px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--brand-gold);
+        transform: translateY(-2px);
+    }
+
+    .btn-primary-neg {
+        display: inline-block;
+        padding: 1.125rem 2.8rem;
+        background-color: var(--bg-light);
+        color: var(--brand-primary);
+        text-decoration: none;
+        font-family: var(--font-body);
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        font-size: 12px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-primary-neg:hover {
+        background-color: var(--brand-gold);
+        transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+        display: inline-block;
+        padding: 1rem 0;
+        color: var(--brand-primary);
+        text-decoration: none;
+        font-family: var(--font-body);
+        font-weight: 600;
+        border-bottom: 2px solid var(--brand-gold);
+        transition: border-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        border-color: var(--brand-primary);
+    }
 .hero-title {
     font-family: "Yeseva One", serif;
     font-size: clamp(2rem, 4.5vw, 3rem);
@@ -38,8 +94,25 @@
         margin-bottom: 2rem;
     }
 
+    .text-center {
+        text-align: center;
+    }
+
+    .container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .container-narrow {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }   
+
     .chiaro { color: var(--bg-light); }
     .beige { color: var(--accent-3); }
     .dorato { color: var(--brand-gold); }
     .scuro { color: var(--text-dark); }
     .salvia { color: var(--accent-2); }
+    .verdone { color: var(--accent-4); }
