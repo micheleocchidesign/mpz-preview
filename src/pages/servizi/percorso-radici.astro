@@ -76,24 +76,55 @@ const faqs = [
         </section>
 
         <section class="for-whom">
-            <div class="container">
-                <h2 class="section-title">Radici &egrave; per te se...</h2>
-                <div class="pain-points-grid">
-                    <div class="pain-card">
-                        <p>Senti che il corpo ti sta mandando dei segnali: stanchezza, tensioni, sintomi che si ripresentano, un malessere diffuso che non riesci a inquadrare. Vorresti finalmente capire cosa sta cercando di dirti, invece di farlo sparire. Sai che non vuoi pi&ugrave; solo "resistere".</p>
-                    </div>
-                    <div class="pain-card">
-                        <p>Hai gi&agrave; fatto dei percorsi di lavoro su te stessa, ma senti che c'&egrave; ancora qualcosa che non si muove. Sei curiosa di esplorare un approccio integrato, che tenga insieme corpo, emozioni e storia personale &mdash; vuoi capire se questo &egrave; il posto giusto per farlo.</p>
-                    </div>
-                    <div class="pain-card">
-                        <p>Non sei pronta a impegnarti subito in un percorso lungo e va benissimo cos&igrave;. Hai bisogno di fermarti, fare ordine, sentirti vista. La Prima Semina &egrave; tutto questo: un momento per te, senza che ci sia gi&agrave; bisogno di sapere dove vuoi arrivare.</p>
-                    </div>
-                    <div class="pain-card">
-                        <p>Vuoi semplicemente ascoltarti, in questo preciso momento della tua vita. Non serve attraversare una crisi per darti il permesso di farlo.</p>
-                    </div>
+    <div class="container container-narrow">
+        <h2 class="section-title text-center">Radici &egrave; per te se...</h2>
+        
+        <div class="pain-narrative">
+            <div class="pain-item">
+                <div class="pain-icon"><span>01</span></div>
+                <div class="pain-text">
+                    <p><strong>Cerchi di ascoltarti, ma non riesci a interpretare i messaggi che ti sta mandando il tuo corpo.</strong> Sei gi&agrave; abituata a lavorare su te stessa, cerchi di prenderti cura di tutto ci&ograve; che sei, ma senti che c'&egrave; una disconnessione tra quello che hai capito con la testa e quello che invece continui a sentire nel corpo. Ti chiedi come puoi riuscire a integrare tutto verso una crescita personale.</p>
                 </div>
             </div>
-        </section>
+
+            <div class="pain-item">
+                <div class="pain-icon"><span>02</span></div>
+                <div class="pain-text">
+                    <p><strong>Stai spesso male e sei arrivata al limite. Cerchi una soluzione diversa</strong>: non sapresti come descriverla, adesso, ma non è ciò che hai provato finora. Sai che non vuoi più “resistere” e nemmeno risolvere tutti i segnali del corpo facendoli sparire. Per prima cosa vorresti stare meglio, certo, ma vuoi anche trovare un modo diverso di stare nella tua vita e uno spazio di ascolto protetto</p>
+                </div>
+            </div>
+
+            <div class="pain-item">
+                <div class="pain-icon"><span>03</span></div>
+                <div class="pain-text">
+                    <p><strong>Senti che il corpo si manifesta in modo sempre più intenso, ma ti è stato detto che non è niente</strong>: stanchezza cronica, mal di pancia, crampi allo stomaco, reflusso, mal di testa, problemi legati al ciclo (ad esempio amenorrea o dismenorrea), tensioni che non se ne vanno, disturbi che finora non sei riuscita davvero a inquadrare. Vuoi ascoltare quello che il tuo corpo sta cercando di dirti, ma hai bisogno di una guida che ti faccia sentire compresa e che ti aiuti a tradurre quei segnali.</p>
+                </div>
+            </div>
+
+            <div class="pain-item">
+                <div class="pain-icon"><span>04</span></div>
+                <div class="pain-text">
+                    <p><strong>Vuoi riappropriarti del tuo tempo.</strong> Hai la sensazione di vivere sempre in rincorsa, di non avere mai abbastanza spazio per te, ma soprattutto di non avere altre possibilità dentro di te, anche se sai che non è vero. Vorresti rallentare ma hai paura di non farcela, di restare indietro, di cosa succederebbe se ti fermassi. Desideri trovare il tuo ritmo, non quello che il mondo ti impone, ma ti domandi se è possibile.</p>
+                </div>
+            </div>
+
+             <div class="pain-item">
+                <div class="pain-icon"><span>05</span></div>
+                <div class="pain-text">
+                    <p><strong>Sei pronta a:</strong></p>
+                    <ul>
+                        <li>Ascoltarti in profondità, anche quando fa paura</li>
+                        <li>Capire perché 'stai sempre male'</li>
+                        <li>Provare un approccio nuovo, naturale e integrato</li>
+                        <li>Dedicare tempo al percorso e a te stessa</li>
+                        <li>Mettere davvero in discussione i tuoi ritmi e i tuoi pensieri più limitanti</li>
+                        <li>Sei conscia che è un processo di co-creazione</li> 
+                    </ul>
+                <p>Sei consapevole che potrei non essere io la sola professionista di cui hai bisogno, ma che può essere utile un percorso integrato in parallelo (ad esempio un percorso di psicoterapia).</p>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section class="approach-section">
             <WavyDivider position="top" color="var(--accent-1-bg)" />
@@ -350,18 +381,37 @@ const faqs = [
     .for-whom{
         background-color: var(--accent-1-bg);
     }
-    .pain-points-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+    .pain-narrative {
         margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
-    .pain-card {
+
+    .pain-item {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
         padding: 2rem;
         background: white;
-        border-left: 4px solid var(--brand-gold);
         border-radius: 4px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-left: 4px solid var(--brand-gold);
+    }
+
+    .pain-icon {
+        flex-shrink: 0;
+        font-family: var(--font-headings);
+        color: var(--brand-gold);
+        font-weight: bold;
+        font-size: 1.2rem;
+        opacity: 0.6;
+    }
+
+    .pain-text p {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.6;
     }
 
 
@@ -484,8 +534,93 @@ const faqs = [
     .faq-answer { padding: 0 1.5rem 1.5rem; }
 
     @media (max-width: 768px) {
-        .grid-2 { grid-template-columns: 1fr; }
-        .hero-meta { flex-direction: column; gap: 1rem; }
-        .pricing-card { padding: 2rem; }
+        section {
+            padding: 3rem 1rem;
+        }
+
+        /* HERO MOBILE */
+        .hero {
+            min-height: auto;
+        }
+        
+        .hero-bg {
+            grid-template-columns: 1fr;
+            grid-template-rows: 40% 60%;
+        }
+
+        .hero-container {
+            grid-template-columns: 1fr;
+            padding: 40px 1rem;
+            text-align: center;
+        }
+
+        .col-img {
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .arch-wrapper {
+            width: 70%;
+            transform: translateX(0); /* Rimuoviamo lo sbalzo su mobile */
+        }
+
+        .col-text {
+            padding: 0;
+        }
+
+        .hero-meta {
+            align-items: center;
+            border-left: none;
+            border-top: 2px solid var(--brand-gold);
+            padding-left: 0;
+            padding-top: 1.5rem;
+        }
+
+        .pain-item {
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+        .pain-list-horizontal {
+            grid-template-columns: 1fr !important;
+        }
+
+        /* GRIGLIE GENERALI */
+        .grid-2, .pricing-grid, .modality-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem;
+        }
+
+        /* PRICING MOBILE */
+        .pricing-section {
+            padding: 3rem 1rem;
+        }
+
+        .pricing-card {
+            position: relative; /* Toglie lo sticky su mobile */
+            top: 0;
+            padding: 2rem 1.5rem;
+            order: 2; /* Sposta la card sotto la descrizione su mobile */
+        }
+
+        .pricing-description {
+            order: 1;
+        }
+
+        .price {
+            font-size: 2.5rem;
+        }
+
+        /* TRIAL CTA MOBILE */
+        .trial-box {
+            padding: 2rem 1rem;
+        }
+
+        /* STEPS MOBILE */
+        .step {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
     }
 </style>
