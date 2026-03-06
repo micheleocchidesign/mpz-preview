@@ -6,73 +6,55 @@ const base = import.meta.env.BASE_URL;
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-grid">
-            <!-- Branding & Info -->
-            <div class="footer-info">
-                <a href={base} class="footer-logo-link">
-                    <img
-                        src={ base + "/MPZ_logo_horiz_fullcolor_negative.svg"}
-                        alt="Marta Paola Zola Logo"
-                        class="footer-logo-img"
-                    />
-                </a>
-                <p class="footer-tagline">Naturopatia integrata per il benessere femminile</p>
-                <p class="footer-vat">P.IVA 14524810968</p>
-            </div>
+    <div class="footer-info">
+        <a href={base} class="footer-logo-link">
+            <img
+                src={base + "/MPZ_logo_horiz_fullcolor_negative.svg"}
+                alt="Marta Zola Logo"
+                class="footer-logo-img"
+            />
+        </a>
+        <p class="footer-tagline">Naturopatia integrata per il benessere femminile</p>
+        <p class="footer-vat">P.IVA 14524810968</p>
+    </div>
 
-            <!-- Navigation Menu -->
-            <div class="footer-nav">
-                <ul>
-                    <li><a href={base + "/chi-sono"}>Chi Sono</a></li>
-                    <li><a href={base + "/#servizi"}>Servizi</a></li>
-                    <li><a href={base + "/#contatti"}>Contatti</a></li>
-                </ul>
-            </div>
+    <div class="footer-newsletter">
+        <h4 class="footer-title">Newsletter</h4>
+        <p>Iscriviti a "Semi": riflessioni e pratiche per radicarti nel corpo.</p>
+        <form action="TUO_LINK_MAILERLITE" method="post" class="footer-form">
+            <input type="email" name="fields[email]" placeholder="La tua email" required />
+            <button type="submit" aria-label="Iscriviti">→</button>
+        </form>
+    </div>
 
-            <!-- Legal & Social -->
-            <div class="footer-legal">
-                <ul>
-                    <li><a href="/privacy-policy">Privacy Policy</a></li>
-                    <li><a href="/cookie-policy">Cookie Policy</a></li>
-                </ul>
-                <div class="footer-social">
-                    <a
-                        href="https://www.instagram.com/marta_zola_naturopata/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="social-icon"
-                        >
-                            <rect
-                                width="20"
-                                height="20"
-                                x="2"
-                                y="2"
-                                rx="5"
-                                ry="5"></rect>
-                            <path
-                                d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                            ></path>
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                        </svg>
-                        <span>Instagram</span>
-                    </a>
-                </div>
-            </div>
+    <div class="footer-nav">
+        <h4 class="footer-title">Menu</h4>
+        <ul>
+            <li><a href={base + "/chi-sono"}>Chi Sono</a></li>
+            <li><a href={base + "/servizi"}>Servizi</a></li>
+            <li><a href={base + "/contatti"}>Contatti</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-legal">
+        <h4 class="footer-title">Social & Legal</h4>
+        <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/marta_zola_naturopata/" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                <span>Instagram</span>
+            </a>
         </div>
+    </div>
+</div>
 
         <div class="footer-bottom">
-            <p>&copy; {year} Marta Paola Zola. Tutti i diritti riservati.</p>
+            <p class="legal-disclaimer">Le pratiche proposte hanno finalità di accompagnamento e benessere e non sostituiscono diagnosi, terapie o il rapporto con il medico o altri professionisti della salute.<br/>
+                In caso di necessità, rivolgiti sempre a un professionista sanitario qualificato.</p>
+            <p>&copy; {year} Marta Zola. Tutti i diritti riservati.</p>
         </div>
     </div>
 </footer>
@@ -92,8 +74,8 @@ const base = import.meta.env.BASE_URL;
 
     .footer-grid {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        gap: 4rem;
+        grid-template-columns: 1.5fr 1.2fr 0.8fr 1fr; /* Proporzioni bilanciate */
+        gap: 3rem;
         margin-bottom: 4rem;
     }
 
@@ -108,14 +90,12 @@ const base = import.meta.env.BASE_URL;
     }
 
     .footer-tagline {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-bottom: 1rem;
-        opacity: 0.9;
     }
 
     .footer-vat {
         font-size: 0.9rem;
-        opacity: 0.7;
     }
 
     .footer-title {
@@ -141,12 +121,51 @@ const base = import.meta.env.BASE_URL;
         color: var(--bg-light);
         text-decoration: none;
         transition: color 0.3s ease;
-        opacity: 0.8;
     }
 
     .footer-grid ul li a:hover {
         color: var(--brand-gold);
         opacity: 1;
+    }
+
+    .footer-newsletter p {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.4;
+    }
+
+    .footer-form {
+        display: flex;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Linea sottile invece di un box pesante */
+        padding-bottom: 5px;
+    }
+
+    .footer-form input {
+        background: transparent;
+        border: none;
+        color: white;
+        padding: 0.5rem 0;
+        font-family: var(--font-body);
+        width: 100%;
+        outline: none;
+    }
+
+    .footer-form input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-form button {
+        background: transparent;
+        border: none;
+        color: var(--brand-gold);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-form button:hover {
+        transform: translateX(5px);
     }
 
     .footer-social {
@@ -160,7 +179,6 @@ const base = import.meta.env.BASE_URL;
         color: var(--bg-light);
         text-decoration: none;
         transition: color 0.3s ease;
-        opacity: 0.8;
     }
 
     .footer-social a:hover {
@@ -181,7 +199,11 @@ const base = import.meta.env.BASE_URL;
         opacity: 0.6;
     }
 
-    @media (max-width: 900px) {
+    .legal-disclaimer{
+        font-size:12px;
+    }
+
+    @media (max-width: 1024px) {
         .footer-grid {
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
@@ -199,13 +221,22 @@ const base = import.meta.env.BASE_URL;
         }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
         .footer-grid {
             grid-template-columns: 1fr;
             gap: 2.5rem;
+            text-align: center;
         }
         .footer-info {
             grid-column: span 1;
+        }
+        .footer-form {
+            justify-content: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .footer-social a {
+            justify-content: center;
         }
     }
 </style>

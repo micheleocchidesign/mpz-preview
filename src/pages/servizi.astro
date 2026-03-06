@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WavyDivider from "../components/WavyDivider.astro";
+import BookCallBanner from "../components/BookCallBanner.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="I miei Servizi - Marta Paola Zola">
+    <main>
+        <section class="services-hero">
+            <div class="container-narrow text-center">
+                <span class="section-overline">Lavoriamo insieme</span>
+                <h1 class="hero-title">I miei servizi</h1>
+                <p class="hero-description">
+                    I miei servizi sono spazi di ascolto e cura. Ti accompagno a tradurre i messaggi del tuo corpo e a ritrovare il tuo ritmo naturale, 
+                    sia che tu cerchi un percorso completo, sia che tu abbia bisogno di un primo incontro come punto di partenza.
+                </p>
+            </div>
+            <WavyDivider position="bottom" color="var(--accent-1-bg)" />
+        </section>
+
+        <section class="services-list-section">
+            <div class="container">
+                
+                <div class="service-row">
+                    <div class="service-image">
+                        <div class="arch-wrapper-simple">
+                            <img src="https://images.unsplash.com/photo-1547401372-0ac4589c4d3e?w=900&auto=format&fit=crop" alt="Percorso Radici" />
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <span class="service-type">Percorso Individuale</span>
+                        <h2 class="service-name">Percorso Radici</h2>
+                        <p>Un percorso di 4 incontri per radicarti in chi sei davvero e sentirti a casa nel tuo corpo, nelle tue emozioni e nei tuoi ritmi.</p>
+                        <ul class="service-features">
+                            <li>4 incontri individuali da 90 minuti + follow-up</li>
+                            <li>Anamnesi approfondita fisica ed emotiva</li>
+                            <li>Tecniche integrate di naturopatia classica, riflessologia plantare, massaggi, embodiment, somatica, costellazioni familiari, coaching</li>
+                            <li>“Parole medicina“ per l'ascolto profondo</li>
+                            <li>Sintesi finale a ogni incontro con i punti cardine</li>
+                            <li>1 incontro di follow-up distante almeno un mese dai 4 incontri</li>
+                        </ul>
+                        <a href={base + "/servizi/percorso-radici"} class="btn-primary">Scopri il percorso</a>
+                    </div>
+                </div>
+
+                <hr class="service-divider" />
+
+                <div class="service-row reverse">
+                    <div class="service-image">
+                        <div class="arch-wrapper-simple">
+                            <img src="https://images.unsplash.com/photo-1731119414875-799ff8cdbbdd?q=80&w=1742" alt="La Prima Semina" />
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <span class="service-type">Incontro Singolo</span>
+                        <h2 class="service-name">La prima semina</h2>
+                        <p>Un incontro per tornare a casa: nel corpo, nelle emozioni, in te stessa. Il punto di partenza di tutto.</p>
+                        <ul class="service-features">
+                            <li>Incontro individuale di 90 minuti</li>
+                            <li>Anamnesi approfondita fisica ed emotiva</li>
+                            <li>Osservazione integrata: naturopatia classica, riflessologia plantare, embodiment, somatica, coaching</li>
+                            <li>“Parole medicina” per l'ascolto profondo</li>
+                            <li>Sintesi finale con i punti cardine</li>
+                        </ul>
+                        <a href={base + "/servizi/incontro-la-prima-semina"} class="btn-primary">Dettagli incontro</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <BookCallBanner 
+            title="Non sai quale servizio scegliere? Parliamone in una chiamata gratuita di 30 minuti."
+            topDividerColor="var(--accent-1-bg)"
+            showBottomDivider={false}
+            imgParallax="https://images.unsplash.com/photo-1557935366-8e0de57eb2cf?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            overlayColor="var(--accent-4)"
+        />
+    </main>
+</BaseLayout>
+
+<style>
+    section { padding: 6rem 1.5rem; }
+
+    /* Hero */
+    .services-hero {
+        background-color: var(--bt-light);
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        position: relative;
+    }
+    .hero-title { margin-bottom: 1.5rem; }
+    .hero-description { max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.7; }
+
+    /* Lista Servizi */
+    .services-list-section { background-color: var(--accent-1-bg); }
+    
+    .service-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+    
+    .service-row.reverse { direction: rtl; }
+    .service-row.reverse .service-info { direction: ltr; }
+
+    .arch-wrapper-simple {
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 0.75;
+        border-radius: 300px 300px 10px 10px;
+        overflow: hidden;
+        border: 2px solid var(--brand-gold);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    .arch-wrapper-simple img { width: 100%; height: 100%; object-fit: cover; }
+
+    .service-type { 
+        text-transform: uppercase; 
+        font-size: 0.85rem; 
+        letter-spacing: 1.5px; 
+        color: var(--brand-gold); 
+        font-weight: bold;
+    }
+    .service-name { font-size: 2.8rem; margin: 0.5rem 0 1.5rem; color: var(--brand-primary); }
+    
+    .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+    }
+    .service-features li {
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .service-features li::before {
+        content: "—";
+        color: var(--brand-gold);
+        font-weight: bold;
+    }
+
+    .service-divider {
+        border: none;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        margin: 3rem 0;
+    }
+
+    @media (max-width: 768px) {
+        .service-row { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+        .service-row.reverse { direction: ltr; }
+        .arch-wrapper-simple { margin: 0 auto; }
+        .service-features li { justify-content: center; }
+        .service-name { font-size: 2.2rem; }
+    }
+</style>
