@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WavyDivider from "../components/WavyDivider.astro";
+import LunarPhases from "../components/LunarPhases.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Spazio di Ascolto Conoscitivo | Marta Paola Zola">
+    <main class="call-page">
+        <section class="call-hero">
+            <div class="container-narrow text-center">
+                <span class="section-overline">Incontro Gratuito</span>
+                <h1 class="hero-title">Spazio di ascolto conoscitivo gratuito di 30 minuti</h1>
+                <p class="hero-description">Un incontro breve e protetto se senti che il corpo ti sta chiedendo di fermarti, ma non sai se un approccio olistico sia ciò che fa per te. Uno spazio di ascolto e chiarezza, senza impegno.</p>
+            </div>
+            <WavyDivider position="bottom" color="var(--bg-light)" />
+        </section>
+
+        <section class="call-content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="text-col">
+                        <div class="description">
+                            <p>Questo è uno spazio pensato per chi è indecisa e desidera un primo momento di ascolto. Non è un incontro individuale come <strong><a href={base + "/servizi/incontro-la-prima-semina"} class="text-link">"La prima semina"</a></strong>, né un percorso più lungo come <strong><a href={base + "/servizi/percorso-radici"} class="text-link">"Radici"</a></strong>, ma un incontro per fare chiarezza.</p>
+                            
+                            <p>Alla fine dell’incontro puoi semplicemente ascoltare come ti sei sentita, prenderti il tuo tempo e scegliere solo se e quando sarà il momento giusto per te.</p>
+                        </div>
+
+                        <div class="newsletter-box">
+                            <p>Se ti va di iniziare a conoscermi un po’ di più anche in altre forme, 
+                            iscriviti a <strong>"Semi"</strong>, la newsletter con consigli, riflessioni e pillole di Naturopatia.</p>
+                            
+                            <form action="TUO_LINK_MAILERLITE" method="post" class="mini-newsletter-form">
+                                <input type="email" name="fields[email]" placeholder="La tua email" required />
+                                <button type="submit">Iscriviti</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="calendar-col">
+                        <div class="calendar-card">
+                            <h3 class="calendar-title">Scegli il tuo momento</h3>
+                            <div class="calendly-placeholder">
+                                <p>Qui apparirà il calendario di Calendly</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .call-page { background-color: var(--bg-light); }
+
+    /* Hero */
+    .call-hero {
+        background-color: var(--accent-3);
+        padding: 8rem 1.5rem 4rem;
+        position: relative;
+    }
+
+    /* Grid */
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr; /* 1.2 parti al testo, 1 parte al calendario */
+        gap: 5rem;
+        padding: 4rem 0;
+        align-items: start;
+    }
+
+    .highlight-text {
+        font-family: var(--font-headings);
+        font-size: 1.6rem;
+        line-height: 1.4;
+        color: var(--brand-primary);
+        margin-bottom: 2rem;
+    }
+
+    .description p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .text-link {
+        color: var(--brand-primary);
+        text-decoration: none;
+        border-bottom: 1px solid var(--brand-gold);
+        transition: all 0.3s ease;
+        padding-bottom: 1px;
+    }
+
+    .text-link:hover {
+        color: var(--brand-gold);
+        border-bottom-color: var(--brand-primary);
+    }
+
+    /* Newsletter Box */
+    .newsletter-box {
+        margin-top: 3rem;
+        padding: 2.5rem;
+        background-color: var(--accent-1-bg);
+        border-radius: 12px;
+        border: 1px solid rgba(0,0,0,0.05);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .mini-newsletter-form {
+        display: flex;
+        gap: 0.5rem;
+        margin: 1.5rem 0 1rem;
+    }
+
+    .mini-newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        font-family: var(--font-body);
+        outline-color: var(--brand-gold);
+    }
+
+    .mini-newsletter-form button {
+        background-color: var(--brand-primary);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .mini-newsletter-form button:hover {
+        background-color: var(--brand-gold);
+    }
+
+    /* Calendario */
+    .calendar-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: 1px solid var(--brand-gold);
+    }
+    .calendar-title {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-family: var(--font-headings);
+    }
+    .calendly-placeholder {
+        background: #f9f9f9;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 1024px) {
+        .content-grid { grid-template-columns: 1fr; gap: 3rem; }
+        .text-col { order: 2; }
+        .calendar-col { order: 1; }
+    }
+</style>

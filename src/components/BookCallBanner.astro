@@ -1,6 +1,7 @@
 ---
 import LunarPhases from "./LunarPhases.astro";
 import WavyDivider from "./WavyDivider.astro";
+const base = import.meta.env.BASE_URL;
 
 interface Props {
   title?: string;
@@ -39,6 +40,10 @@ const {
     
     <a href={buttonLink} class="btn-primary btn-cta">
       {buttonText}
+    </a>
+    <a href={base + "/call-conoscitiva"} class="btn-secondary btn-call-conoscitiva">
+      Vuoi saperne di più?<br/>
+      Scopri che cos'è lo Spazio di Ascolto Conoscitivo
     </a>
   </div>
 
@@ -111,9 +116,23 @@ const {
         font-weight: 700;
     }
 
+
     .btn-cta:hover {
         background-color: var(--bg-lighter);
         color: var(--brand-primary);
+    }
+    
+    .btn-call-conoscitiva{
+      color: var(--bg-light);
+      border-bottom: 1px solid var(--bg-light);
+      padding: 0rem;
+      font-weight: 400;
+      font-size: .85rem;
+    }
+    .btn-call-conoscitiva:hover {
+      color: var(--brand-gold);
+      border-bottom-color: var(--brand-gold);
+      opacity: 1;
     }
 
   /* Supporto per mobile dove fixed background può dare problemi */

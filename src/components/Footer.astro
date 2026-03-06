@@ -38,16 +38,16 @@ const base = import.meta.env.BASE_URL;
 
     <div class="footer-legal">
         <h4 class="footer-title">Social & Legal</h4>
-        <ul>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/cookie-policy">Cookie Policy</a></li>
-        </ul>
         <div class="footer-social">
             <a href="https://www.instagram.com/marta_zola_naturopata/" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
                 <span>Instagram</span>
             </a>
         </div>
+        <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
     </div>
 </div>
 
@@ -74,7 +74,7 @@ const base = import.meta.env.BASE_URL;
 
     .footer-grid {
         display: grid;
-        grid-template-columns: 1.5fr 1.2fr 0.8fr 1fr; /* Proporzioni bilanciate */
+        grid-template-columns: 4fr 3fr 1fr 2fr; /* Proporzioni bilanciate */
         gap: 3rem;
         margin-bottom: 4rem;
     }
@@ -90,12 +90,14 @@ const base = import.meta.env.BASE_URL;
     }
 
     .footer-tagline {
-        font-size: 1rem;
+        font-size: .9rem;
+        margin-top:0.3rem;
         margin-bottom: 1rem;
     }
 
     .footer-vat {
         font-size: 0.9rem;
+        margin-top: 2rem;
     }
 
     .footer-title {
@@ -169,7 +171,7 @@ const base = import.meta.env.BASE_URL;
     }
 
     .footer-social {
-        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
     }
 
     .footer-social a {
@@ -204,39 +206,69 @@ const base = import.meta.env.BASE_URL;
     }
 
     @media (max-width: 1024px) {
-        .footer-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-        .footer-info {
-            grid-column: span 2;
-            text-align: center;
-        }
-        .footer-nav,
-        .footer-legal {
-            text-align: center;
-        }
-        .footer-social a {
-            justify-content: center;
-        }
+    .footer-grid {
+        /* Crea due colonne di larghezza uguale */
+        grid-template-columns: 1fr 1fr; 
+        gap: 3rem;
     }
 
-    @media (max-width: 768px) {
-        .footer-grid {
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-            text-align: center;
-        }
-        .footer-info {
-            grid-column: span 1;
-        }
-        .footer-form {
-            justify-content: center;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        .footer-social a {
-            justify-content: center;
-        }
+    .footer-info {
+        /* Rimuoviamo lo span 2 per farlo stare in una colonna sola */
+        grid-column: span 1; 
+        text-align: left; /* Opzionale: allinea a sinistra per coerenza */
     }
+
+    /* Le altre colonne (Newsletter, Menu, Legal) si posizioneranno 
+       automaticamente seguendo il flusso della griglia:
+       Riga 1: Info | Newsletter
+       Riga 2: Menu | Legal 
+    */
+
+    .footer-nav,
+    .footer-legal,
+    .footer-newsletter {
+        text-align: left; /* Allineamento coerente su tablet */
+    }
+
+    .footer-social a {
+        justify-content: flex-start; /* Allinea l'icona social a sinistra */
+    }
+}
+
+    @media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Una sola colonna */
+        gap: 2.5rem;
+        text-align: center; /* Centra il testo di base */
+    }
+    .footer-title{
+        text-align: center;
+    }
+    .footer-newsletter{
+        text-align: center;
+    }
+    .footer-info {
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra logo e tagline */
+    }
+
+    .footer-form {
+        justify-content: center; /* Centra il contenuto della form */
+        max-width: 300px;
+        margin: 0 auto; /* Centra il contenitore della form nella colonna */
+    }
+
+    .footer-social a {
+        justify-content: center; /* Centra l'icona + testo Instagram */
+    }
+
+    .footer-nav ul, 
+    .footer-legal ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra le liste dei link */
+    }
+}
 </style>
