@@ -339,19 +339,22 @@ import BookCallBanner from "../components/BookCallBanner.astro";
     }
 
     .portrait-wrapper {
-        position: relative;
-        padding-bottom: 125%; /* 4:5 Aspect Ratio */
-        overflow: hidden;
+        width: 100%;
+        max-width: 450px; /* Limita la grandezza massima */
+        margin: 0 auto;
+        /* Definisce il rapporto 4:5 direttamente */
+        aspect-ratio: 4 / 5; 
         border-radius: 300px 300px 5px 5px;
         box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
     }
 
     .portrait-wrapper img {
-        position: absolute;
-        top: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        /* Fondamentale: l'immagine riempie il contenitore senza deformarsi */
+        object-fit: cover; 
+        display: block;
     }
 
     /* APPROACH */
@@ -568,49 +571,98 @@ import BookCallBanner from "../components/BookCallBanner.astro";
     opacity: 0.5;
 }
 
-    /* RESPONSIVE */
+    /* --- RESPONSIVE E CORREZIONI --- */
+
     @media (max-width: 1024px) {
+        /* Reset Griglie Generali */
         .hero-container,
-        .bio-grid,
-        .approach-grid,
-        .bio-extended-grid,
-        .personal-grid,
-        .hero-intro-text,
-        .hero-content,
-        .bio-extended-text,
-        .personal-text-block {
-            margin: 0 auto;
-        }
-        .hero-image,
-        .bio-extended-image {
-            max-width: 500px;
-            margin: 3rem auto 0;
-        }
-        .personal-quote-block {
-            border-left: none;
-            border-top: 4px solid var(--brand-gold);
+        .bio-extended-grid {
+            grid-template-columns: 1fr; /* Una colonna sola */
+            text-align: center;
+            gap: 3rem;
         }
 
+        /* Hero */
+        .about-hero {
+            padding: 8rem 0 6rem; /* Riduciamo i padding eccessivi */
+        }
+        
+        .hero-image {
+            order: 2; /* Immagine sotto il testo */
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        /* Bio Estesa */
+        .bio-extended-text {
+            order: 1;
+            text-align: left; /* Manteniamo il testo leggibile a sinistra */
+        }
+
+        .bio-extended-image {
+            order: 2;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .bio-final {
+            margin: 3rem 1.5rem !important;
+            font-size: 1.8rem;
+        }
+
+        /* Griglia Valori (Tablet) */
         .values-grid {
-            grid-template-columns: repeat(4, 1fr); /* Passiamo a una base 4 */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
         .value-card {
-            grid-column: span 2 !important; /* Tutte occupano metà spazio */
+            grid-column: span 2 !important;
         }
-        /* L'ultima card (la 5°) va a capo e si centra occupando le due colonne centrali */
         .value-card:nth-child(5) {
-            grid-column: 2 / span 2 !important;
+            grid-column: 2 / span 2 !important; /* Centra l'ultima card */
         }
     }
+
     @media (max-width: 768px) {
+        /* Typography Mobile */
+        .hero-title {
+            font-size: 2.2rem;
+            line-height: 1.2;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        /* Spaziature */
+        .about-hero, .bio-extended-section {
+            padding: 6rem 1.5rem;
+        }
+
+        /* Valori (Mobile) */
         .values-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            grid-template-columns: 1fr; /* Tutto in verticale */
         }
         .value-card, 
         .value-card:nth-child(4), 
         .value-card:nth-child(5) {
             grid-column: span 1 !important;
+        }
+
+        .value-card h3 {
+            font-size: 1.8rem;
+        }
+
+        /* Manifesto */
+        .manifesto-content p {
+            font-size: 1.1rem;
+        }
+        
+        /* Correzione per le immagini che spariscono sotto le onde */
+        .portrait-wrapper, .bio-portrait-large {
+            position: relative;
+            z-index: 5;
+            margin-bottom: 2rem;
         }
     }
 </style>
