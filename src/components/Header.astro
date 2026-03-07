@@ -7,6 +7,11 @@ const base = import.meta.env.BASE_URL;
         <div class="logo">
             <a href={base}><img src={base + "/MPZ_logo_horiz_fullcolor.svg"} alt="Logo" /></a>
         </div>
+        <button class="menu-toggle" aria-label="Apri menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <nav class="main-nav">
             <ul>
                 <li><a href={base + "/chi-sono"}>Chi Sono</a></li>
@@ -64,9 +69,74 @@ const base = import.meta.env.BASE_URL;
         color: var(--brand-primary);
     }
 
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1000;
+    }
+
+    .bar {
+        width: 30px;
+        height: 2px;
+        background-color: var(--brand-primary);
+        transition: 0.3s;
+    }
+
     @media (max-width: 768px) {
+        .menu-toggle {
+            display: flex;
+        }
+
         .main-nav {
-            display: none; /* Simplification for now */
+            position: fixed;
+            top: 0;
+            right: -100%; /* Nascosto a destra */
+            width: 80%; /* Occupa l'80% della larghezza */
+            height: 100vh;
+            background-color: var(--bg-lighter);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            padding-top: 100px;
+            z-index: 999;
+        }
+
+        .main-nav.active {
+            right: 0; /* Entra in scena */
+        }
+
+        .main-nav ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            font-size: 1.2rem;
+        }
+
+        /* Animazione Hamburger a "X" quando attivo */
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
     }
 </style>
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+</script>
