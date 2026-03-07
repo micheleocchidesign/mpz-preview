@@ -28,10 +28,6 @@ const faqs = [
     {
         q: "Sto seguendo una terapia medica, posso fare un consulto di naturopatia integrata?",
         a: "Sì, ma non aspettarti di abbandonare la terapia medica: possiamo fare un lavoro in parallelo, in modo da valutare i cambiamenti mano a mano che avvengono. La Naturopatia si fonda su una visione olistica dell’essere umano e mira a promuovere il benessere attraverso metodi naturali, stimolando la capacità innata dell’organismo di ritrovare l’equilibrio."
-    },
-    {
-        q: "Posso unire la naturopatia integrata ad altri percorsi?",
-        a: "Sì, la naturopatia integrata con un percorso di psicoterapia, lavorando in parallelo, è spesso molto utile. Posso anche consigliarti le professioniste a cui mi affido per lavorare insieme, quando ci sono delle necessità che vanno oltre le mie competenze. Credo sia un atto di responsabilità reciproca tra professionista e cliente."
     }
 ];
 ---
@@ -159,7 +155,7 @@ const faqs = [
                 <div class="pricing-card">
                     <h2 class="section-title">La Prima Semina</h2>
                     <ul class="inclusions-list">
-                        {inclusions.map(item => <li>{item}</li>)}
+                        {inclusions.map(item => <li set:html={item}></li>)}
                     </ul>
                     <div class="price-box">
                         <span class="price">€ 100,00</span>
