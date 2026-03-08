@@ -90,7 +90,7 @@ const base = import.meta.env.BASE_URL;
                     <div class="calendar-col">
                         <div class="contact-card gold-border">
                             <h2 class="card-title">Prenota la tua Call</h2>
-                            <p class="card-subtitle">Se invece vuoi prenotare il mio <strong>Spazio di Ascolto Conoscitivo</strong>, scegli data e ora qui sotto. Riceverai un link una volta confermato l'appuntamento</p>
+                            <p class="card-subtitle">Se vuoi prenotare il mio <strong>Spazio di Ascolto Conoscitivo</strong>, scegli data e ora qui sotto. Riceverai un link una volta confermato l'appuntamento. Vuoi saperne di più? <a href={ base + "/call-conoscitiva/"} class="text-link";>Clicca qui.</a></p>
                             
                             <div class="calendly-inline-widget" 
                                  data-url="https://calendly.com/TUO_LINK/30min" 
@@ -122,7 +122,18 @@ const base = import.meta.env.BASE_URL;
         margin: 0 auto;
         line-height: 1.6;
     }
+    .text-link {
+        color: var(--brand-primary);
+        text-decoration: none;
+        border-bottom: 1px solid var(--brand-gold);
+        transition: all 0.3s ease;
+        padding-bottom: 1px;
+    }
 
+    .text-link:hover {
+        color: var(--brand-gold);
+        border-bottom-color: var(--brand-primary);
+    }
     /* GRID LAYOUT */
     .contact-main-grid {
         display: grid;
