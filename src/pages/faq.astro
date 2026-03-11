@@ -1,0 +1,168 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WavyDivider from "../components/WavyDivider.astro";
+import BookCallBanner from "../components/BookCallBanner.astro";
+const base = import.meta.env.BASE_URL;
+
+const faqs = [
+    {
+        q: "Cos'è la Naturopatia?",
+        a: "La naturopatia è una disciplina di supporto alla medicina che utilizza tecniche tradizionali e moderne per favorire e mantenere l’equilibrio naturale della persona. Si basa su una visione integrale dell’essere umano, considerando corpo, mente ed emozioni come parti di un unico sistema. In questo integro nel mio approccio anche il coaching. Il suo obiettivo non è curare la malattia, ma accompagnare la persona verso uno stato di maggiore benessere, sostenendo il risveglio della vis medicatrix naturae, la “forza guaritrice della natura”. Secondo questo antico principio ippocratico, il nostro organismo possiede innate capacità di autoregolazione e autoguarigione. Il naturopata non cura, ma osserva e ascolta il “terreno” individuale, per comprendere i bisogni della persona e individuare un percorso personalizzato. Attraverso educazione, consapevolezza e strumenti naturali, si lavora per rafforzare le risorse fisiche, psichiche ed emozionali, favorendo un equilibrio più profondo e duraturo."
+    },
+    {
+        q: "Che tipo di coaching pratico?",
+        a: "Il coaching che propongo non è assolutamente un coaching performativo e non controlla né definisce le aspirazioni della cliente. Al contrario, si tratta di un percorso co-creato di trasformazione, evoluzione e ascolto profondo. Nel mio approccio di spiritualità incarnata, in cui l’aspecto spirituale è indissolubilmente legato a quello pratico della vita quotidiana, offro strumenti per esplorare l’esistenza al di fuori di regole già scritte e convinzioni limitanti. Rimane fondamentale sottolineare che, qualora fosse necessario l’intervento di un professionista specializzato, come una psicoterapeuta, sarà mia cura segnalarlo immediatamente. Il coaching con cui mi sono formata è un coaching evolutivo, creato e guidato dalla scuola “Luna. Scuola di Coaching per l’Anima”, certificata ICF."
+    },
+    {
+        q: "Cosa si intende con fitocomplementi?",
+        a: "La parola fitoterapia deriva dal greco e indica l’utilizzo delle piante per il mantenimento del benessere e il sostegno alle naturali funzioni dell’organismo. Rappresenta, storicamente, una delle prime forme di medicina utilizzate dall’uomo per la prevenzione e il supporto alla salute attraverso rimedi di origine naturale. I fitocomplementi sono preparazioni a base vegetale che vengono inseriti all’interno di un piano benessere legato allo stile di vita della persona. Possono essere utilizzati come coadiuvanti nei processi di drenaggio e riequilibrio dell’organismo, secondo un approccio salutistico e preventivo. Esistono diverse modalità di estrazione delle piante, ma è importante ricordare che naturale non significa necessariamente innocuo. Alcune preparazioni, come le estrazioni secche (pastiglie) e le tinture madri, richiedono una conoscenza approfondita e un’attenta osservazione della persona. Esistono poi estrazioni più delicate, come i macerati glicerinati, che per la loro composizione risultano generalmente più adatti anche ad anziani e bambini. L’utilizzo della fitoterapia diventa particolarmente interessante quando si esce dal semplice schema sintomo → rimedio. In una visione naturopatica, infatti, i fitocomplementi vengono scelti per sostenere e rafforzare le risorse individuali, accompagnando la persona in un percorso di riequilibrio che parte da ciò che già è presente nell’organismo."
+    },
+    {
+        q: "Cos’è la riflessologia e quale metodo riflessologico utilizzo?",
+        a: "La riflessologia plantare è un’antica tecnica di neurostimolazione che viene effettuata dal punto più distale del corpo: i piedi, nei quali troviamo circa 7000 rami terminali nervosi. Attraverso la digitopressione e un percorso costruito appositamente per chi la riceve, è possibile agire su differenti disfunzioni. I nostri piedi sono il riflesso dell’intero corpo. La riflessologia è infatti un’antica tecnica valutativa e di riequilibrio basata sulla stimolazione di specifici punti del piede, collegati alle diverse parti dell’organismo. Il dolore che può manifestarsi alla pressione in alcuni punti del piede può segnalare uno squilibrio delle parti del corpo corrispondenti, consentendo di riconoscere eventuali disarmonie o bisogni della persona e lavorare così anche in ottica preventiva. La pratica riflessologica ha quindi un grande valore di prevenzione e di benessere integrale. La mia tecnica nasce dalla riflessologia classica di Eunice Ingham, che è considerata la fondatrice della riflessologia moderna. Arricchisco il trattamento attraverso il massaggio sui piedi ayurvedico e le conoscenze della medicina tradizionale cinese. In questo modo, oltre all’osservazione delle disfunzioni, la persona può vivere anche un profondo momento di rilassamento."
+    }
+];
+---
+
+<BaseLayout title="FAQ - Domande Frequenti | Marta Zola">
+    <main>
+        <section class="hero-faq">
+            <div class="container container-narrow text-center">
+                <span class="section-overline">Approfondimenti</span>
+                <h1 class="hero-title">Domande Frequenti</h1>
+                <p class="hero-description">
+                    In questa pagina ho raccolto le risposte alle domande che mi vengono poste più spesso sulla naturopatia e sul mio approccio integrato.
+                </p>
+            </div>
+            <WavyDivider position="bottom" color="var(--bg-lighter)" />
+        </section>
+
+        <section class="faq-list-section">
+            <div class="container container-narrow">
+                <div class="faq-list">
+                    {faqs.map(faq => (
+                        <details class="faq-item">
+                            <summary>
+                                <span>{faq.q}</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon"><path d="m6 9 6 6 6-6"/></svg>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>{faq.a}</p>
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <BookCallBanner 
+            title="Hai altre domande o vuoi capire come queste discipline possono aiutarti? Prenota una call conoscitiva gratuita." 
+            topDividerColor="var(--bg-lighter)"
+            showBottomDivider={false}
+            imgParallax="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1840&auto=format&fit=crop"
+        />
+    </main>
+</BaseLayout>
+
+<style>
+    section {
+        padding: 5rem 1.5rem;
+        position: relative;
+    }
+
+    .hero-faq {
+        background-color: var(--bg-light);
+        padding: 8rem 1.5rem 6rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        color: var(--brand-primary);
+        margin: 1rem 0;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        color: var(--text-dark);
+    }
+
+    /* FAQ LIST STYLES */
+    .faq-list-section {
+        background-color: var(--bg-lighter);
+        padding-top: 2rem;
+    }
+
+    .faq-list {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        background: var(--bg-light);
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item[open] {
+        transform: translateY(-2px);
+    }
+
+    summary {
+        padding: 1.8rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-family: var(--font-headings);
+        font-size: 1.3rem;
+        color: var(--brand-primary);
+        outline: none;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Rimuove la freccia di default su Safari/Chrome */
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .faq-icon {
+        transition: transform 0.3s ease;
+        color: var(--brand-gold);
+    }
+
+    .faq-item[open] .faq-icon {
+        transform: rotate(180deg);
+    }
+
+    .faq-answer {
+        padding: 0 1.8rem 2rem;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        color: var(--text-dark);
+    }
+
+    .faq-answer p {
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        
+        summary {
+            font-size: 1.15rem;
+            padding: 1.4rem;
+        }
+        
+        .faq-answer {
+            padding: 0 1.4rem 1.5rem;
+        }
+    }
+</style>
