@@ -41,6 +41,10 @@ const base = import.meta.env.BASE_URL;
                                   </div>
                               </div>
                               <div class="ml-button-horizontal primary ">
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                    <label for="ml_phone_number">Non compilare questo campo</label>
+                                    <input type="text" id="ml_phone_number" name="fields[phone_number_val]" tabindex="-1" value="" autocomplete="off">
+                                </div>
                                 <button type="submit" class="primary">Iscriviti</button>
                                 <button disabled="disabled" style="display: none;" type="button" class="loading">
                                   <div class="ml-form-embedSubmitLoad"></div>
@@ -935,4 +939,21 @@ const base = import.meta.env.BASE_URL;
 
 <script is:inline>
   fetch("https://assets.mailerlite.com/jsonp/1808406/forms/181298543914386948/takel")
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.ml-subscribe-form-38133265 form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            const phoneField = form.querySelector('input[name="fields[phone_number_val]"]');
+            if (phoneField && phoneField.value !== "") {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                if (typeof ml_webform_success_38133265 === 'function') {
+                    ml_webform_success_38133265();
+                }
+            }
+        });
+    }
+});
 </script>
