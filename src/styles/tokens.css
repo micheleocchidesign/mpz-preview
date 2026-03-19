@@ -1,7 +1,7 @@
 :root {
     /* Brand Colors */
     --brand-primary: #a65d50;
-    --brand-gold: #dbb57d;
+    --brand-gold: hsl(36, 57%, 67%);
     --bg-light: #f4efea;
     --bg-lighter: #FAF7F5;
     --text-dark: #3b3b3a;

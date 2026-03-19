@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WavyDivider from "../components/WavyDivider.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Iscriviti a Semi | Marta Zola">
+    <main class="newsletter-landing">
+        <section class="nl-hero">
+            <div class="container-narrow text-center">
+                <span class="section-overline">Newsletter</span>
+                <h1 class="hero-title">Semi</h1>
+                <p class="hero-description">
+                    Questa newsletter è come se fosse una chiacchiera informale.
+                    Arriva quando serve (circa ogni mese) per accompagnarti nella fase stagionale, femminile, emotiva e fisica in cui potresti essere. Le nostre radici sono dentro di noi e questo è uno spazio per nutrirle nel tempo. 
+                    <br/>Con affetto<br/>
+                    <i>Marta</i>
+                </p>
+            </div>
+            <WavyDivider position="bottom" color="var(--bg-light)" />
+        </section>
+
+        <section class="nl-form-section">
+            <div class="container-mini">
+                <div class="form-card">
+                    <div id="mlb2-38707373" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38707373">
+                        
+                        <div class="ml-form-successBody row-success" style="display: none">
+                            <div class="success-content text-center">
+                                <h3>Grazie per esserti iscritta.</h3>
+                                <p>Controlla la tua casella di posta.</p>
+                            </div>
+                        </div>
+
+                        <div class="row-form">
+                            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1808406/forms/182381408922109763/subscribe" method="post" target="_blank">
+                                <div class="ml-form-formContent">
+                                    
+                                    <div class="field-group">
+                                        <label for="name">Il tuo nome</label>
+                                        <input type="text" id="name" name="fields[name]" placeholder="Nome" autocomplete="given-name" required>
+                                    </div>
+
+                                    <div class="field-group">
+                                        <label for="email">La tua email</label>
+                                        <input type="email" id="email" name="fields[email]" placeholder="esempio@email.it" autocomplete="email" required>
+                                    </div>
+
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                        <input type="text" name="fields[phone_number_val]" tabindex="-1" value="" autocomplete="off">
+                                    </div>
+
+                                    <div class="privacy-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" required>
+                                            <span class="custom-check"></span>
+                                            <p>Accetto di ricevere la newsletter e confermo di aver preso visione della <a href="/privacy-policy">privacy policy</a></p>
+                                        </label>
+                                    </div>
+
+                                    <div class="captcha-wrapper">
+                                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                                        <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
+                                    </div>
+
+                                    <button type="submit" class="btn-submit">Iscriviti a Semi</button>
+                                </div>
+
+                                <input type="hidden" name="ml-submit" value="1">
+                                <input type="hidden" name="anticsrf" value="true">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<script is:inline>
+    // Funzione chiamata da MailerLite in caso di successo
+    function ml_webform_success_38707373() {
+        document.querySelector('.ml-subscribe-form-38707373 .row-success').style.display = 'block';
+        document.querySelector('.ml-subscribe-form-38707373 .row-form').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('#mlb2-38707373 form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const honey = form.querySelector('input[name="fields[phone_number_val]"]').value;
+                if (honey !== "") {
+                    e.preventDefault();
+                    ml_webform_success_38707373(); // Illudiamo il bot
+                }
+            });
+        }
+    });
+</script>
+
+<style>
+    .newsletter-landing { background-color: var(--bg-light); min-height: 100vh; }
+    .nl-hero { background-color: var(--accent-3); padding: 8rem 1.5rem 5rem; position: relative; }
+    .container-mini { max-width: 500px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero-title { font-size: 3.5rem; color: var(--brand-primary); margin: 1rem 0; font-family: var(--font-headings); }
+    
+    .nl-form-section { padding: 4rem 0 6rem; }
+    .form-card { background: white; padding: 2.5rem; border-radius: 12px; border: 1px solid var(--brand-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+    .field-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--brand-primary); font-size: 0.9rem; }
+    .field-group input { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 1.2rem; font-family: var(--font-body); }
+    
+    .btn-submit { width: 100%; background-color: var(--brand-primary); color: white; padding: 1rem; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; transition: 0.3s; font-family: var(--font-headings); text-transform: uppercase; margin-top: 1rem; }
+    .btn-submit:hover { background-color: var(--brand-gold); }
+
+    .privacy-group { margin: 1rem 0; }
+    .checkbox-label { display: flex; gap: 10px; cursor: pointer; font-size: 0.85rem; line-height: 1.4; }
+    .checkbox-label a { color: var(--brand-gold); }
+
+    .captcha-wrapper { margin-bottom: 1.5rem; transform: scale(0.9); transform-origin: left; }
+
+    .success-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+</style>
+
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
