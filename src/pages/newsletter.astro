@@ -57,12 +57,6 @@ const base = import.meta.env.BASE_URL;
                                             <p>Accetto di ricevere la newsletter e confermo di aver preso visione della <a href="/privacy-policy">privacy policy</a></p>
                                         </label>
                                     </div>
-
-                                    <div class="captcha-wrapper">
-                                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                                        <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
-                                    </div>
-
                                     <button type="submit" class="btn-submit">Iscriviti a Semi</button>
                                 </div>
 
@@ -116,9 +110,6 @@ const base = import.meta.env.BASE_URL;
     .privacy-group { margin: 1rem 0; }
     .checkbox-label { display: flex; gap: 10px; cursor: pointer; font-size: 0.85rem; line-height: 1.4; }
     .checkbox-label a { color: var(--brand-gold); }
-
-    .captcha-wrapper { margin-bottom: 1.5rem; transform: scale(0.9); transform-origin: left; }
-
     .success-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
 </style>
 
