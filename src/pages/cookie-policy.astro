@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Cookie Policy | Marta Paola Zola">
+  <section class="privacy-hero">
+    <div class="container-narrow text-center">
+      <span class="section-overline">Navigazione Sicura</span>
+      <h1>Cookie Policy</h1>
+      <p class="last-update">Ultima modifica: 24 marzo 2026</p>
+    </div>
+  </section>
+
+  <section class="privacy-body">
+    <div class="privacy-container">
+      
+      <div class="intro-box">
+        <p>In questo spazio digitale, la tua tranquillità è la mia priorità. Ho scelto di progettare questo sito in modo che sia il più leggero e rispettoso possibile della tua privacy.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Cosa sono i Cookie?</h2>
+        <p>
+          I cookie sono piccoli file di testo che i siti visitati inviano al tuo browser. Servono a diverse finalità: far funzionare il sito correttamente, ricordare le tue preferenze o, purtroppo, tracciare le tue abitudini di navigazione per fini pubblicitari.
+        </p>
+      </div>
+
+      <div class="policy-section highlight">
+        <h2>Quali cookie utilizza questo sito?</h2>
+        <p>Il mio sito <strong>martazola.it</strong> segue il principio della "Privacy by Design". Per questo motivo:</p>
+        
+        <ul class="custom-list">
+          <li>
+            <strong>SOLO Cookie Tecnici:</strong> Utilizzo esclusivamente cookie tecnici strettamente necessari per permetterti di navigare in sicurezza. Senza di questi, il sito (ospitato su Netlify) non potrebbe essere visualizzato correttamente.
+          </li>
+          <li>
+            <strong>NESSUN Cookie di Profilazione:</strong> Non utilizzo strumenti che tracciano i tuoi gusti, le tue ricerche o i tuoi comportamenti per scopi pubblicitari o di marketing.
+          </li>
+          <li>
+            <strong>NESSUN Cookie di Terze Parti:</strong> Non permetto a servizi esterni (come Google o Facebook) di installare strumenti di tracciamento sul tuo computer mentre sei qui.
+          </li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Servizi esterni e Link</h2>
+        <p>
+          Sul sito troverai dei pulsanti che rimandano a servizi esterni (come <strong>Calendly</strong> per la prenotazione della tua call o <strong>MailerLite</strong> per la newsletter). 
+        </p>
+        <div class="card-info">
+          <p>
+            ⚠️ <strong>Nota bene:</strong> Una volta che clicchi su questi link e lasci il mio sito, si applicheranno le policy del fornitore esterno. Ho scelto questi partner perché seri e affidabili, ma non ho il controllo sui cookie che loro potrebbero installare sulle proprie piattaforme.
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2>Come gestire i cookie</h2>
+        <p>
+          Anche se io non uso cookie di profilazione, puoi decidere di bloccare o eliminare i cookie direttamente dalle impostazioni del tuo browser (Chrome, Safari, Firefox, ecc.). Tieni presente che se blocchi i cookie tecnici, alcune parti del sito potrebbero non apparire correttamente.
+        </p>
+      </div>
+
+      <footer class="policy-footer">
+        <p>Titolare del Trattamento: Marta Paola Zola — <a href="mailto:marta.zola@gmail.com">marta.zola@gmail.com</a></p>
+      </footer>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Riprendiamo esattamente gli stessi stili della Privacy Policy per coerenza totale */
+  .privacy-hero {
+    background-color: var(--accent-3); /* Un tono diverso per distinguerla leggermente */
+    padding: 8rem 1.5rem 4rem;
+    text-align: center;
+  }
+
+  .privacy-body {
+    background-color: var(--bg-lighter);
+    padding: 4rem 0;
+  }
+
+  .privacy-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    line-height: 1.8;
+  }
+
+  h1 {
+    font-family: var(--font-headings);
+    color: var(--brand-primary);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: var(--font-headings);
+    color: var(--brand-primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .section-overline {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: var(--brand-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .last-update {
+    font-style: italic;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+
+  .intro-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--brand-gold);
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  .highlight {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--accent-3);
+  }
+
+  .card-info {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--brand-gold);
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .custom-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .custom-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .custom-list li::before {
+    content: "✓";
+    color: var(--brand-gold);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+
+  .policy-footer {
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    border-top: 1px solid var(--accent-3);
+    padding-top: 2rem;
+  }
+
+  .policy-footer a { color: var(--text-dark); }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 2.2rem; }
+  }
+</style>

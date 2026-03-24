@@ -30,73 +30,96 @@ const base = import.meta.env.BASE_URL;
                             <p class="card-subtitle">Scrivimi attraverso questo form per richiedere informazioni o acquistare un servizio.</p>
                             
                             <form
-                                name="contact"
-                                method="POST"
-                                data-netlify="true"
-                                class="contact-form"
-                            >
-                                <div class="form-group">
-                                    <label for="name">Nome e Cognome</label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        required
-                                        placeholder="Inserisci il tuo nome"
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        required
-                                        placeholder="latua@email.it"
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <label for="reason">Di cosa hai bisogno?</label>
-                                    <select id="reason" name="reason" required>
-                                        <option value="" disabled selected>Seleziona un'opzione</option>
-                                        <option value="percorso-radici">Percorso "Radici"</option>
-                                        <option value="la-prima-semina">Incontro singolo "La prima semina"</option>
-                                        <option value="chiamata-conoscitiva">Chiamata conoscitiva gratuita</option>
-                                        <option value="altro">Altre informazioni</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Messaggio</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows="5"
-                                        required
-                                        placeholder="Come posso aiutarti?"></textarea>
-                                </div>
-                                <div class="form-group checkbox-group">
-                                    <label class="checkbox-container">
-                                        <input type="checkbox" name="privacy" required />
-                                        <span class="privacy-text">
-                                            Accetto la <a href="/privacy">Privacy Policy</a> e il trattamento dei dati personali.
-                                        </span>
-                                    </label>
-                                </div>
-                                <button type="submit" class="btn-primary">Invia Messaggio</button>
-                            </form>
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    action="/successo" 
+    class="contact-form"
+>
+    <input type="hidden" name="form-name" value="contact" />
+    <input 
+        type="hidden" 
+        name="subject" 
+        data-remove-prefix 
+        value="Nuovo messaggi dal sito per: %{reason}" 
+    />
+
+    <div class="form-group">
+        <label for="name">Nome e Cognome</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Inserisci il tuo nome"
+        />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="latua@email.it"
+        />
+    </div>
+
+    <div class="form-group">
+        <label for="reason">Di cosa hai bisogno?</label>
+        <select id="reason" name="reason" required>
+            <option value="" disabled selected>Seleziona un'opzione</option>
+            <option value="Percorso Radici">Percorso "Radici"</option>
+            <option value="La Prima Semina">Incontro singolo "La prima semina"</option>
+            <option value="Chiamata Conoscitiva">Chiamata conoscitiva gratuita</option>
+            <option value="Altre Informazioni">Altre informazioni</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Messaggio</label>
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            placeholder="Come posso aiutarti?"></textarea>
+    </div>
+
+    <div class="form-group checkbox-group">
+        <label class="checkbox-container">
+            <input type="checkbox" name="privacy-consent" required />
+            <span class="privacy-text">
+                Accetto la <a href={base + "privacy-policy"}>Privacy Policy</a> e il trattamento dei dati personali.
+            </span>
+        </label>
+    </div>
+
+    <button type="submit" class="btn-primary">Invia Messaggio</button>
+</form>
                         </div>
                     </div>
 
                     <div class="calendar-col">
-                        <div class="contact-card gold-border">
-                            <h2 class="card-title">Prenota la tua Call</h2>
-                            <p class="card-subtitle">Se vuoi prenotare il mio <strong>Spazio di Ascolto Conoscitivo</strong>, scegli data e ora qui sotto. Riceverai un link una volta confermato l'appuntamento. Vuoi saperne di più? <a href={ base + "/call-conoscitiva/"} class="text-link";>Clicca qui.</a></p>
-                            
-                            <div class="calendly-inline-widget" 
-                                 data-url="https://calendly.com/TUO_LINK/30min" 
-                                 style="min-width:320px; height:650px;">
+                        <div class="contact-card gold-border promo-card">
+                            <div class="promo-content">
+                                <h2 class="card-title">Prenota la tua Call</h2>
+                                <p class="card-subtitle">
+                                    Se vuoi prenotare il mio <strong>Spazio di Ascolto Conoscitivo</strong>, ti aspetto per una chiacchierata gratuita di 30 minuti.
+                                </p>
+                                <p class="promo-text">
+                                    Cliccando il tasto qui sotto verrai indirizzato alla pagina di prenotazione dove potrai scegliere il giorno e l'ora che preferisci.
+                                </p>
+                                
+                                <a href="https://calendly.com/martazola-info/30min" target="_blank" rel="noopener noreferrer" class="btn-primary btn-gold">
+                                    Vedi disponibilità
+                                </a>
+
+                                <div class="info-footer">
+                                    <p>Vuoi saperne di più sulla call? <a href="/call-conoscitiva" class="text-link">Clicca qui.</a></p>
+                                </div>
                             </div>
-                            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                         </div>
                     </div>
 

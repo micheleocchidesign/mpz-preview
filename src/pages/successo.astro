@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WavyDivider from "../components/WavyDivider.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Messaggio Inviato | Marta Zola">
+    <main class="success-page">
+        <section class="success-hero">
+            <div class="container-narrow text-center">
+                <span class="section-overline">Grazie</span>
+                <h1 class="hero-title">Il tuo messaggio è arrivato</h1>
+                <p class="hero-description">
+                    Ho ricevuto le tue parole. Mi prenderò il tempo necessario per leggerle con cura e ti risponderò al più presto (solitamente entro 48 ore).
+                </p>
+                
+                <div class="success-actions">
+                    <a href={base} class="btn-primary">Torna alla Home</a>
+                </div>
+            </div>
+            <WavyDivider position="bottom" color="var(--bg-light)" />
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .success-page { 
+        background-color: var(--bg-light); 
+        min-height: 80vh; 
+        display: flex; 
+        align-items: center; 
+    }
+    .success-hero { 
+        width: 100%;
+        padding: 4rem 1.5rem; 
+    }
+    .hero-title { 
+        font-family: var(--font-headings); 
+        color: var(--brand-primary); 
+        font-size: 3rem; 
+        margin: 1.5rem 0; 
+    }
+    .hero-description {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+    }
+    .success-actions {
+        margin-top: 2rem;
+    }
+</style>

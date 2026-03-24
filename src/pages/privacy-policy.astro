@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Privacy Policy | Marta Paola Zola">
+  <section class="privacy-hero">
+    <div class="container-narrow text-center">
+      <span class="section-overline">Trasparenza</span>
+      <h1>Privacy Policy</h1>
+      <p class="last-update">Ultima modifica: 24 marzo 2026</p>
+    </div>
+  </section>
+
+  <section class="privacy-body">
+    <div class="privacy-container">
+      <div class="policy-section">
+        <h2>1. Titolare del Trattamento dei Dati</h2>
+        <div class="card-info">
+          <p>
+            <strong>Marta Paola Zola</strong><br />
+            Largo Promessi Sposi, 4<br />
+            20142 Milano (MI)<br />
+            <strong>Email:</strong> <a href="mailto:marta.zola@gmail.com">marta.zola@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2>2. Tipologie di Dati raccolti</h2>
+        <p>Fra i Dati Personali raccolti da questo sito, in modo autonomo o tramite terze parti, ci sono:</p>
+        <ul class="custom-list">
+          <li><strong>Dati di utilizzo:</strong> raccolti automaticamente durante la navigazione (indirizzo IP, orari, caratteristiche del browser).</li>
+          <li><strong>Email e Nome:</strong> i dati che scegli di fornirmi volontariamente quando ti iscrivi alla newsletter o mi scrivi un messaggio.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>3. Dettagli sui servizi utilizzati</h2>
+        
+        <div class="service-block">
+          <h3>Hosting ed infrastruttura</h3>
+          <p>Questi servizi permettono al sito di essere online e sicuro.</p>
+          <ul>
+            <li><strong>IONOS:</strong> Gestione del dominio. (Germania).</li>
+            <li><strong>Netlify:</strong> Hosting del sito e gestione tecnica dei file. (Stati Uniti).</li>
+          </ul>
+        </div>
+
+        <div class="service-block">
+          <h3>Contatti e Newsletter</h3>
+          <p>Servizi che uso per dialogare con te e inviarti i miei "Semi".</p>
+          <ul>
+            <li><strong>Netlify Forms:</strong> Ricezione dei messaggi dal modulo contatti.</li>
+            <li><strong>MailerLite:</strong> Invio della newsletter e gestione dei contatti email. (Lituania, UE).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2>4. Modalità e luogo del trattamento</h2>
+        <p>Tratto i tuoi dati con cura, adottando misure di sicurezza per impedirne l'accesso non autorizzato. I dati sono trattati presso la mia sede operativa e nei luoghi in cui le parti coinvolte (i servizi sopra elencati) sono localizzate.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>5. Periodo di conservazione</h2>
+        <p>Conservo i tuoi dati solo per il tempo strettamente necessario: ad esempio, finché sarai iscritta alla newsletter o finché avremo in corso una conversazione via email.</p>
+      </div>
+
+      <div class="policy-section highlight">
+        <h2>6. I tuoi diritti (GDPR)</h2>
+        <p>In quanto utente, hai pieno controllo sui tuoi dati. Puoi chiedermi in qualsiasi momento di:</p>
+        <ul class="custom-list">
+          <li>Accedere ai tuoi dati e riceverne una copia.</li>
+          <li>Rettificare informazioni errate o incomplete.</li>
+          <li><strong>Esercitare il diritto all'oblio</strong> (cancellazione totale dei tuoi dati).</li>
+          <li>Revocare il consenso precedentemente fornito.</li>
+        </ul>
+        <p class="cta-text">Per ogni richiesta, scrivimi pure a: <strong>marta.zola@gmail.com</strong></p>
+      </div>
+
+      <footer class="policy-footer">
+        <p>Questa pagina è stata redatta per garantire la massima trasparenza, rispettando le normative vigenti nel 2026.</p>
+      </footer>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Layout generale */
+  .privacy-hero {
+    background-color: var(--accent-1-bg);
+    padding: 8rem 1.5rem 4rem;
+    text-align: center;
+  }
+
+  .privacy-body {
+    background-color: var(--bg-lighter);
+    padding: 4rem 0;
+  }
+
+  .privacy-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    line-height: 1.8;
+  }
+
+  /* Tipografia */
+  h1 {
+    font-family: var(--font-headings);
+    color: var(--brand-primary);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: var(--font-headings);
+    color: var(--brand-primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  h3 {
+    font-family: var(--font-headings);
+    color: var(--accent-1);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-overline {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: var(--accent-1);
+    margin-bottom: 0.5rem;
+  }
+
+  .last-update {
+    font-style: italic;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+
+  /* Elementi grafici */
+
+  .card-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-3);
+  }
+
+  .card-info a {
+    color: var(--brand-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .service-block {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+  }
+
+  .custom-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .custom-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .custom-list li::before {
+    content: "•";
+    color: var(--brand-gold);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .highlight {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--accent-3);
+    margin-top: 4rem;
+  }
+
+  .cta-text {
+    margin-top: 1.5rem;
+    color: var(--brand-primary);
+    font-family: var(--font-headings);
+  }
+
+  .policy-footer {
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    border-top: 1px solid var(--accent-3);
+    padding-top: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 2.2rem; }
+    .privacy-hero { padding: 6rem 1.5rem 3rem; }
+  }
+</style>
