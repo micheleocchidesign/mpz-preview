@@ -24,59 +24,55 @@ const base = import.meta.env.BASE_URL;
     <div class="container-mini">
         <div class="form-card">
             <div id="mlb2-38707373" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38707373">
-                
-                <div class="ml-form-successBody row-success" style="display: none">
-                    <div class="success-content text-center">
-                        <h3>Grazie per esserti iscritta!</h3>
-                        <p>Controlla la tua casella di posta per confermare l'iscrizione.</p>
-                    </div>
+    
+    <div class="ml-form-successBody row-success" style="display: none">
+        <div class="success-content text-center">
+            <h3>Grazie per esserti iscritta!</h3>
+            <p>Controlla la tua casella di posta per confermare l'iscrizione.</p>
+        </div>
+    </div>
+
+    <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1808406/forms/182381408922109763/subscribe" method="post" target="_blank">
+            
+            <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow">
+                    <label for="name">Il tuo nome</label>
+                    <input type="text" id="name" name="fields[name]" placeholder="Nome" autocomplete="given-name" required>
                 </div>
 
-                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                    <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1808406/forms/182381408922109763/subscribe" method="post" target="_blank">
-                        
-                        <div class="ml-form-formContent">
-                            <div class="ml-form-fieldRow">
-                                <label for="name">Il tuo nome</label>
-                                <input type="text" id="name" name="fields[name]" placeholder="Nome" autocomplete="given-name" required>
-                            </div>
-
-                            <div class="ml-form-fieldRow">
-                                <label for="email">La tua email</label>
-                                <input type="email" id="email" name="fields[email]" placeholder="esempio@email.it" autocomplete="email" required>
-                            </div>
-                        </div>
-
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                            <input type="text" name="fields[phone_number_val]" tabindex="-1" value="" autocomplete="off">
-                        </div>
-
-                        <div class="ml-form-checkboxRow ml-validate-required">
-                            <label class="checkbox-label">
-                                <input type="checkbox" required>
-                                <span class="label-description">
-                                    Accetto di ricevere la newsletter e confermo di aver letto la <a href="/privacy-policy">privacy policy</a>
-                                </span>
-                            </label>
-                        </div>
-
-                        <div class="ml-form-recaptcha ml-validate-required" style="margin-bottom: 20px;">
-                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                            <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
-                        </div>
-
-                        <input type="hidden" name="ml-submit" value="1">
-                        <input type="hidden" name="anticsrf" value="true">
-
-                        <div class="ml-form-embedSubmit">
-                            <button type="submit" class="btn-submit btn-primary">Iscriviti a Semi</button>
-                            <button disabled="disabled" style="display: none;" type="button" class="loading btn-submit">
-                                <div class="ml-form-embedSubmitLoad"></div>
-                            </button>
-                        </div>
-                    </form>
+                <div class="ml-form-fieldRow">
+                    <label for="email">La tua email</label>
+                    <input type="email" id="email" name="fields[email]" placeholder="esempio@email.it" autocomplete="email" required>
                 </div>
             </div>
+
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="fields[phone_number_val]" tabindex="-1" value="" autocomplete="off">
+            </div>
+
+            <div class="ml-form-checkboxRow ml-validate-required">
+                <label class="checkbox-label">
+                    <input type="checkbox" required>
+                    <span class="label-description">
+                        Accetto di ricevere la newsletter e confermo di aver preso visione della <a href="/privacy-policy">privacy policy</a>
+                    </span>
+                </label>
+            </div>
+
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="hidden" name="anticsrf" value="true">
+
+            <div class="ml-form-embedSubmit">
+                <button type="submit" class="btn-submit">Iscriviti a Semi</button>
+                
+                <button disabled="disabled" style="display: none;" type="button" class="loading btn-submit">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
         </div>
     </div>
 </section>
@@ -84,11 +80,6 @@ const base = import.meta.env.BASE_URL;
 </BaseLayout>
 
 <script is:inline>
-    // Funzione chiamata da MailerLite in caso di successo
-    function ml_webform_success_38707373() {
-        document.querySelector('.ml-subscribe-form-38707373 .row-success').style.display = 'block';
-        document.querySelector('.ml-subscribe-form-38707373 .row-form').style.display = 'none';
-    }
 
     document.addEventListener('DOMContentLoaded', function() {
         const form = document.querySelector('#mlb2-38707373 form');
