@@ -1,0 +1,177 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WavyDivider from "../components/WavyDivider.astro";
+import LunarPhases from "../components/LunarPhases.astro";
+import BookCallBanner from "../components/BookCallBanner.astro";
+import gufo from "../img/gufo.jpg"; 
+
+const testimonials = [
+  {
+    name: "Valeria V.",
+    text: "Ho incontrato Marta per la prima volta a settembre 2024 su consiglio di un’amica, ci siamo conosciute tramite Zoom e nonostante in quel momento io fossi lontana da lei chilometri, ho sentito subito la sua energia. <br/><br/> Stavo attraversando un momento di grande crisi interiore su vari aspetti della mia vita ed ero molto provata anche fisicamente, il lavoro fatto insieme mi ha aiutata a ritrovare la stabilità e la forza per “la mia strada”. <br/><br/> Marta è molto disponibile, sa creare un vero contatto, le sue pratiche di yoga nidra, le conoscenze del sacro femminile e dello yoga sono tutti valori aggiunti alla sue pratiche e cure di naturopatia. <br/><br/> Per me é una di quelle persone che si definiscono <strong>“donne medicina”</strong>. Perciò, attraverso questa recensione, esprimo tutta la mia gratitudine! Per lei e per il percorso fatto insieme!<br/> <br/> Ahó Valeria.",
+  },
+  {
+    name: "Giulia G.",
+    text: "Mi sono sentita accolta da Marta fin dal nostro primo incontro. È arrivata proprio nel momento in cui, nel mio percorso personale, era diventato essenziale integrare anche il suo lavoro, consentendomi di fare quel passo di cui avevo bisogno. <br/><br/> Ciò che mi ha colpito di più è stata la sua grande dolcezza, insieme alla capacità di ascoltare con attenzione e presenza. Con lei <strong>mi sono sentita accompagnata, in modo rispettoso e profondo.</strong>",
+  },
+  {
+    name: "Eleonora P.",
+    text: "L’incontro con Marta è stato per me estremamente significativo e importante in questa fase della mia vita. Sin dal primo appuntamento ho sentito una grande sintonia e affinità con lei, che mi ha permesso di affidarmi e lasciarmi guidare nel percorso. Il suo approccio è fortemente empatico e pone una grande attenzione alle singolarità e alle specificità della persona; da subito ho percepito una connessione e una capacità di leggere e interpretare gli aspetti più profondi di me e del mio femminile. <br/><br/> Il fatto che abbia una formazione così ampia e una specializzazione in diversi ambiti del settore olistico ha dato modo di strutturare insieme un percorso che tiene conto di molte sfaccettature. Ho riscontrato da subito benefici, sia a livello fisico che a livello emotivo, e desidero proseguire con questo percorso perché trovo che mi stia dando l’opportunità di <strong>conoscere e ascoltare molto di più me stessa</strong>, dando valore e significato a corpo, mente ed emozioni per riportare in tutto un equilibrio.",
+  },
+  {
+    name: "Gabrielle C.",
+    text: "Non trovando più risposte nelle discipline “classiche”, ho intrapreso un percorso con Marta per (ri)trovare un equilibrio sia a livello psichico che fisico. Ho trovato in lei un aiuto prezioso che mi ha permesso di avere una visione generale sui miei problemi e di <strong>unire i puntini</strong>, che troppo spesso vengono presi singolarmente senza fare connessioni fondamentali per trovare soluzioni concrete. <br/><br/> Marta ascolta, analizza, e aiuta con dolcezza e umanità a trovare queste soluzioni prendendo in considerazione l’intera persona. Mi sono sentita finalmente sentita compresa in tutta la complessità del mio essere.<br/><br/>Grazie Marta!",
+  },
+  {
+    name: "Eva C.",
+    text: "Le sedute con Marta sono una coccola per il corpo e la mente. Ha un vero talento per creare uno spazio di fiducia nel quale rilassarsi profondamente e per me il sistema di «percorso» è stato molto utile per andare più a fondo su dinamiche più radicate. Ci si sente accolte e curate, e cosa forse ancora più importante: <strong>si esce dalla seduta con la sensazione di conoscersi meglio.</strong>",
+  }
+];
+---
+
+<BaseLayout title="Dicono di me - Testimonianze | Marta Zola">
+  <main>
+    <!-- HERO UNIFORMATA ALLA PAGINA FAQ -->
+    <section class="hero-testimonials">
+      <div class="container container-narrow text-center">
+        <span class="section-overline">Storie di benessere</span>
+        <h1 class="hero-title">Dicono di me</h1>
+        <p class="hero-description">
+          Le parole di chi ha scelto di affidarsi a me e di intraprendere un viaggio di ascolto e cura. 
+          Ogni testimonianza è un seme che ha trovato il suo terreno.
+        </p>
+      </div>
+      <WavyDivider position="bottom" color="var(--bg-light)" />
+    </section>
+
+    <section class="testimonials-grid">
+      <div class="container">
+        {testimonials.map((t, index) => (
+          <article class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="quote-icon">“</div>
+              <div class="testimonial-text" set:html={t.text} />
+              <footer class="testimonial-footer">
+                <div class="author-info">
+                  <span class="author-name">{t.name}</span>
+                </div>
+              </footer>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <BookCallBanner 
+        title="Vuoi capire se il mio approccio è adatto a te? Parliamone in una chiamata conoscitiva gratuita."
+        topDividerColor="var(--bg-light)"
+        showBottomDivider={false}
+        imgParallax={gufo}
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  section {
+    position: relative;
+  }
+
+  /* HERO UNIFORMATA (Padding e colori come FAQ) */
+  .hero-testimonials {
+    background-color: var(--accent-1-bg);
+    padding: 10rem 1.5rem 3rem; /* Stesso padding-top alto delle FAQ */
+    text-align: center;
+  }
+
+  .hero-title {
+    font-family: var(--font-headings);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--brand-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-description {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+  }
+
+  /* GRID E CARDS */
+  .testimonials-grid {
+    padding: 5rem 1.5rem;
+    background-color: var(--bg-light);
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    margin-bottom: 5rem;
+    position: relative;
+  }
+
+  .quote-icon {
+    font-family: var(--font-headings);
+    font-size: 5rem;
+    color: var(--brand-gold);
+    opacity: 0.2;
+    position: absolute;
+    top: -2.5rem;
+    left: -2.5rem;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-footer {
+    text-align: left;
+    border-bottom: 1px solid var(--brand-gold);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .author-name {
+    display: block;
+    font-family: var(--font-headings);
+    font-size: 1.2rem;
+    color: var(--brand-primary);
+    font-weight: 600;
+  }
+
+  .lunar-accent {
+    margin: 6rem 0 4rem;
+    display: flex;
+    justify-content: center;
+    opacity: 0.3;
+  }
+
+  @media (max-width: 768px) {
+    .hero-testimonials {
+        padding-top: 8rem;
+    }
+    
+    .testimonial-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .quote-icon {
+      font-size: 3.5rem;
+      top: -1.5rem;
+      left: -1rem;
+    }
+  }
+</style>

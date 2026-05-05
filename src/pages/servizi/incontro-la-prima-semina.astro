@@ -2,15 +2,30 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import WavyDivider from "../../components/WavyDivider.astro";
 import BookCallBanner from "../../components/BookCallBanner.astro";
+import QuoteSeed from "../../components/QuoteSeed.astro";
+import { getImage } from "astro:assets";
+import { Image } from 'astro:assets';
+import radici from "../../img/percorso-radici.jpg";
+import semina from "../../img/incontro-prima-semina.jpg";
+import maniCiotola from "../../img/mani-ciotola.jpg";
+import percheSemina from "../../img/perche-semina.jpg";
+import gufo from "../../img/gufo.jpg";
 const base = import.meta.env.BASE_URL;
 
 const inclusions = [
     "<strong>1 incontro individuale</strong> (90 minuti)",
-    "Anamnesi approfondita fisica ed emotiva",
+    "Osservazione approfondita fisica ed emotiva",
     "Osservazione integrata: naturopatia classica, riflessologia plantare, embodiment, somatica, coaching",
     "“Parole medicina” per l'ascolto profondo",
     "Sintesi finale con i punti cardine"
 ];
+
+const optimizedHeroBg = await getImage({
+  src: semina,
+  width: 900,
+  format: 'webp',
+  quality: 'high'
+});
 
 const faqs = [
     {
@@ -43,10 +58,13 @@ const faqs = [
             <div class="hero-container">
                 <div class="col-img">
                     <div class="arch-wrapper">
-                        <img
-                            src="https://images.unsplash.com/photo-1604881991720-f91add269bed?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGhhbmRzfGVufDB8fDB8fHwy"
-                            alt="Percorso Radici - Marta Zola"
+                        <Image
+                            src={maniCiotola}
+                            alt="Incontro La Prima Semina - Marta Zola"
                             class="hero-arch-img"
+                            loading="eager"
+                            format="webp"
+                            quality="high"
                         />
                     </div>
                 </div>
@@ -55,10 +73,10 @@ const faqs = [
                     <div class="text-content">
                         <span class="section-overline">Naturopatia integrata per il benessere femminile</span>
                         <h1 class="hero-title">
-                            Incontro La Prima Semina
+                            Incontro "La Prima Semina"
                         </h1>
                         <p class="hero-description">
-                            Un incontro per tornare a casa: nel corpo, nelle emozioni, in te stessa. Il punto di partenza di tutto.
+                            Un incontro per fare ordine e iniziare a sentirti a casa nel tuo corpo e nelle tue emozioni.
                         </p>
                         <div class="hero-meta">
                             <span class="meta-item"><strong>Durata:</strong> Incontro singolo uno a uno di 90 minuti</span>
@@ -72,7 +90,7 @@ const faqs = [
 
         <section class="for-whom">
             <div class="container">
-                <p>Forse sei qui perché senti che qualcosa non va, ma non riesci ancora a dargli un nome. Oppure hai già un'idea abbastanza chiara di quello che vuoi cambiare, ma non sai da dove cominciare e non sai se un percorso più lungo può essere quello che ti serve adesso.</p>
+                <p><strong>Forse sei qui perché senti che qualcosa non va, ma non riesci ancora a dargli un nome.</strong> Oppure hai già un'idea abbastanza chiara di quello che vuoi cambiare, ma non sai da dove cominciare e non sai se un percorso più lungo può essere quello che ti serve adesso.</p>
                 <h2 class="section-title">La Prima Semina è per te se...</h2>
                 <div class="pain-narrative">
             <div class="pain-item">
@@ -104,31 +122,40 @@ const faqs = [
             </div>
         </div>
             </div>
+            <QuoteSeed 
+    quote="Marta mi ha aiutata a unire i puntini e a trovare soluzioni concrete, facendomi sentire finalmente compresa nella complessità del mio essere." 
+    author="Gabrielle C." 
+    link={true}
+/>
         </section>
 
         <section class="approach-section">
             <WavyDivider position="top" color="var(--accent-1-bg)" />
             <div class="container grid-2">
                 <div class="approach-image">
-                    <img src="https://images.unsplash.com/photo-1590415024718-798cdaab96dd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3Byb3V0fGVufDB8fDB8fHwy" alt="Radici e natura" class="img-rounded" />
+                    <Image
+                            src={percheSemina}
+                            alt="Incontro La Prima Semina - Marta Zola"
+                            class="img-rounded"
+                        />
                 </div>
                 <div class="approach-text">
                     <h2 class="section-title">Perché un'incontro singolo</h2>
-                    <p>È un incontro in cui possiamo fare ordine, costruire una mappa, portare chiarezza lì dove c'è confusione.</p>
+                    <p><strong>È un incontro in cui possiamo fare ordine, costruire una mappa, portare chiarezza lì dove c'è confusione.</strong></p>
                     <p>Spesso arriviamo a un primo incontro con una sensazione difficile 
                         da spiegare - una serie di sintomi, stanchezza, qualcosa che continua 
-                        a tornare. Quello che succede quando ci prendiamo davvero il tempo di 
-                        ascoltarci è spesso sorprendente: connessioni che non avevamo visto, 
+                        a tornare. <strong>Quello che succede quando ci prendiamo davvero il tempo di 
+                        ascoltarci è spesso sorprendente:</strong> connessioni che non avevamo visto, 
                         schemi che si ripetono, risorse che non sapevamo di avere. Qualcosa 
                         dentro si muove, si apre, respira.</p>
                     <p>Molti percorsi olistici ti invitano subito a lasciar andare: 
                         ma se stai arrivando dalla confusione o dalla sfiducia, 
-                        può sembrare impossibile. Prima hai bisogno di fare ordine. 
-                        Io inizio sempre da lì, sia in un incontro singolo che in un percorso più lungo.</p>
+                        può sembrare impossibile. Prima <strong>hai bisogno di fare ordine. 
+                        Io inizio sempre da lì,</strong> sia in un incontro singolo che in un percorso più lungo.</p>
                         <p>
-                            Attraverso un approccio di naturopatia integrata, che unisce anamnesi 
-                            approfondita, riflessologia, embodiment e coaching, tracciamo 
-                            insieme una mappa di dove sei adesso. Partiamo da te: 
+                            <strong>Attraverso un approccio di naturopatia integrata,</strong> che unisce osservazione 
+                            approfondita, riflessologia, embodiment e coaching, <strong>tracciamo 
+                            insieme una mappa di dove sei adesso.</strong> Partiamo da te: 
                             da quello che senti nel corpo, da quello che stai attraversando, 
                             da ciò che vuole finalmente essere ascoltato.
                         </p>
@@ -139,14 +166,14 @@ const faqs = [
         <section class="how-it-works">
             <div class="container container-narrow">
                 <h2 class="section-title text-center">Come funziona</h2>
-                <p>Ci prendiamo il tempo per conoscerti: parliamo dei tuoi sintomi fisici ed 
-                    emotivi, dei tuoi vissuti, di cosa ti ha portata qui. Ti faccio delle 
+                <p>Ci prendiamo il tempo per conoscerti: <strong>parliamo dei tuoi sintomi fisici ed 
+                    emotivi, dei tuoi vissuti,</strong> di cosa ti ha portata qui. Ti faccio delle 
                     domande e ascolto cosa dice il tuo corpo, anche attraverso una breve 
                     pratica di embodiment o somatica.</p>
                 <p>A conclusione dell'incontro ti restituisco ciò che è emerso: i punti 
                     cardine, le connessioni,  le "parole medicina". Sono parole che affiorano 
                     durante il nostro lavoro insieme e che puoi portare con te, come una guida.</p>
-                <p>Lì dove qualcosa si è aperto, inizia il cambiamento.</p>
+                <p><strong>Lì dove qualcosa si è aperto, inizia il cambiamento.</strong></p>
             </div>
         </section>
 
@@ -160,7 +187,7 @@ const faqs = [
                     <div class="price-box">
                         <span class="price">€ 100,00</span>
                     </div>
-                    <a href={base + "contatti"} class="btn-primary-neg">Richiedi il percorso</a>
+                    <a href={base + "contatti"} class="btn-primary-neg">Richiedi l'incontro</a>
                 </div>
 
                 <div class="pricing-description">
@@ -171,7 +198,7 @@ const faqs = [
                         <div class="modality-grid">
                             <div class="modality">
                                 <h4>Online</h4>
-                                <p>Lavoriamo attraverso l'osservazione del corpo, la parola, pratiche guidate di embodiment e somatica. È altrettanto efficace, in modalità differenti, anche a distanza. Nel caso di consulto online assicurati di avere una buona connessione per la videochiamata e di poter stare in un posto tranquillo e privato.</p>
+                                <p>Lavoriamo attraverso l'osservazione del corpo, la parola, pratiche guidate di embodiment e somatica. <strong>È altrettanto efficace, in modalità differenti, anche a distanza.</strong> Nel caso di consulto online assicurati di avere una buona connessione per la videochiamata e di poter stare in un posto tranquillo e privato.</p>
                             </div>
                             <div class="modality">
                                 <h4>In presenza</h4>
@@ -206,19 +233,18 @@ const faqs = [
             </div>
         </section>
 
-        <BookCallBanner 
+       <BookCallBanner 
             title="Non sei ancora sicura che sia ciò che fa per te? Prenota una call conoscitiva gratuita e scopriamolo insieme." 
-            buttonText="SCOPRILO ORA" 
-        buttonLink="/contatti"
             topDividerColor="var(--bg-lighter)"
             showBottomDivider={false}
-            imgParallax="https://images.unsplash.com/photo-1619968987472-4d1b2784592e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbGlzdGljfGVufDB8MHwwfHx8Mg%3D%3D"
-
+            imgParallax={gufo}
+            buttonText="PRENOTA ORA" 
+            buttonLink="/call-conoscitiva"
         />
     </main>
 </BaseLayout>
 
-<style>
+<style define:vars={{ sfondoSemina: `url(${semina.src})` }}>
     section {
         padding: 5rem 1.5rem;
         position: relative;
@@ -247,7 +273,7 @@ const faqs = [
     }
 
     .bg-left {
-        background-image: url("https://images.unsplash.com/photo-1731119414875-799ff8cdbbdd?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-image: var(--sfondoSemina);
         background-size: cover;
         background-position: center;
     }
@@ -354,7 +380,7 @@ const faqs = [
 
     .pain-text p {
         margin: 0;
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.6;
     }
 
@@ -362,7 +388,7 @@ const faqs = [
     /* APPROACH */
     .approach-section { background-color: var(--bg-lighter);}
     .grid-2 { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; margin:0 auto; padding: 0 1.5rem; max-width: var(--container-width);}
-    .img-rounded { border-radius: 300px 300px 4px 4px; width: 100%; }
+    .img-rounded { border-radius: 300px 300px 4px 4px; width: 100%; border: solid 2px var(--brand-gold);}
 
     /* STEPS */
     .step-content h3{

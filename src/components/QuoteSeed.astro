@@ -1,0 +1,85 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+  link?: boolean;
+}
+
+const { quote, author, link = false } = Astro.props;
+---
+
+<div class="quote-seed">
+  <div class="quote-content">
+    <span class="quotation-mark">&ldquo;</span>
+    <p class="text">{quote}</p>
+    <cite>— {author}</cite>
+  </div>
+  
+  {link && (
+    <a href="/dicono-di-me" class="read-more">
+      Leggi cosa dicono di me <span>&rarr;</span>
+    </a>
+  )}
+</div>
+
+<style>
+  .quote-seed {
+    max-width: 800px; /* Un po' più largo per far respirare il testo */
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .quotation-mark {
+    display: block;
+    font-family: serif; /* Un font classico per le virgolette */
+    font-size: 10rem;
+    line-height: 1;
+    color: var(--brand-gold);
+    opacity: .5;
+    margin-bottom: -6rem; /* Le avviciniamo al testo */
+    user-select: none;
+  }
+
+  .text {
+    font-family: var(--font-headings);
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--brand-primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    font-style: italic;
+  }
+
+  cite {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    font-style: normal;
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--brand-gold);
+    transition: opacity 0.3s ease;
+    font-weight: bold;
+  }
+
+  .read-more:hover {
+    opacity: 0.7;
+  }
+
+  .read-more span {
+    margin-left: 5px;
+  }
+</style>

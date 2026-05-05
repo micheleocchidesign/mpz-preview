@@ -2,24 +2,27 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WavyDivider from "../components/WavyDivider.astro";
 import BookCallBanner from "../components/BookCallBanner.astro";
+import { Image } from 'astro:assets';
+import madre from "../img/madre-terra.jpg";
+
 const base = import.meta.env.BASE_URL;
 
 const faqs = [
     {
         q: "Cos'è la Naturopatia?",
-        a: "La naturopatia è una disciplina di supporto alla medicina che utilizza tecniche tradizionali e moderne per favorire e mantenere l’equilibrio naturale della persona. Si basa su una visione integrale dell’essere umano, considerando corpo, mente ed emozioni come parti di un unico sistema. In questo integro nel mio approccio anche il coaching. Il suo obiettivo non è curare la malattia, ma accompagnare la persona verso uno stato di maggiore benessere, sostenendo il risveglio della vis medicatrix naturae, la “forza guaritrice della natura”. Secondo questo antico principio ippocratico, il nostro organismo possiede innate capacità di autoregolazione e autoguarigione. Il naturopata non cura, ma osserva e ascolta il “terreno” individuale, per comprendere i bisogni della persona e individuare un percorso personalizzato. Attraverso educazione, consapevolezza e strumenti naturali, si lavora per rafforzare le risorse fisiche, psichiche ed emozionali, favorendo un equilibrio più profondo e duraturo."
+        a: "<strong>La naturopatia è una disciplina di supporto alla medicina</strong> che utilizza tecniche tradizionali e moderne per favorire e mantenere l’equilibrio naturale della persona. <strong>Si basa su una visione integrale dell’essere umano, considerando corpo, mente ed emozioni come parti di un unico sistema.</strong> In questo integro nel mio approccio anche il coaching. Il suo obiettivo non è curare la malattia, ma accompagnare la persona verso uno stato di maggiore benessere, <strong>sostenendo il risveglio della vis medicatrix naturae, la “forza guaritrice della natura”.</strong> Secondo questo antico principio ippocratico, il nostro organismo possiede innate capacità di autoregolazione e autoguarigione. Il naturopata non cura, ma osserva e ascolta il “terreno” individuale, per comprendere i bisogni della persona e individuare un percorso personalizzato. Attraverso educazione, consapevolezza e strumenti naturali, si lavora per rafforzare le risorse fisiche, psichiche ed emozionali, <strong>favorendo un equilibrio più profondo e duraturo.</strong>"
     },
     {
         q: "Che tipo di coaching pratico?",
-        a: "Il coaching che propongo non è assolutamente un coaching performativo e non controlla né definisce le aspirazioni della cliente. Al contrario, si tratta di un percorso co-creato di trasformazione, evoluzione e ascolto profondo. Nel mio approccio di spiritualità incarnata, in cui l’aspecto spirituale è indissolubilmente legato a quello pratico della vita quotidiana, offro strumenti per esplorare l’esistenza al di fuori di regole già scritte e convinzioni limitanti. Rimane fondamentale sottolineare che, qualora fosse necessario l’intervento di un professionista specializzato, come una psicoterapeuta, sarà mia cura segnalarlo immediatamente. Il coaching con cui mi sono formata è un coaching evolutivo, creato e guidato dalla scuola “Luna. Scuola di Coaching per l’Anima”, certificata ICF."
+        a: "<strong>Il coaching che propongo non è assolutamente un coaching performativo e non controlla né definisce le aspirazioni della cliente.</strong> Al contrario, si tratta di un percorso co-creato di trasformazione, evoluzione e ascolto profondo. Nel mio approccio di spiritualità incarnata, in cui l’aspecto spirituale è indissolubilmente legato a quello pratico della vita quotidiana, offro strumenti per esplorare l’esistenza al di fuori di regole già scritte e convinzioni limitanti. Rimane fondamentale sottolineare che, <strong>qualora fosse necessario l’intervento di un professionista specializzato, come una psicoterapeuta, sarà mia cura segnalarlo immediatamente.</strong> Il coaching con cui mi sono formata è un coaching evolutivo, creato e guidato dalla scuola “Luna. Scuola di Coaching per l’Anima”, certificata ICF."
     },
     {
         q: "Cosa si intende con fitocomplementi?",
-        a: "La parola fitoterapia deriva dal greco e indica l’utilizzo delle piante per il mantenimento del benessere e il sostegno alle naturali funzioni dell’organismo. Rappresenta, storicamente, una delle prime forme di medicina utilizzate dall’uomo per la prevenzione e il supporto alla salute attraverso rimedi di origine naturale. I fitocomplementi sono preparazioni a base vegetale che vengono inseriti all’interno di un piano benessere legato allo stile di vita della persona. Possono essere utilizzati come coadiuvanti nei processi di drenaggio e riequilibrio dell’organismo, secondo un approccio salutistico e preventivo. Esistono diverse modalità di estrazione delle piante, ma è importante ricordare che naturale non significa necessariamente innocuo. Alcune preparazioni, come le estrazioni secche (pastiglie) e le tinture madri, richiedono una conoscenza approfondita e un’attenta osservazione della persona. Esistono poi estrazioni più delicate, come i macerati glicerinati, che per la loro composizione risultano generalmente più adatti anche ad anziani e bambini. L’utilizzo della fitoterapia diventa particolarmente interessante quando si esce dal semplice schema sintomo → rimedio. In una visione naturopatica, infatti, i fitocomplementi vengono scelti per sostenere e rafforzare le risorse individuali, accompagnando la persona in un percorso di riequilibrio che parte da ciò che già è presente nell’organismo."
+        a: "<strong>La parola fitoterapia</strong> deriva dal greco e <strong>indica l’utilizzo delle piante per il mantenimento del benessere e il sostegno alle naturali funzioni dell’organismo.</strong> Rappresenta, storicamente, una delle prime forme di medicina utilizzate dall’uomo per la prevenzione e il supporto alla salute attraverso rimedi di origine naturale. <strong>I fitocomplementi sono preparazioni a base vegetale che vengono inseriti all’interno di un piano benessere legato allo stile di vita della persona.</strong> Possono essere utilizzati come coadiuvanti nei processi di drenaggio e riequilibrio dell’organismo, secondo un approccio salutistico e preventivo. Esistono diverse modalità di estrazione delle piante, ma è importante ricordare che <strong>naturale non significa necessariamente innocuo.</strong> Alcune preparazioni, come le estrazioni secche (pastiglie) e le tinture madri, richiedono una conoscenza approfondita e un’attenta osservazione della persona. Esistono poi estrazioni più delicate, come i macerati glicerinati, che per la loro composizione risultano generalmente più adatti anche ad anziani e bambini. L’utilizzo della fitoterapia diventa particolarmente interessante quando si esce dal semplice schema sintomo → rimedio. In una visione naturopatica, infatti, i fitocomplementi vengono scelti per sostenere e rafforzare le risorse individuali, accompagnando la persona in un percorso di riequilibrio che parte da ciò che già è presente nell’organismo."
     },
     {
         q: "Cos’è la riflessologia e quale metodo riflessologico utilizzo?",
-        a: "La riflessologia plantare è un’antica tecnica di neurostimolazione che viene effettuata dal punto più distale del corpo: i piedi, nei quali troviamo circa 7000 rami terminali nervosi. Attraverso la digitopressione e un percorso costruito appositamente per chi la riceve, è possibile agire su differenti disfunzioni. I nostri piedi sono il riflesso dell’intero corpo. La riflessologia è infatti un’antica tecnica valutativa e di riequilibrio basata sulla stimolazione di specifici punti del piede, collegati alle diverse parti dell’organismo. Il dolore che può manifestarsi alla pressione in alcuni punti del piede può segnalare uno squilibrio delle parti del corpo corrispondenti, consentendo di riconoscere eventuali disarmonie o bisogni della persona e lavorare così anche in ottica preventiva. La pratica riflessologica ha quindi un grande valore di prevenzione e di benessere integrale. La mia tecnica nasce dalla riflessologia classica di Eunice Ingham, che è considerata la fondatrice della riflessologia moderna. Arricchisco il trattamento attraverso il massaggio sui piedi ayurvedico e le conoscenze della medicina tradizionale cinese. In questo modo, oltre all’osservazione delle disfunzioni, la persona può vivere anche un profondo momento di rilassamento."
+        a: "<strong>La riflessologia plantare è un’antica tecnica di neurostimolazione che viene effettuata dal punto più distale del corpo:</strong> i piedi, nei quali troviamo circa 7000 rami terminali nervosi. Attraverso la digitopressione e un percorso costruito appositamente per chi la riceve, è possibile agire su differenti disfunzioni. I nostri piedi sono il riflesso dell’intero corpo. La riflessologia è infatti un’antica <strong>tecnica valutativa e di riequilibrio basata sulla stimolazione di specifici punti del piede, collegati alle diverse parti dell’organismo.</strong> Il dolore che può manifestarsi alla pressione in alcuni punti del piede può segnalare uno squilibrio delle parti del corpo corrispondenti, consentendo di riconoscere eventuali disarmonie o bisogni della persona e lavorare così anche in ottica preventiva. La pratica riflessologica ha quindi un grande <strong>valore di prevenzione e di benessere integrale.</strong> La mia tecnica nasce dalla riflessologia classica di Eunice Ingham, che è considerata la fondatrice della riflessologia moderna. <strong>Arricchisco il trattamento attraverso il massaggio sui piedi ayurvedico e le conoscenze della medicina tradizionale cinese.</strong> In questo modo, oltre all’osservazione delle disfunzioni, la persona può vivere anche un profondo momento di rilassamento."
     }
 ];
 ---
@@ -47,7 +50,7 @@ const faqs = [
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon"><path d="m6 9 6 6 6-6"/></svg>
                             </summary>
                             <div class="faq-answer">
-                                <p>{faq.a}</p>
+                                <p set:html={faq.a} />
                             </div>
                         </details>
                     ))}
@@ -56,10 +59,12 @@ const faqs = [
         </section>
 
         <BookCallBanner 
-            title="Vuoi capire se sono la persona adatta a te? Prenota la tua call conoscitiva gratuita" 
+            title="Vuoi capire se sono la persona adatta a te? Prenota la tua call conoscitiva gratuita"
+            buttonText="PRENOTA ORA" 
+            buttonLink="/call-conoscitiva"
             topDividerColor="var(--bg-light)"
             showBottomDivider={false}
-            imgParallax="https://images.unsplash.com/photo-1494861895304-fb272971c078?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            imgParallax={madre}
         />
     </main>
 </BaseLayout>
@@ -72,17 +77,13 @@ const faqs = [
 
     .hero-faq {
         background-color: var(--accent-3);
-        padding: 8rem 1.5rem 6rem;
+        padding: 10rem 0 3rem;
     }
 
-    .hero-title {
-        font-size: 3.5rem;
-        color: var(--brand-primary);
-        margin: 1rem 0;
-    }
+    
 
     .hero-description {
-        font-size: 1.2rem;
+        font-size: 1.125rem;
         max-width: 700px;
         margin: 0 auto;
         color: var(--text-dark);
@@ -143,7 +144,7 @@ const faqs = [
     .faq-answer {
         padding: 0 1.8rem 2rem;
         line-height: 1.8;
-        font-size: 1.05rem;
+        font-size: 1rem;
         color: var(--text-dark);
     }
 

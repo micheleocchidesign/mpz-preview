@@ -2,12 +2,27 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import WavyDivider from "../../components/WavyDivider.astro";
 import BookCallBanner from "../../components/BookCallBanner.astro";
+import QuoteSeed from "../../components/QuoteSeed.astro";
+import { getImage } from "astro:assets";
+import { Image } from 'astro:assets';
+import radici from "../../img/percorso-radici.jpg";
+import semina from "../../img/incontro-prima-semina.jpg";
+import mani from "../../img/mani.jpg";
+import percheRadici from "../../img/perche-radici.jpg";
+import gufo from "../../img/gufo.jpg";
 const base = import.meta.env.BASE_URL;
+
+const optimizedHeroBg = await getImage({
+  src: radici,
+  width: 900,
+  format: 'webp',
+  quality: 'high'
+});
 
 const inclusions = [
     "<strong>4 incontri individuali</strong> (90 minuti ciascuno)",
-    "1 incontro di follow-up distante almeno un mese dai 4 incontri",
-    "Anamnesi approfondita fisica ed emotiva",
+    "<strong>1 incontro di follow-up</strong> distante almeno un mese dai 4 incontri",
+    "Osservazione approfondita fisica ed emotiva",
     "Tecniche integrate di naturopatia classica, riflessologia plantare, massaggi, embodiment, somatica, costellazioni familiari, coaching",
     "Piano personalizzato: rimedi naturali, pratiche ed esercizi da fare a casa (se lo vorrai)",
     "“Parole medicina“ per l'ascolto profondo",
@@ -49,10 +64,13 @@ const faqs = [
             <div class="hero-container">
                 <div class="col-img">
                     <div class="arch-wrapper">
-                        <img
-                            src={base + "mani-hero.jpg"}
+                        <Image
+                            src={mani}
                             alt="Percorso Radici - Marta Zola"
                             class="hero-arch-img"
+                            loading="eager"
+                            format="webp"
+                            quality="high"
                         />
                     </div>
                 </div>
@@ -125,19 +143,29 @@ const faqs = [
             </div>
         </div>
     </div>
+    <QuoteSeed 
+                    quote="Il suo approccio empatico mi ha permesso di affidarmi, portando benefici fisici ed emotivi e un nuovo equilibrio tra corpo, mente e anima." 
+                    author="Eleonora P." 
+                    link={true}
+                />
 </section>
 
         <section class="approach-section">
             <WavyDivider position="top" color="var(--accent-1-bg)" />
             <div class="container grid-2">
                 <div class="approach-image">
-                    <img src="https://images.unsplash.com/photo-1551087255-eaec2139931d?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Radici e natura" class="img-rounded" />
+                    <Image
+                            src={percheRadici}
+                            alt="Percorso Radici - Marta Zola"
+                            class="img-rounded"
+                        />
                 </div>
+                
                 <div class="approach-text">
                     <h2 class="section-title">Perché il percorso Radici</h2>
-                    <p>Molti percorsi olistici ti chiedono subito di "lasciar andare" e "fluire", 
-                        ma se stai arrivando dalla confusione, dal dolore e dalla sfiducia, hai bisogno prima 
-                        di <strong><strong>fare ordine, o meglio di essere veramente tu</strong></strong>. Io inizio da lì: insieme facciamo 
+                    <p><strong>Molti percorsi olistici ti chiedono subito di "lasciar andare" e "fluire",</strong> 
+                        ma se stai arrivando dalla confusione, dal dolore e dalla sfiducia, <strong>hai bisogno prima 
+                        di fare ordine, o meglio di essere veramente tu</strong>. Io inizio da lì: insieme facciamo 
                         <strong>chiarezza</strong>, ascoltiamo i sintomi, le emozioni, i vissuti. Partiamo da te e costruiamo una 
                         mappa del cambiamento. Poi, toccando i punti che ti servono, possiamo lasciar andare, 
                         smuovere, cambiare. Ho presente che cosa significa vivere sempre "in modalità 
@@ -153,7 +181,7 @@ const faqs = [
                         </strong> Non guardiamo solo cosa fa male oggi, ma allarghiamo lo sguardo: cosa sta cercando 
                         di dirti il tuo corpo? E le emozioni? Cosa hai ereditato da chi c'era prima di te? 
                         Sì, perché ti porti dentro dei vissuti che non sono solo i tuoi.</p>
-                    <p>Ci tengo a darti strumenti <strong>pratici</strong>, non solo comprensione e supporto: osservazioni su 
+                    <p>Ci tengo a darti <strong>strumenti pratici</strong>, non solo comprensione e supporto: osservazioni su 
                         abitudini, energia e ciclo mestruale, piccoli esercizi da fare a casa, pratiche corporee, 
                         rilassamento, rimedi naturali. Il mio approccio è profondo e radicato nella 
                         vita di tutti i giorni. Ti accompagno in modo graduale attraverso il cambiamento: 
@@ -169,7 +197,7 @@ const faqs = [
             <WavyDivider position="top" color="var(--bg-lighter)" />
             <div class="container container-narrow">
                 <h2 class="section-title text-center">Il viaggio insieme</h2>
-                <p>Il Percorso Radici si sviluppa in 4 incontri personalizzati che costruiamo insieme a partire dalla tua storia, dai tuoi bisogni e da quello che il tuo corpo ti sta comunicando.</p>
+                <p>Il Percorso Radici si sviluppa in <strong>5 incontri personalizzati che costruiamo insieme</strong> a partire dalla tua storia, dai tuoi bisogni e da quello che il tuo corpo ti sta comunicando.</p>
                 <div class="steps-wrapper">
                     <div class="step">
                         <div class="step-number">1</div>
@@ -189,8 +217,8 @@ const faqs = [
                         <div class="step-content">
                             <h3>Incontri 2, 3 e 4: Lavoro Integrato (90 minuti)</h3>
                             <p>Negli incontri successivi, che saranno possibilmente ravvicinati, lavoriamo sul percorso che 
-                                abbiamo costruito insieme. Tu mi porti quello che hai osservato, vissuto, come hanno agito 
-                                i rimedi che ti ho consigliato. Io integro con pratiche di embodiment e somatica, movimenti 
+                                abbiamo costruito insieme. <strong>Tu mi porti quello che hai osservato,</strong> vissuto, come hanno agito 
+                                i rimedi che ti ho consigliato. <strong>Io integro</strong> con pratiche di embodiment e somatica, movimenti 
                                 per sbloccare tensioni nel corpo, tecniche naturopatiche, costellazioni familiari e massaggi 
                                 (in presenza). In questi incontri la parte dedicata al <strong>rilassamento</strong> e all'<strong>
                                     ascolto profondo</strong> è maggiore rispetto al primo.</p>
@@ -200,13 +228,13 @@ const faqs = [
                         <div class="step-number">5</div>
                         <div class="step-content">
                             <h3>5° incontro: Follow Up</h3>
-                            <p>In questo incontro - distante almeno un mese dai primi 4 incontri - ci 
-                                confronteremo sul prima e sul dopo, sui cambiamenti fisici, emotivi o 
+                            <p>In questo incontro - distante almeno un mese dai primi 4 incontri - <strong>ci 
+                                confronteremo sul prima e sul dopo,</strong> sui cambiamenti fisici, emotivi o 
                                 energetici e su eventuali nuovi bisogni emersi.</p>
                         </div>
                     </div>
                 </div>
-                <p>A conclusione di ogni incontro ti lascio anche delle <strong>
+                <p><strong>A conclusione</strong> di ogni incontro ti lascio anche delle <strong>
                     "parole
                         medicina"
                 </strong> o <strong>"frasi medicina"</strong>: ti restituisco parole che 
@@ -235,7 +263,7 @@ const faqs = [
                 <div class="pricing-description">
                     <div class="desc-block">
                         <p class="lead-text">Ogni consulto è un momento per te, un tempo in cui aumentare la consapevolezza dei tuoi ritmi corporei ed emotivi.</p>
-                        <p>Cambia il modo in cui stai nella tua vita: non stravolgimenti, ma consapevolezze, gesti e strumenti che ti sostengono, con naturalezza. Puoi imparare a non avere paura del tempo, a fidarti della <strong>ciclicità</strong>, a dare spazio a ciò che senti e ciò che sei.</p>
+                        <p>Cambia il modo in cui stai nella tua vita: non stravolgimenti, ma consapevolezze, gesti e strumenti che ti sostengono, con naturalezza. <strong>Puoi imparare a non avere paura del tempo, a fidarti della ciclicità</strong>, a dare spazio a ciò che senti e ciò che sei.</p>
                     </div>
 
                     <div class="location-info">
@@ -245,7 +273,7 @@ const faqs = [
                         <div class="modality-grid">
                             <div class="modality">
                                 <h4>Online</h4>
-                                <p>Lavoriamo attraverso l'osservazione del corpo, la parola, pratiche guidate di embodiment e somatica. è altrettanto efficace, in modalità differenti, anche a distanza. Nel caso di consulto online assicurati di avere una buona connessione per la videochiamata e di poter stare in un posto tranquillo e privato.</p>
+                                <p>Lavoriamo attraverso l'osservazione del corpo, la parola, pratiche guidate di embodiment e somatica. <strong>È altrettanto efficace, in modalità differenti, anche a distanza.</strong> Nel caso di consulto online assicurati di avere una buona connessione per la videochiamata e di poter stare in un posto tranquillo e privato.</p>
                             </div>
                             <div class="modality">
                                 <h4>In presenza</h4>
@@ -291,12 +319,14 @@ const faqs = [
             title="Non sei ancora sicura che sia ciò che fa per te? Prenota una call conoscitiva gratuita e scopriamolo insieme." 
             topDividerColor="var(--bg-lighter)"
             showBottomDivider={false}
-            imgParallax="https://images.unsplash.com/photo-1619968987472-4d1b2784592e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbGlzdGljfGVufDB8MHwwfHx8Mg%3D%3D"
+            imgParallax={gufo}
+            buttonText="PRENOTA ORA" 
+            buttonLink="/call-conoscitiva"
         />
     </main>
 </BaseLayout>
 
-<style>
+<style define:vars={{ sfondoRadici: `url(${radici.src})` }}>
     section {
         padding: 5rem 1.5rem;
         position: relative;
@@ -325,7 +355,7 @@ const faqs = [
     }
 
     .bg-left {
-        background-image: url("https://images.unsplash.com/photo-1601979142879-ad5896cb0617?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFkaWNpfGVufDB8MHwwfHx8MA%3D%3D");
+        background-image: var(--sfondoRadici);
         background-size: cover;
         background-position: center;
     }
@@ -432,7 +462,7 @@ const faqs = [
 
     .pain-text p {
         margin: 0;
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.6;
     }
 
@@ -440,7 +470,7 @@ const faqs = [
     /* APPROACH */
     .approach-section { background-color: var(--bg-lighter);}
     .grid-2 { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; margin:0 auto; padding: 0 1.5rem; max-width: var(--container-width);}
-    .img-rounded { border-radius: 300px 300px 4px 4px; width: 100%; }
+    .img-rounded { border-radius: 300px 300px 4px 4px; width: 100%; border: solid 2px var(--brand-gold);}
 
     /* STEPS */
     .step-content h3{

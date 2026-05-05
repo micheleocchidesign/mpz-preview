@@ -1,6 +1,9 @@
 ---
+import { getImage } from "astro:assets";
+import type { ImageMetadata } from 'astro'; // Importante per TypeScript
 import LunarPhases from "./LunarPhases.astro";
 import WavyDivider from "./WavyDivider.astro";
+import defaultBg from "../img/notte-stelle.jpg";
 const base = import.meta.env.BASE_URL;
 
 interface Props {
@@ -11,7 +14,7 @@ interface Props {
   showBottomDivider?: boolean; // mostra o nasconde onda inferiore
   topDividerColor?: string;
   bottomDividerColor?: string;
-  imgParallax?: string;
+  imgParallax?: ImageMetadata; // Non più stringa, ma l'oggetto immagine importato;
   overlayColor?: string;
 }
 
@@ -23,12 +26,20 @@ const {
   showBottomDivider = true,
   topDividerColor = "var(--bg-light)",
   bottomDividerColor = "var(--bg-light)",
-  imgParallax = "https://images.unsplash.com/photo-1482385916434-814664df9c5b?q=80&w=3193&auto=format&fit=crop",
+  imgParallax = defaultBg,
   overlayColor ="var(--accent-4)"
 } = Astro.props;
+
+// Ottimizziamo l'immagine qui dentro
+const optimizedBg = await getImage({
+    src: imgParallax, 
+    width: 1600, 
+    format: 'webp', 
+    quality: 80
+});
 ---
 
-<section class="cta-banner" style={`--bg-img: url('${imgParallax}'); --overlay-col: ${overlayColor};`}>
+<section class="cta-banner" style={`--bg-img: url('${optimizedBg.src}'); --overlay-col: ${overlayColor};`}>
   {showTopDivider && <WavyDivider position="top" color={topDividerColor} />}
 
   <div class="cta-container">

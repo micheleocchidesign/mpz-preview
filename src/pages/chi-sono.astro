@@ -3,6 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import WavyDivider from "../components/WavyDivider.astro";
 import SpacerIcon from "../components/SpacerIcon.astro";
 import BookCallBanner from "../components/BookCallBanner.astro";
+import QuoteSeed from '../components/QuoteSeed.astro';
+import { Image } from 'astro:assets';
+import heroImage from "../img/marta-zola-chi-sono.jpg";
+import bioImage from "../img/marta-zola-bio.jpg";
+import immagineAltare from "../img/altare.jpg";
+import { object } from "astro:schema";
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -22,17 +28,20 @@ const base = import.meta.env.BASE_URL;
                 </h1>
                 <div class="hero-description">
                     <p>
-                        riscoprire i propri ritmi e sentirsi a casa nel corpo e
-                        nelle emozioni, attraverso un approccio integrato.
+                        <b>riscoprire i propri ritmi e sentirsi a casa nel corpo e
+                        nelle emozioni,</b> attraverso un approccio integrato.
                     </p>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="portrait-wrapper">
-                    <img
-                        src={base + "marta-zola-oliva.jpg"}
-                        alt="Marta Zola"
-                    />
+                    <Image
+                            src={heroImage}
+                            alt="Marta Zola - Naturopatia integrata e benessere femminile"
+                            loading="eager"
+                            format="webp"
+                            quality="high"
+                        />
                 </div>
             </div>
         </div>
@@ -44,8 +53,8 @@ const base = import.meta.env.BASE_URL;
         <div class="container-narrow">
             <h2 class="section-title text-center">Il mio approccio</h2>
             <p>
-                Unisco naturopatia, coaching, tecniche corporee e uno sguardo
-                sistemico ispirato alle costellazioni familiari, per offrire un
+                <strong>Unisco naturopatia, coaching, tecniche corporee e uno sguardo
+                sistemico ispirato alle costellazioni familiari,</strong> per offrire un
                 approccio a tutto tondo sulla persona. Mi piace guardare oltre
                 le corazze, avere fiducia nel cambiamento e andare oltre ciò che
                 appare, per portare ordine e chiarezza dopo il caos.
@@ -54,8 +63,8 @@ const base = import.meta.env.BASE_URL;
                 <i
                     >Molti percorsi olistici, infatti, ti invitano subito a
                     “lasciar andare”,</i> ma se stai arrivando dal dolore e dalla sfiducia, può sembrare
-                impossibile: prima hai bisogno di fare ordine nei tuoi blocchi o
-                difficoltà fisiche ed emozionali.<br /><strong>Iniziamo da lì.</strong>
+                impossibile: <strong>prima hai bisogno di fare ordine nei tuoi blocchi o
+                difficoltà fisiche ed emozionali. Iniziamo da lì.</strong>
             </p>
             <p class="tools-paragraph">
                 Partendo dalla naturopatia e il coaching uso strumenti
@@ -67,14 +76,14 @@ const base = import.meta.env.BASE_URL;
                 <span class="tool-accent">costellazioni familiari</span> - e li integro
                 in modo flessibile: li adatto a te e al cambiamento che desideri,
                 scegliendo ciò che può sostenerti meglio nella tua esperienza interiore
-                e nel corpo. Non seguo un'unica via: trovo quella che può aiutarti
+                e nel corpo. <strong>Non seguo un'unica via: trovo quella che può aiutarti</strong>
                 a sentirti a casa e più radicata in te stessa.
             </p>
             <p>
                 Ci tengo a darti <strong>strumenti pratici,</strong> non solo comprensione
-                e supporto: osservazioni su abitudini, energia e ciclo mestruale,
+                e supporto: <strong>osservazioni su abitudini, energia e ciclo mestruale,
                 piccoli esercizi da fare a casa, pratiche corporee, rilassamento,
-                rimedi naturali. Il mio approccio è profondo e radicato nella vita
+                rimedi naturali.</strong> Il mio approccio è profondo e radicato nella vita
                 di tutti i giorni. Ti accompagno in modo graduale attraverso il cambiamento:
                 perché se sei arrivata al limite è anche un’opportunità per rimettere
                 radici in te stessa, non avere paura del tempo, trovare un equilibrio.
@@ -84,6 +93,11 @@ const base = import.meta.env.BASE_URL;
                 e corpo, stimolando la capacità innata dell’organismo di ritrovare
                 l’equilibrio.
             </p>
+            <QuoteSeed 
+                quote="Marta sa creare un vero contatto; il lavoro fatto insieme mi ha aiutata a ritrovare la stabilità e la forza per la mia strada." 
+                author="Valeria V." 
+                link={true}
+            />
             <p>
                 Osservo la <strong
                     >connessione tra corpo, mente, emozioni e storia familiare,</strong
@@ -104,14 +118,14 @@ const base = import.meta.env.BASE_URL;
                 ciò che è misurabile.
             </p>
             <p>
-                Il mio metodo è <strong>profondo e concreto:</strong> facciamo chiarezza
+                <strong>Il mio metodo è profondo e concreto:</strong> facciamo chiarezza
                 nei pensieri, troviamo nuovi gesti, rimedi e pratiche che puoi portare
                 nella tua vita di tutti i giorni. Credo che il <strong
                     >cambiamento</strong
                 > sia possibile solo se veramente <strong
-                    >radicato in ciò che desideri:</strong
-                > per questo lavoro sulla continuità, sulla pratica, sull'ascolto
-                e sulla connessione tra la mente e il corpo. L’obiettivo delle mie
+                    >radicato in ciò che desideri: per questo lavoro sulla continuità, sulla pratica, sull'ascolto
+                e sulla connessione tra la mente e il corpo.</strong
+                > L’obiettivo delle mie
                 sessioni è accompagnarti a trovare un senso di sicurezza, fare luce
                 su una situazione che stai vivendo. Ascoltarsi è l’unico modo per
                 smettere di delegare il proprio benessere e prendersi la propria
@@ -119,14 +133,14 @@ const base = import.meta.env.BASE_URL;
                 risposte più efficaci.
             </p>
             <p>
-                Ogni donna ha in sé la capacità di ritrovarsi, quando finalmente
-                si sente vista, sostenuta e accompagnata senza giudizio.
+                <strong>Ogni donna ha in sé la capacità di ritrovarsi, quando finalmente
+                si sente vista, sostenuta e accompagnata senza giudizio.</strong>
             </p>
 
             <SpacerIcon margin="4rem auto" width="600px" />
 
             <h2 class="section-title text-center">Qualcosa su di me</h2>
-            <p>Sono schietta e sincera, ma anche profondamente accogliente.</p>
+            <p><strong>Sono schietta e sincera, ma anche profondamente accogliente.</strong></p>
             <p>
                 Energica, curiosa, testarda. Amo i tempi lenti, cucinare (come
                 atto di cura e di piacere), viaggiare, avere persone a casa per
@@ -162,8 +176,8 @@ const base = import.meta.env.BASE_URL;
                         la cosmesi naturale, le erbe e gli olii essenziali.
                         Negli anni dell’università, mentre frequentavo
                         Sociologia nella facoltà di Scienze Politiche, ho
-                        incontrato per la prima volta anche lo yoga, le piante e
-                        gli oli essenziali. Un mondo che stava iniziando a
+                        incontrato per la prima volta anche <strong>lo yoga, le piante e
+                        gli oli essenziali.</strong> Un mondo che stava iniziando a
                         mandarmi un messaggio:
                         <strong>rallenta e respira</strong>. Osserva come ti
                         stai muovendo, tra ideologie, politica e lotte per
@@ -171,8 +185,8 @@ const base = import.meta.env.BASE_URL;
                     </p>
 
                     <p>
-                        Nel 2016 ho intrapreso la Scuola di Naturopatia SIMO,
-                        traducendo in competenze le mie passioni. Per anni ho
+                        <strong>Nel 2016 ho intrapreso la Scuola di Naturopatia SIMO,
+                        traducendo in competenze le mie passioni.</strong> Per anni ho
                         cercato il mio posto nel mondo: studi, corsi,
                         esperienze, trasformazioni interiori e passi indietro.
                         Ho lavorato nella Cooperazione Internazionale come
@@ -189,14 +203,18 @@ const base = import.meta.env.BASE_URL;
                         Devi Yoga, lo yoga del femminile, una pratica che
                         sostiene il corpo della donna nei suoi cambiamenti,
                         rispettando la
-                        <strong>ciclicità naturale</strong> e favorendo l’<strong>ascolto profondo</strong>.
-                        Inoltre la formazione in Yoga Nidra (lo yoga del sonno) mi ha fatto comprendere 
-                        quanto <strong>si possa portare pace con la parola</strong>. 
+                        <strong>ciclicità naturale</strong> e favorendo l’ascolto profondo.
+                        Inoltre la formazione in <strong>Yoga Nidra (lo yoga del sonno)</strong> mi ha fatto comprendere 
+                        quanto si possa <strong>portare pace con la parola</strong>. 
                     </p>
                     <p>
-                        Ho sentito sulla mia pelle che non potevo cambiare la
+                        <strong>Ho sentito sulla mia pelle che non potevo cambiare la
                         mia vita rimanendo nello stesso paradigma produttivo che
-                        volevo abbandonare. Quando ho lasciato il mio lavoro
+                        volevo abbandonare.</strong> 
+                        
+                      </p>
+                    <p>  
+                        Quando ho lasciato il mio lavoro
                         nella Cooperazione Internazionale, l’ho fatto con
                         immensa gratitudine per ciò che è stato: oggi racchiudo
                         tutta la mia esperienza — i viaggi, i progetti, lo
@@ -214,9 +232,9 @@ const base = import.meta.env.BASE_URL;
                 </div>
                 <div class="bio-extended-image">
                     <div class="bio-portrait-large">
-                        <img
-                            src={base + "marta-zola-hero.webp"}
-                            alt="Marta Zola - Studio"
+                        <Image
+                            src={bioImage}
+                            alt="Marta Zola"
                         />
                     </div>
                 </div>
@@ -306,9 +324,9 @@ const base = import.meta.env.BASE_URL;
     <BookCallBanner 
         title="Vuoi conoscermi meglio? Prenota uno spazio di ascolto conoscitivo gratuito di 30 minuti." 
         buttonText="PRENOTA ORA" 
-        buttonLink="/contatti"
+        buttonLink="/call-conoscitiva"
         showBottomDivider={false}
-        imgParallax="https://images.unsplash.com/photo-1523501859272-afa857e87881?q=80&w=1624&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        imgParallax={immagineAltare}
         overlayColor="var(--text-dark)"
     />
 </BaseLayout>

@@ -3,7 +3,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import LunarPhases from "../components/LunarPhases.astro";
 import WavyDivider from "../components/WavyDivider.astro";
 import BookCallBanner from "../components/BookCallBanner.astro";
+import QuoteSeed from '../components/QuoteSeed.astro';
+import { Image } from 'astro:assets';
+import { getImage } from "astro:assets";
+import heroImage from "../img/marta-zola-naturopatia-integrata-hero.jpg";
+import portrait from "../img/marta-zola-portrait.jpg";
+import slider1 from "../img/slider-mare.jpg";
+import slider2 from "../img/slider-costellazioni.jpg";
+import slider3 from "../img/slider-nuraghe.jpg";
+import slider4 from "../img/slider-utero.jpg"
+import radici from "../img/percorso-radici.jpg";
+import semina from "../img/incontro-prima-semina.jpg";
+import { object } from "astro:schema";
 const base = import.meta.env.BASE_URL;
+const opt1 = await getImage({src: slider1, width: 1400, format: 'webp', quality: 80});
+const opt2 = await getImage({src: slider2, width: 1400, format: 'webp', quality: 80});
+const opt3 = await getImage({src: slider3, width: 1400, format: 'webp', quality: 80});
+const opt4 = await getImage({src: slider4, width: 1400, format: 'webp', quality: 80});
 ---
 
 <BaseLayout title="Marta Zola | Naturopatia integrata per il benessere femminile">
@@ -18,10 +34,13 @@ const base = import.meta.env.BASE_URL;
             <div class="hero-container">
                 <div class="col-img">
                     <div class="arch-wrapper">
-                        <img
-                            src={base + "marta-zola-hero.webp"}
-                            alt="Marta Zola - Naturopatia"
+                        <Image
+                            src={heroImage}
+                            alt="Marta Zola - Naturopatia integrata e benessere femminile"
                             class="hero-arch-img"
+                            loading="eager"
+                            format="webp"
+                            quality="high"
                         />
                     </div>
                 </div>
@@ -33,10 +52,8 @@ const base = import.meta.env.BASE_URL;
                             rimetti radici in te stessa.
                         </h1>
                         <p class="hero-description">
-                            <b
-                                >Ciao, sono Marta. Benvenuta in uno spazio
-                                protetto.</b
-                            ><br />
+                            <b>Ciao, sono Marta. Benvenuta in uno spazio
+                                protetto.</b><br />
                             Grazie a un approccio di Naturopatia integrata ti accompagno a sentire le tue radici, per sentirti a casa nel corpo e nelle emozioni.
                         </p>
                         <div class="hero-actions">
@@ -56,9 +73,9 @@ const base = import.meta.env.BASE_URL;
             <div class="about-container">
                 <div class="about-image-col">
                     <div class="about-arch-wrapper">
-                        <img
-                            src={base + "marta-zola-oliva.jpg"}
-                            alt="Marta Zola"
+                        <Image
+                            src={portrait}
+                            alt="Marta Zola - Naturopatia integrata e benessere femminile"
                             class="about-img"
                         />
                     </div>
@@ -69,14 +86,18 @@ const base = import.meta.env.BASE_URL;
                         Naturopatia integrata per il benessere femminile
                     </h2>
                     <p class="section-text">
-                        Accompagno le donne a sentire le proprie radici, riscoprire i propri
-                         ritmi e sentirsi a casa nel corpo e nelle emozioni, attraverso un approccio integrato.
+                        <b>Aiuto le donne stanche e bloccate a ritrovare energia ed equilibrio</b> attraverso percorsi su misura che integrano corpo, emozioni e ciclicità.
                     </p>
                     <a href={base + "chi-sono"} class="btn-secondary"
-                        >Scopri la mia storia</a
+                        >Scopri chi sono</a
                     >
                 </div>
             </div>
+            <QuoteSeed 
+                quote="Con lei mi sono sentita accolta fin dal primo incontro e accompagnata in modo rispettoso e profondo." 
+                author="Giulia G." 
+                link={true}
+            />
         </section>
 
         <!-- CTA SECTION - DISCOVERY CALL -->
@@ -92,32 +113,32 @@ const base = import.meta.env.BASE_URL;
                 <div class="services-grid">
                     <a href={base + "servizi/percorso-radici"} class="service-card">
                         <div class="service-image-wrapper">
-                            <img
-                                src="https://images.unsplash.com/photo-1547401372-0ac4589c4d3e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9vdHN8ZW58MHx8MHx8fDI%3D"
-                                alt="Percorso Radici - Naturopatia"
-                                class="service-img"
-                            />
+                            <Image
+                            src={radici}
+                            alt="Percorso Radici"
+                            class="service-img"
+                        />
                         </div>
                         <h3 class="service-title">Percorso <br /> "Radici"</h3>
                         <p class="service-excerpt">
-                            Un percorso per radicarti in chi sei davvero e sentirti a 
-                            casa nel tuo corpo, nelle tue emozioni e nei tuoi ritmi
+                            <b>Ti senti stanca di rincorrere un equilibrio che ti sfugge?<br/>Un percorso di 5 incontri</b> per radicarti in chi sei davvero e sentirti a 
+                            casa nel tuo corpo, nelle tue emozioni e nei tuoi ritmi.
                         </p>
                         <span class="service-link">Dettagli →</span>
                     </a>
                     <a href={base + "servizi/incontro-la-prima-semina"} class="service-card">
                         <div class="service-image-wrapper">
-                            <img
-                                src="https://images.unsplash.com/photo-1731119414875-799ff8cdbbdd?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Incontro La prima semina - Floriterapia"
-                                class="service-img"
-                            />
+                            <Image
+                            src={semina}
+                            alt="Incontro La prima semina"
+                            class="service-img"
+                        />
                         </div>
                         <h3 class="service-title">
                             Incontro singolo <br />"La prima semina"
                         </h3>
                         <p class="service-excerpt">
-                            Un incontro per tornare a casa: nel corpo, nelle emozioni, in te stessa. Il punto di partenza di tutto.
+                            <b>Non sai da dove iniziare?<br/>Un incontro singolo di 90 minuti</b> per fare ordine e iniziare a sentirti a casa nel tuo corpo e nelle tue emozioni.
                         </p>
                         <span class="service-link">Dettagli →</span>
                     </a>
@@ -200,9 +221,19 @@ const base = import.meta.env.BASE_URL;
             </div>
         </section>
     </main>
+    <div style="position: fixed; bottom: 0; left: 0; width: 1px; height: 1px; opacity: 0.01; overflow: hidden; pointer-events: none;">
+    <img src={opt1.src} alt="" />
+    <img src={opt2.src} alt="" />
+    <img src={opt3.src} alt="" />
+    <img src={opt4.src} alt="" />
+    </div>
 </BaseLayout>
-
-<style>
+<style define:vars={{ 
+        url1: `url(${opt1.src})`, 
+        url2: `url(${opt2.src})`, 
+        url3: `url(${opt3.src})`, 
+        url4: `url(${opt4.src})` 
+    }}>
     /* --- COMMON / RESET --- */
     .home-main {
         margin: 0 !important;
@@ -240,28 +271,18 @@ const base = import.meta.env.BASE_URL;
     }
 
     .bg-left {
-        background: url("/mare.webp");
+        background-image: var(--url1);
         background-size: cover;
         background-position: center;
         animation: slideShow 15s infinite ease-in-out;
     }
 
     @keyframes slideShow {
-        0%,
-        30% {
-            background-image: url("/mare.webp");
-        }
-        33%,
-        63% {
-            background-image: url("/monstera.webp");
-        }
-        66%,
-        96% {
-            background-image: url("/nuraghe.webp");
-        }
-        100% {
-            background-image: url("/mare.webp");
-        }
+        0%, 20% { background-image: var(--url1); }
+        25%, 45% { background-image: var(--url2); }
+        50%, 70% { background-image: var(--url3); }
+        75%, 95% { background-image: var(--url4); }
+        100% { background-image: var(--url1); }
     }
 
     .bg-right {
@@ -332,6 +353,7 @@ const base = import.meta.env.BASE_URL;
         max-width: 450px;
         aspect-ratio: 0.65;
         border-radius: 300px 300px 4px 4px;
+        border: solid 2px var(--brand-gold);
         overflow: hidden;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }

@@ -2,6 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WavyDivider from "../components/WavyDivider.astro";
 import BookCallBanner from "../components/BookCallBanner.astro";
+import QuoteSeed from "../components/QuoteSeed.astro";
+import { Image } from 'astro:assets';
+import radici from "../img/percorso-radici.jpg";
+import semina from "../img/incontro-prima-semina.jpg";
+import pane from "../img/pane.jpg";
+
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -13,7 +19,7 @@ const base = import.meta.env.BASE_URL;
                 <h1 class="hero-title">I miei servizi</h1>
                 <p class="hero-description">
                     I miei servizi sono spazi di ascolto e cura. Ti accompagno a tradurre i messaggi del tuo corpo e a ritrovare il tuo ritmo naturale, 
-                    sia che tu cerchi un percorso completo, sia che tu abbia bisogno di un primo incontro come punto di partenza.
+                    sia che tu cerchi un <strong>percorso completo</strong>, sia che tu abbia bisogno di un <strong>primo incontro come punto di partenza.</strong>
                 </p>
             </div>
             <WavyDivider position="bottom" color="var(--accent-1-bg)" />
@@ -25,17 +31,21 @@ const base = import.meta.env.BASE_URL;
                 <div class="service-row">
                     <div class="service-image">
                         <div class="arch-wrapper-simple">
-                            <img src="https://images.unsplash.com/photo-1547401372-0ac4589c4d3e?w=900&auto=format&fit=crop" alt="Percorso Radici" />
+                             <Image
+                            src={radici}
+                            alt="Percorso Radici"
+                            class="service-img"
+                            />
                         </div>
                     </div>
                     <div class="service-info">
                         <span class="service-type">Percorso Individuale</span>
                         <h2 class="service-name">Percorso Radici</h2>
-                        <p>Un percorso di 4 incontri per radicarti in chi sei davvero e sentirti a casa nel tuo corpo, nelle tue emozioni e nei tuoi ritmi.</p>
+                        <p>Un percorso di 5 incontri per radicarti in chi sei davvero e sentirti a casa nel tuo corpo, nelle tue emozioni e nei tuoi ritmi.</p>
                         <ul class="service-features">
                             <li>4 incontri individuali da 90 minuti + follow-up</li>
                             <li>1 incontro di follow-up distante almeno un mese dai 4 incontri</li>
-                            <li>Anamnesi approfondita fisica ed emotiva</li>
+                            <li>Osservazione approfondita fisica ed emotiva</li>
                             <li>Tecniche integrate di naturopatia classica, riflessologia plantare, massaggi, embodiment, somatica, costellazioni familiari, coaching</li>
                             <li>“Parole medicina“ per l'ascolto profondo</li>
                             <li>Sintesi finale a ogni incontro con i punti cardine</li>
@@ -49,16 +59,20 @@ const base = import.meta.env.BASE_URL;
                 <div class="service-row reverse">
                     <div class="service-image">
                         <div class="arch-wrapper-simple">
-                            <img src="https://images.unsplash.com/photo-1731119414875-799ff8cdbbdd?q=80&w=1742" alt="La Prima Semina" />
+                            <Image
+                            src={semina}
+                            alt="Incontro La prima semina"
+                            class="service-img"
+                            />
                         </div>
                     </div>
                     <div class="service-info">
                         <span class="service-type">Incontro Singolo</span>
                         <h2 class="service-name">La prima semina</h2>
-                        <p>Un incontro per tornare a casa: nel corpo, nelle emozioni, in te stessa. Il punto di partenza di tutto.</p>
+                        <p>Un incontro singolo di 90 minuti per fare ordine e iniziare a sentirti a casa nel tuo corpo e nelle tue emozioni.</p>
                         <ul class="service-features">
                             <li>Incontro individuale di 90 minuti</li>
-                            <li>Anamnesi approfondita fisica ed emotiva</li>
+                            <li>Osservazione approfondita fisica ed emotiva</li>
                             <li>Osservazione integrata: naturopatia classica, riflessologia plantare, embodiment, somatica, coaching</li>
                             <li>“Parole medicina” per l'ascolto profondo</li>
                             <li>Sintesi finale con i punti cardine</li>
@@ -68,14 +82,21 @@ const base = import.meta.env.BASE_URL;
                 </div>
 
             </div>
+            <QuoteSeed 
+    quote="Le sedute sono una coccola per il corpo e la mente: con Marta si crea uno spazio di fiducia che permette di conoscersi meglio nel profondo." 
+    author="Eva C." 
+    link={true}
+/>
         </section>
 
         <BookCallBanner 
             title="Non sai quale servizio scegliere? Parliamone in una chiamata gratuita di 30 minuti."
             topDividerColor="var(--accent-1-bg)"
             showBottomDivider={false}
-            imgParallax="https://images.unsplash.com/photo-1557935366-8e0de57eb2cf?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            imgParallax={pane}
             overlayColor="var(--accent-4)"
+            buttonText="PRENOTA ORA" 
+            buttonLink="/call-conoscitiva"
         />
     </main>
 </BaseLayout>
