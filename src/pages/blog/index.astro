@@ -1,15 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import WavyDivider from "../../components/WavyDivider.astro";
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 
 const base = import.meta.env.BASE_URL;
 
-// Recuperiamo tutti gli articoli del blog che non sono contrassegnati come bozza (draft)
-// e li ordiniamo dal più recente al più vecchio
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+// Recuperiamo tutti gli articoli della collezione 'blog'
+const allPosts = await getCollection('blog');
+
+// Filtriamo le bozze e ordiniamo per data (dal più recente al più vecchio)
+const posts = allPosts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 ---
 
 <BaseLayout title="Blog - Spazi di Riflessione | Marta Zola">

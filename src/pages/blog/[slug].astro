@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content'; // 🌟 Aggiornato: importato 'render'
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import WavyDivider from '../../components/WavyDivider.astro';
 
@@ -9,19 +9,26 @@ const base = import.meta.env.BASE_URL;
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => ({
-    params: { slug: post.id },
+    params: { slug: post.id }, // Mantiene post.id per Astro 6
     props: { post },
   }));
 }
 
 // 2. Recupera i dati dell'articolo corrente
 const { post } = Astro.props;
-const { Content } = await post.render();
+
+// 3. 🌟 Nuova sintassi Astro 6 per estrarre il contenuto HTML
+const { Content } = await render(post);
+
 const pageTitle = `${post.data.title} | Marta Zola`;
+const pageDescription = post.data.description; // Recuperiamo la descrizione per i social
+const pageImage = post.data.heroImage.src;     // Recuperiamo il percorso immagine per i social
 ---
 
 <BaseLayout 
   title={pageTitle} 
+  description={pageDescription} 
+  image={pageImage}
 >
   <main>
     <header class="post-header">
