@@ -58,7 +58,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
                                     </time>
                                     <h2 class="card-title">{post.data.title}</h2>
                                     <p class="card-excerpt">{post.data.description}</p>
-                                    <a href={base + `blog/${post.slug}`} class="btn-link">
+                                    <a href={base + `blog/${post.id}`} class="btn-link">
                                         Leggi l'articolo <span class="arrow">→</span>
                                     </a>
                                 </div>
