@@ -1,0 +1,553 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WavyDivider from "../../components/WavyDivider.astro";
+import BookCallBanner from "../../components/BookCallBanner.astro";
+import QuoteSeed from "../../components/QuoteSeed.astro";
+import { getImage } from "astro:assets";
+import { Image } from 'astro:assets';
+
+// Importazioni immagini (assicurati che i file esistano o usa i tuoi fallback)
+import riflessologiaHero from "../../img/riflessologia.jpg"; 
+import percheRiflesso from "../../img/riflessologia-punto.jpg"; 
+import riflessologiaArco from "../../img/riflessologia-small.jpg";
+import gufo from "../../img/gufo.jpg";
+
+const base = import.meta.env.BASE_URL;
+
+const optimizedHeroBg = await getImage({
+  src: riflessologiaHero,
+  width: 900,
+  format: 'webp',
+  quality: 'high'
+});
+
+const inclusions = [
+    "<strong>Trattamento individuale</strong> focalizzato sui piedi come mappa del corpo.",
+    "Diagnosi energetica dei punti riflessi personalizzata",
+    "Integrazione id più tecniche al fine di trovare la via migliore per ciascuna",
+    "Spazio finale di ascolto, integrazione e restituzione verbale",
+    "Piccoli consigli di auto-trattamento"
+];
+
+const faqs = [
+    {
+        q: "Come si svolge una seduta di riflessologia plantare?",
+        a: "Ci prendiamo i primi momenti per fare il punto su di te e per accoglierti al meglio. Il trattamento si sposta poi sul lettino dove lavorerò sui punti riflessi del piede e alcuni punti di agopuntura con la digito pressione o la penna di cromopuntura. Uso diverse tecniche per cui la parte finale, a cui dedico un buon tempo, si svolge attraverso tecniche del massaggio ayurvedico. Concluderemo sempre con qualche minuto di riposo e ritorno da parte tua."
+    },
+    {
+        q: "Fa male? Cosa succede se ho i piedi molto sensibili?",
+        a: "Alcuni punti riflessi del corpo sul piede potrebbero risultare sensibili o reattivi, però il tocco sarà sempre calibrato e rispettoso della persona. L'obiettivo principale è ridurre l'attivazione del sistema nervoso e permetterti di ricaricarti."
+    },
+    {
+        q: "Quante sedute sono necessarie?",
+        a: `Dipende molto dal tuo obiettivo. Una singola seduta è un ottimo strumento di sblocco e rilassamento profondo. Se invece lavoriamo su un disturbo cronico o psicosomatico specifico (es. problemi intestinali, tensioni radicate, sonno disturbato, scompensi del ciclo), consiglio un ciclo iniziale di 4 o 5 sedute ravvicinate (settimanali o quindicinali) per dare continuità al corpo e avviare il processo di autoguarigione, per questo la riflessologia è anche all'interno del <a href="${base}servizi/percorso-radici">"Percorso Radici"</a>.`
+    },
+    {
+        q: "Ci sono controindicazioni?",
+        a: "La riflessologia non ha effetti collaterali, proprio perché in maniera naturale le aree riflesse di vari organi o tessuti del corpo, attivano solo processi di autoguarigione. Detto ciò non tratto donne nei primi mesi di gravidanza, persone con patologie molto gravi, con problematiche cutanee sul piede o meccaniche del piede stesso."
+    },
+    {
+        q: "Si può fare online?",
+        a: `No, la riflessologia plantare si può svolgere solo in presenza in un trattamento 1:1 a meno che non si tratti di un corso online sull'autotrattamento. Se sei interessata ad un percorso online, in cui attraverso pratiche somatiche di embodiment lavoriamo sul sistema nervoso, ti consiglio l'incontro <a href="${base}servizi/incontro-la-prima-semina">"La Prima Semina"</a> o il <a href="${base}servizi/percorso-radici">"Percorso Radici"</a>. Se hai dubbi contattami per una chiamata conoscitiva gratuita.`
+    }
+];
+const pageTitle = "Riflessologia Plantare | Marta Zola";
+const pageDescription = "Un dialogo profondo attraverso i piedi per sciogliere le tensioni, riequilibrare gli organi e riportare pace nel sistema nervoso.";
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+>
+    <main>
+        <section class="hero">
+            <div class="hero-bg">
+                <div class="bg-left"></div>
+                <div class="bg-right"></div>
+            </div>
+
+            <div class="hero-container">
+                <div class="col-img">
+                    <div class="arch-wrapper">
+                        <Image
+                            src={riflessologiaArco}
+                            alt="Trattamento di Riflessologia Plantare - Marta Zola"
+                            class="hero-arch-img"
+                            loading="eager"
+                            format="webp"
+                            quality="high"
+                        />
+                    </div>
+                </div>
+
+                <div class="col-text">
+                    <div class="text-content">
+                        <span class="section-overline">Trattamento in presenza</span>
+                        <h1 class="hero-title">
+                            Riflessologia Plantare
+                        </h1>
+                        <p class="hero-description">
+                            Un contatto coi piedi che ti fa mettere radici, senza forzare il corpo. Molte donne scoprono che liberando il piede, fluiscono emozioni, stanchezze trattenute e così il respiro si fa più ampio. Spesso ciò che si scioglie nei piedi trova spazio anche nel resto del corpo.
+                        </p>
+                        <div class="hero-meta">
+                            <span class="meta-item"><strong>Durata:</strong> Incontri individuali da 60 minuti</span>
+                            <span class="meta-item"><strong>Modalità:</strong> Esclusivamente in Presenza (Milano o Nuoro)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <WavyDivider position="bottom" color="var(--accent-1-bg)" />
+        </section>
+
+        <section class="for-whom">
+            <div class="container container-narrow">
+                <h2 class="section-title text-center">La riflessologia fa per te se...</h2>
+                
+                <div class="pain-narrative">
+                    <div class="pain-item">
+                        <div class="pain-icon"><span>01</span></div>
+                        <div class="pain-text">
+                            <p>Stai attraversando un periodo di stress, cambiamento o affaticamento e senti il bisogno di <strong>ritrovare equilibrio e centratura.</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="pain-item">
+                        <div class="pain-icon"><span>02</span></div>
+                        <div class="pain-text">
+                            <p>Vuoi dedicarti un momento in cui ti prendi <strong>cura di te</strong> e stai proprio cercando un <strong>punto di vista diverso.</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="pain-item">
+                        <div class="pain-icon"><span>03</span></div>
+                        <div class="pain-text">
+                            <p><strong>Vorresti comprendere meglio alcuni segnali che il tuo corpo continua a mandarti</strong> e osservare ciò che potrebbe esserci dietro a livello emotivo con una ricaduta sul benessere fisico.</p>
+                        </div>
+                    </div>
+
+                    <div class="pain-item">
+                        <div class="pain-icon"><span>04</span></div>
+                        <div class="pain-text">
+                            <p><strong>Sei conscia che la naturopata rilfessologa <strong>stimola i processi di autoguarigione</strong> portando "un’informazione” al corpo, </strong>non si tratta di una terapia medica.</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="pain-item">
+                        <div class="pain-icon"><span>05</span></div>
+                        <div class="pain-text">
+                            <p><strong>Cosa troverai in questo spazio:</strong></p>
+                            <ul>
+                                <li>Un tocco attento e professionale sui tuoi piedi</li>
+                                <li>L'unione fra più tecniche: la riflessologia moderna della Ingham, il metodo Zu basato sulla medicina tradizionale cinese e il tocco auyurvedico per far rilasciare ancora di più sistema nervoso</li>
+                                <li>Un tempo di silenzio e accoglienza sul lettino</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="approach-section">
+            <WavyDivider position="top" color="var(--accent-1-bg)" />
+            <div class="container grid-2">
+                <div class="approach-image">
+                    <Image
+                        src={percheRiflesso}
+                        alt="Riflessologia plantare metodo olistico - Marta Zola"
+                        class="img-rounded"
+                    />
+                </div>
+                
+                <div class="approach-text">
+                    <h2 class="section-title">La mappa che abbiamo sotto i piedi, le nostre radici a terra</h2>
+                    <p>I nostri piedi sostengono tutto il nostro peso, ci permettono di avanzare nel mondo e contengono più di 7.000 terminazioni nervose. Nella mia pratica non considero il piede come una parte anatomica a sé stante, ma come uno specchio di chi sei tu. <strong>Il piede è una delle mappe che possiamo usare per comprendere come stai</strong> e cammini verso di te.</p>
+                    <p>Attraverso il trattamento di riflessologia plantare unisco la precisione dei punti riflessi e la visione energetica della Medicina Tradizionale Cinese, oltre agli stimoli sui punti di agopuntura con la digito pressione o la cromopuntura. Questo significa che mentre tratto un punto sul tallone o sull'arcata plantare, stiamo parlando al tuo intestino, al tuo utero, al tuo fegato o al tuo diaframma contratto dallo stress; con l'obiettivo di inviare uno stimolo di "autoguarigione". La Riflessologia agisce in modo indiretto, cioè riflesso. Non è una terpaia. 
+                    Infine completano il mio approccio le manovre avvolgenti e calde della riflessologia ayurvedica così da farti sentire a casa e coi "piedi a terra". Durante il trattamento il corpo può entrare progressivamente in uno stato di profondo rilassamento, mentre emergono informazioni utili per comprendere meglio ciò che sta chiedendo attenzione.
+                    Spesso ciò che si scioglie nei piedi trova spazio anche nel resto del corpo.</p>
+                    <p>È un lavoro somatico che non va a sforzare il corpo. Molte donne scoprono che liberando il piede, fluiscono emozioni, stanchezze trattenute e così il respiro si fa più ampio lasciando una sensazione di stabilità e radicamento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <WavyDivider position="top" color="var(--bg-lighter)" />
+            <div class="container container-narrow">
+                <h2 class="section-title text-center">Come si sviluppa l'incontro</h2>
+                <p>Ogni seduta di riflessologia è un microcosmo di ascolto su misura. Anche se la tecnica si concentra sui piedi e su alcuni punti dei mediridiani cinesi, l'effetto avvolge l'intera persona.</p>
+                <div class="steps-wrapper">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>L'Accoglienza</h3>
+                            <p>Ci prendiamo qualche minuto per capire cosa ti ha portata da me.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Il Trattamento sul Lettino</h3>
+                            <p>Ti accomodi sul lettino. Attraverso manovre di apertura, sblocco articolare e digitopressioni mirate sui canali energetici e sulle zone riflesse, andiamo a stimolare il sistema nervoso e la circolazione. Per la parte ayurvedica uso solo oli naturali e se la persona lo gradisce anche oli essenziali.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>L'Integrazione e la Parola</h3>
+                            <p>Al termine del trattamento olistico ti lascio qualche istante per riposare e concludiamo con una breve restituzione e se arriveranno, anche delle parole che possono accompagnarti, delle parole medicina.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="container pricing-grid">
+                <div class="pricing-card">
+                    <h2 class="section-title">Singolo Trattamento</h2>
+                    <ul class="inclusions-list">
+                        {inclusions.map(item => <li set:html={item}></li>)}
+                    </ul>
+                    <div class="price-box">
+                        <span class="price">€ 70,00</span>
+                        <p class="payment-info">Durata della seduta: circa 60 minuti</p>
+                    </div>
+                    <a href={base + "contatti"} class="btn-primary-neg">Prenota un trattamento</a>
+                </div>
+
+                <div class="pricing-description">
+                    <div class="desc-block">
+                        <p class="lead-text">Il tuo corpo sa: metti radici a terra attraverso i tuoi piedi.</p>
+                        <p>Puoi scegliere di regalarti una seduta singola come spazio di totale scarico dello stress e rigenerazione somatica, oppure strutturare un percorso più mirato in più sedute.</p>
+                    </div>
+
+                    <div class="location-info">
+                        <!--
+                        <h3>Dove trovarmi</h3>
+                        <p>I trattamenti di riflessologia plantare e i massaggi corporei integrati avvengono esclusivamente in presenza per garantire la corretta interazione somatica e l'efficacia del tocco.</p>
+                        -->
+                        
+                        <div class="modality-grid">
+                            <div class="modality">
+                                <h4>Il mio Studio</h4>
+                                <p>Ti accolgo in uno spazio protetto, accogliente e silenzioso a <strong>Milano o Nuoro</strong>, progettato per favorire il rilassamento sensoriale e il ritorno all'ascolto profondo di te.</p>
+                            </div>
+                            <div class="modality">
+                                <h4>Percorsi Ciclici</h4>
+                                <p>Se decidi di impostare un ciclo di trattamenti per consolidare i risultati ottenuti, struttureremo un calendario flessibile e uno sconto sul pacchetto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trial-cta">
+            <div class="container container-narrow text-center">
+                <div class="trial-box">
+                    <p class="trial-text">
+                        Desideri affiancare al lavoro corporeo della riflessologia un percorso più profondo di cambiamento emotivo, coaching dell'anima e naturopatia a 360 gradi?
+                    </p>
+                    <a href={base + "servizi/percorso-radici"} class="btn-primary">Scopri il percorso completo Radici</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <WavyDivider position="top" color="var(--bg-light)" />
+            <div class="container container-narrow">
+                <h2 class="section-title text-center">Domande Frequenti</h2>
+                <div class="faq-list">
+                    {faqs.map(faq => (
+                        <details class="faq-item">
+                            <summary>{faq.q}</summary>
+                            <div class="faq-answer"><p set:html={faq.a} /></p></div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <BookCallBanner 
+            title="Hai dubbi o vuoi capire se la riflessologia può aiutarti per un tuo disturbo specifico? Parliamone a voce." 
+            topDividerColor="var(--bg-lighter)"
+            showBottomDivider={false}
+            imgParallax={gufo}
+            buttonText="PRENOTA LA CALL" 
+            buttonLink="/call-conoscitiva"
+        />
+    </main>
+</BaseLayout>
+
+<style define:vars={{ sfondoRiflesso: `url(${riflessologiaHero.src})` }}>
+    section {
+        padding: 5rem 1.5rem;
+        position: relative;
+    }
+
+    /* HERO */
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 37% 63%;
+        z-index: 1;
+    }
+
+    .bg-left {
+        background-image: var(--sfondoRiflesso);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .bg-right {
+        background-color: var(--bt-light);
+    }
+
+    .hero-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: var(--container-width);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 38% 62%;
+        padding: 60px 0;
+    }
+
+    .col-img {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .arch-wrapper {
+        width: 55%;
+        max-width: 500px;
+        aspect-ratio: 0.65;
+        border-radius: 300px 300px 5px 5px;
+        overflow: hidden;
+        transform: translateX(20%);
+        border: solid 2px var(--brand-gold);
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-arch-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .col-text {
+        display: flex;
+        align-items: center;
+        padding-left: 12%;
+        padding-right: 5%;
+    }
+
+    .text-content {
+        max-width: 600px;
+    }
+
+    .hero-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 2rem;
+        font-size: 1rem;
+        color: var(--brand-primary);
+        border-left: 2px solid var(--brand-gold);
+        padding-left: 1.5rem;
+    }
+
+    .meta-item strong {
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        margin-right: 5px;
+    }
+
+    /* PAIN POINTS */
+    .for-whom {
+        background-color: var(--accent-1-bg);
+    }
+    .pain-narrative {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .pain-item {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        padding: 2rem;
+        background: white;
+        border-radius: 4px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-left: 4px solid var(--brand-gold);
+    }
+
+    .pain-icon {
+        flex-shrink: 0;
+        font-family: var(--font-headings);
+        color: var(--brand-gold);
+        font-weight: bold;
+        font-size: 1.2rem;
+        opacity: 0.6;
+    }
+
+    .pain-text p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .pain-text ul {
+        margin: 1rem 0 0 0;
+        padding-left: 1.2rem;
+    }
+
+    .pain-text li {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+
+    /* APPROACH */
+    .approach-section { background-color: var(--bg-lighter);}
+    .grid-2 { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; margin:0 auto; padding: 0 1.5rem; max-width: var(--container-width);}
+    .img-rounded { border-radius: 300px 300px 4px 4px; width: 100%; border: solid 2px var(--brand-gold);}
+
+    /* STEPS */
+    .step-content h3 {
+        color: var(--brand-primary);
+    }
+    .steps-wrapper { max-width: 800px; margin: 4rem auto 0; }
+    .step { display: flex; gap: 2rem; margin-bottom: 3rem; }
+    .step-number { 
+        background: var(--brand-gold); color: white; 
+        width: 50px; height: 50px; border-radius: 50%; 
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-headings); flex-shrink: 0;
+    }
+
+    /* PRICING */
+    .inclusions-list { text-align: left; margin: 2rem 0; list-style: none; padding: 0; }
+    .inclusions-list li::before { content: "✓"; color: var(--brand-gold); margin-right: 10px; font-weight: bold; }
+    .price { font-size: 3rem; font-family: var(--font-headings); display: block; margin: 2rem 0 0.5rem; }
+
+    .pricing-section {
+        padding: 0rem 1.5rem 5rem 0rem;
+        background-color: var(--bg-light);
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 5rem;
+        align-items: start;
+        max-width: var(--container-width);
+        margin: 0 auto;
+    }
+
+    .pricing-card { 
+        background: var(--brand-primary); 
+        color: var(--bg-light); 
+        padding: 3rem 3rem; 
+        border-radius: 12px; 
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 50px;
+    }
+
+    .pricing-card .section-title {
+        color: var(--bg-light);
+    }
+
+    .pricing-description {
+        color: var(--text-dark);
+    }
+
+    .lead-text {
+        font-family: var(--font-headings);
+        font-size: 1.25rem;
+        color: var(--brand-primary);
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .location-info h3 {
+        font-family: var(--font-headings);
+        font-size: 2rem;
+        color: var(--brand-primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .modality-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .modality h4 {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        color: var(--brand-gold);
+        margin: 0;
+        margin-bottom: .7rem;
+    }
+
+    .trial-cta {
+        background-color: var(--bg-light);
+        padding-top: 0;
+    }
+
+    .trial-text {
+        font-size: 1.1rem;
+        color: var(--brand-primary);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-section { padding: 6rem 0; background: var(--bg-lighter); }
+    .faq-item { background: var(--bg-light); margin-bottom: 1rem; border-radius: 8px; overflow: hidden; }
+    summary { padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--brand-primary); outline: none; }
+    .faq-answer { padding: 0 1.5rem 1.5rem; }
+
+    @media (max-width: 768px) {
+        section { padding: 3rem 1rem; }
+        .hero { min-height: auto; }
+        .hero-bg { grid-template-columns: 1fr; grid-template-rows: 40% 60%; }
+        .hero-container { grid-template-columns: 1fr; padding: 40px 1rem; text-align: center; }
+        .col-img { justify-content: center; margin-bottom: 2rem; }
+        .arch-wrapper { width: 65%; transform: translateX(0); }
+        .col-text { padding: 0; }
+        .hero-meta { align-items: center; border-left: none; border-top: 2px solid var(--brand-gold); padding-left: 0; padding-top: 1.5rem; }
+        .pain-item { gap: 1rem; padding: 1.5rem; }
+        .grid-2, .pricing-grid, .modality-grid { grid-template-columns: 1fr !important; gap: 2rem; }
+        .pricing-section { padding: 3rem 1rem; }
+        .pricing-card { position: relative; top: 0; padding: 2rem 1.5rem; order: 2; }
+        .pricing-description { order: 1; }
+        .price { font-size: 2.5rem; }
+        .step { flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
+    }
+</style>

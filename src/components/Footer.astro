@@ -54,7 +54,10 @@ const base = import.meta.env.BASE_URL;
             <p class="legal-disclaimer">Le pratiche proposte hanno finalità di accompagnamento e benessere e non sostituiscono diagnosi, terapie o il rapporto con il medico o altri professionisti della salute.<br/>
                 In caso di necessità, rivolgiti sempre a un professionista sanitario qualificato.</p>
             <p>&copy; {year} Marta Zola. Tutti i diritti riservati.</p>
-        </div>
+            </div>
+            <div class="footer-madeby">
+                <p>Designed and built with ❤️ by <a href="https://micheleocchi.com" target="_blank" rel="noopener noreferrer">Michele &omacr;cchi</a></p>
+            </div>
     </div>
 </footer>
 
@@ -200,6 +203,20 @@ const base = import.meta.env.BASE_URL;
 
     .legal-disclaimer{
         font-size:12px;
+    }
+    .footer-madeby {
+        margin-top: 2rem;
+        font-size: 0.7rem;
+        opacity: 0.6;
+        text-align: center;
+    }
+    .footer-madeby a {
+        color: var(--bg-light);
+        text-decoration: underline;
+    }
+
+    .footer-madeby a:hover {
+        color: var(--brand-gold);
     }
 
 

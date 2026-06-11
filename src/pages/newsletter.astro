@@ -2,9 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WavyDivider from "../components/WavyDivider.astro";
 const base = import.meta.env.BASE_URL;
+const pageTitle = "Iscriviti alla newsletter Semi | Marta Zola";
+const pageDescription = "La mia newsletter con consigli, riflessioni e pillole di Naturopatia.";
 ---
 
-<BaseLayout title="Iscriviti a Semi | Marta Zola">
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+>
     <main class="newsletter-landing">
         <section class="nl-hero">
             <div class="container-narrow text-center">

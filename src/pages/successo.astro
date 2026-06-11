@@ -2,9 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WavyDivider from "../components/WavyDivider.astro";
 const base = import.meta.env.BASE_URL;
+const pageTitle = "Messaggio inviato | Marta Zola";
 ---
 
-<BaseLayout title="Messaggio Inviato | Marta Zola">
+<BaseLayout 
+  title={pageTitle} 
+>
     <main class="success-page">
         <section class="success-hero">
             <div class="container-narrow text-center">

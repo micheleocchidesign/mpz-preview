@@ -12,6 +12,8 @@ import slider1 from "../img/slider-mare.jpg";
 import slider2 from "../img/slider-costellazioni.jpg";
 import slider3 from "../img/slider-nuraghe.jpg";
 import slider4 from "../img/slider-utero.jpg"
+import slider5 from "../img/slider-dea.jpg";
+import slider6 from "../img/slider-mani.jpg";
 import radici from "../img/percorso-radici.jpg";
 import semina from "../img/incontro-prima-semina.jpg";
 import { object } from "astro:schema";
@@ -20,9 +22,14 @@ const opt1 = await getImage({src: slider1, width: 1400, format: 'webp', quality:
 const opt2 = await getImage({src: slider2, width: 1400, format: 'webp', quality: 80});
 const opt3 = await getImage({src: slider3, width: 1400, format: 'webp', quality: 80});
 const opt4 = await getImage({src: slider4, width: 1400, format: 'webp', quality: 80});
+const opt5 = await getImage({src: slider5, width: 1400, format: 'webp', quality: 80});
+const opt6 = await getImage({src: slider6, width: 1400, format: 'webp', quality: 80});
+const pageTitle = "Marta Zola | Naturopatia integrata e benessere femminile";
 ---
 
-<BaseLayout title="Marta Zola | Naturopatia integrata per il benessere femminile">
+<BaseLayout 
+  title={pageTitle}
+>
     <main class="home-main">
         <!-- HERO SECTION -->
         <section class="hero">
@@ -226,13 +233,17 @@ const opt4 = await getImage({src: slider4, width: 1400, format: 'webp', quality:
     <img src={opt2.src} alt="" />
     <img src={opt3.src} alt="" />
     <img src={opt4.src} alt="" />
+    <img src={opt5.src} alt="" />
+    <img src={opt6.src} alt="" />
     </div>
 </BaseLayout>
 <style define:vars={{ 
         url1: `url(${opt1.src})`, 
         url2: `url(${opt2.src})`, 
         url3: `url(${opt3.src})`, 
-        url4: `url(${opt4.src})` 
+        url4: `url(${opt4.src})`,
+        url5: `url(${opt5.src})`,
+        url6: `url(${opt6.src})`
     }}>
     /* --- COMMON / RESET --- */
     .home-main {
@@ -274,16 +285,25 @@ const opt4 = await getImage({src: slider4, width: 1400, format: 'webp', quality:
         background-image: var(--url1);
         background-size: cover;
         background-position: center;
-        animation: slideShow 15s infinite ease-in-out;
+        animation: slideShow 18s infinite ease-in-out;
     }
 
     @keyframes slideShow {
-        0%, 20% { background-image: var(--url1); }
-        25%, 45% { background-image: var(--url2); }
-        50%, 70% { background-image: var(--url3); }
-        75%, 95% { background-image: var(--url4); }
-        100% { background-image: var(--url1); }
-    }
+    /* Foto 1 */
+    0%, 13.33% { background-image: var(--url1); }
+    /* Foto 2 */
+    16.66%, 30% { background-image: var(--url2); }
+    /* Foto 3 */
+    33.33%, 46.66% { background-image: var(--url3); }
+    /* Foto 4 */
+    50%, 63.33% { background-image: var(--url4); }
+    /* Foto 5 */
+    66.66%, 80% { background-image: var(--url5); }
+    /* Foto 6 */
+    83.33%, 96.66% { background-image: var(--url6); }
+    /* Ritorno alla Foto 1 */
+    100% { background-image: var(--url1); }
+}
 
     .bg-right {
         background-color: var(--accent-3);

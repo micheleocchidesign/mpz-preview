@@ -2,11 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WavyDivider from "../components/WavyDivider.astro";
 const base = import.meta.env.BASE_URL;
+const pageTitle = "Contatti - Marta Zola";
+const pageDescription = "Contattami per richiedere informazioni sui miei servizi o prenotare una call conoscitiva gratuita.";
 ---
 
 <BaseLayout 
-    title="Contatti | Marta Zola" 
-    description="Inizia il tuo percorso di benessere. Scrivimi per informazioni o per prenotare una consulenza."
+  title={pageTitle} 
+  description={pageDescription} 
 >
     <main class="contact-page">
         <section class="contact-hero">

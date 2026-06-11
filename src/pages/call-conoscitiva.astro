@@ -3,9 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import WavyDivider from "../components/WavyDivider.astro";
 import LunarPhases from "../components/LunarPhases.astro";
 const base = import.meta.env.BASE_URL;
+const pageTitle = "Spazio di Ascolto Conoscitivo | Marta Zola";
+const pageDescription = "Un incontro gratuito di 30 minuti per chi desidera un primo momento di ascolto.";
 ---
 
-<BaseLayout title="Spazio di Ascolto Conoscitivo | Marta Zola">
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription} 
+>
     <main class="call-page">
         <section class="call-hero">
             <div class="container-narrow text-center">

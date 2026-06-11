@@ -5,14 +5,19 @@ import "../styles/tokens.css";
 import "../styles/global.css";
 
 interface Props {
-    title?: string;
-    description?: string;
+  title: string;
+  description?: string;
+  image?: string;
 }
 
 const {
     title = "Marta Zola - Naturopata",
-    description = "Consulenze di naturopatia per il tuo benessere naturale.",
+    description = "Naturopatia integrata per il benessere femminile",
+    image = "/img/social-share.jpg"
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -27,8 +32,22 @@ const {
         <meta name="apple-mobile-web-app-title" content="Marta Zola" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="generator" content={Astro.generator} />
-        <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL} />
         <title>{title}</title>
+        <meta name="description" content={description} />
+        
+         <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={imageURL} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={imageURL} />
 
          <!-- MailerLite Universal -->
         <script>
@@ -48,5 +67,28 @@ const {
             /* Global styles can be added here if needed, 
 	   but they are mostly in tokens.css */
         </style>
+        <script is:inline>
+            document.addEventListener('copy', (e) => {
+                // 1. Trova l'elemento da cui l'utente sta cercando di copiare
+                const target = e.target;
+
+                // 2. Se sta copiando da un input/textarea, da un link email (mailto) o telefonico (tel), lascialo fare
+                if (
+                target.tagName === 'INPUT' || 
+                target.tagName === 'TEXTAREA' || 
+                target.closest('a[href^="mailto:"]') || 
+                target.closest('a[href^="tel:"]') ||
+                target.closest('.footer-vat') ||
+                target.closest('.permetti-copia') // Classe jolly che puoi usare dove vuoi
+                ) {
+                return; // Interrompe lo script e permette la copia normale
+                }
+
+                // 3. Per tutto il resto del sito, sostituisci il testo
+                //const testoAlternativo = "Copia non permessa";
+                //e.clipboardData.setData('text/plain', testoAlternativo);
+                //e.preventDefault();
+            });
+            </script>
     </body>
 </html>

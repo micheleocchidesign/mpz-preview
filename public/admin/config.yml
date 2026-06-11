@@ -1,0 +1,43 @@
+local_backend: true
+# Configurazione del backend (Decap si collegherà a GitHub tramite Netlify)
+backend:
+  name: git-gateway
+  branch: main # Sostituisci con "master" se il tuo branch principale si chiama così
+
+# Dove Decap salva i file sul tuo Mac quando li carichi dal pannello
+media_folder: "src/img/blog"
+
+# Il percorso esatto che Decap deve scrivere nel file .md (Astro lo adorerà)
+public_folder: "../../img/blog"
+
+# Configurazione della collezione del Blog
+collections:
+  - name: "blog"
+    label: "Articoli Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Breve Descrizione (Anteprima)", name: "description", widget: "text" }
+      - { label: "Data di Pubblicazione", name: "pubDate", widget: "datetime" }
+      - { label: "Immagine di Copertina", name: "heroImage", widget: "image" }
+      - { label: "Categoria", name: "category", widget: "select", options: ["Naturopatia", "Riflessologia", "Benessere Femminile", "Inspirazione"] }
+      - { label: "Bozza", name: "draft", widget: "boolean", default: false }
+      - label: "Testo dell'Articolo"
+        name: "body"
+        widget: "markdown"
+        minimal: false
+        buttons:
+          - bold
+          - italic
+          - link
+          - heading-two
+          - heading-three
+          - bulleted-list
+          - numbered-list
+          - quote
+        editor_components:
+          - image

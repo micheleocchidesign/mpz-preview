@@ -6,12 +6,16 @@ import QuoteSeed from "../components/QuoteSeed.astro";
 import { Image } from 'astro:assets';
 import radici from "../img/percorso-radici.jpg";
 import semina from "../img/incontro-prima-semina.jpg";
+import riflessologia from "../img/riflessologia.jpg";
 import pane from "../img/pane.jpg";
 
 const base = import.meta.env.BASE_URL;
+const pageTitle = "I miei servizi | Marta Zola";
 ---
 
-<BaseLayout title="I miei Servizi - Marta Zola">
+<BaseLayout 
+  title={pageTitle} 
+>
     <main>
         <section class="services-hero">
             <div class="container-narrow text-center">
@@ -78,6 +82,33 @@ const base = import.meta.env.BASE_URL;
                             <li>Sintesi finale con i punti cardine</li>
                         </ul>
                         <a href={base + "servizi/incontro-la-prima-semina"} class="btn-primary">Dettagli incontro</a>
+                    </div>
+                </div>
+
+                <hr class="service-divider" />
+
+                <div class="service-row">
+                    <div class="service-image">
+                        <div class="arch-wrapper-simple">
+                            <Image
+                            src={riflessologia}
+                            alt="Trattamento di Riflessologia Plantare"
+                            class="service-img"
+                            />
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <span class="service-type">Trattamento in presenza</span>
+                        <h2 class="service-name">Riflessologia Plantare</h2>
+                        <p>Un contatto coi piedi che ti fa mettere radici, senza forzare il corpo. Molte donne scoprono che liberando il piede, fluiscono emozioni, stanchezze trattenute e così il respiro si fa più ampio. Spesso ciò che si scioglie nei piedi trova spazio anche nel resto del corpo.</p>
+                        <ul class="service-features">
+                            <li>Trattamento individuale di 60 minuti</li>
+                            <li>Diagnosi energetica personalizzata dei punti riflessi</li>
+                            <li>Integrazione di più tecniche al fine di trovare la via migliore per ciascuna</li>
+                            <li>Spazio finale di ascolto, integrazione e restituzione verbale</li>
+                            <li>Piccoli consigli di auto-trattamento</li>
+                        </ul>
+                        <a href={base + "servizi/riflessologia-plantare"} class="btn-primary">Scopri il trattamento</a>
                     </div>
                 </div>
 

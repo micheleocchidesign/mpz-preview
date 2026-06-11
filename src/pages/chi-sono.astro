@@ -10,11 +10,65 @@ import bioImage from "../img/marta-zola-bio.jpg";
 import immagineAltare from "../img/altare.jpg";
 import { object } from "astro:schema";
 const base = import.meta.env.BASE_URL;
+// Array strutturato per la formazione
+const formazione = [
+  {
+    title: "Formazione in corso di coaching dell’Anima - coaching evolutivo",
+    subtitle: "Luna scuola di coaching per l’Anima",
+    description: "Certificazione Professionale accreditata come formazione di Livello 1 e 2 da parte della Federazione Internazionale di Coaching (ICF). LUNA è una Scuola di Coaching, ha un approccio integrato e trasformativo che considera la persona nella sua interezza: mente, corpo, anima; e accoglie la complessità dell’esperienza umana. È un approccio trauma-informed, somatico, evolutivo ed anche spirituale e al contempo profondamente ancorato alla vita concreta, quotidiana, reale.",
+    date: "2025 / 2027",
+    highlight: true // Per dare un leggero accento visivo al corso attuale
+  },
+  {
+    title: "Formazione completa Insegnanti Yoga - Hatha Yoga",
+    subtitle: "Diploma della Scuola LIBERA SCUOLA DI HATHA YOGA HAMSA. Certificazione CONI tramite CSAIn - WEPA",
+    description: "Il corso insegnanti è strutturato in 7 moduli in funzione del sistema dei 7 Chakra evolutivi - con esercizi specifici e mirati per ogni livello, Asana, Pranayama, Mudra, Bandha, tecniche di visualizzazione, rilassamento e meditazione - e segue la metodologia del Pranayoga Method® di Maurizio Morelli. 300 ore di formazione",
+    date: "2023 / 2024"
+  },
+  {
+    title: "Diploma in Naturopatia con specializzazione in Fitocomplementi",
+    subtitle: "SIMO - Scuola Italiana di Medicina Olistica e di Naturopatia",
+    description: "1600 ore di formazione, di cui 270 in fitocomplementi. Riflessologia plantare (ad oggi con contratto di co-docenza). Cromopuntura secondo la Medicina tradizionale cinese con stage aggiuntivo di 60 ore.",
+    date: "2016 / 2021"
+  },
+  {
+    title: "Diploma operatrice olistica benessere femminile e attestato facilitatrice in costellazioni familiari sistemiche secondo Bert Hellinger",
+    subtitle: "La scuola del Sacro Femminile, oggi Benessere Femminile, affiliata all'associazione Fenoop.",
+    description: "Diploma operatrice olistica 250 ore ECP 157. Attestato facilitatrice costellazioni familiari 750 ore ECP 142",
+    date: "2021 / 2025"
+  },
+  {
+    title: "Corso SHRI DEVI YOGA I e II - Lo yoga del sacro femminile",
+    subtitle: "Presso RAMA YOGA con certificazione YOGA ALLIANCE ITALIA. Insegnante Lila Devi Marialaura Bonfanti.",
+    description: "Lo Shri Devi Yoga è un percorso che affonda le sue radici nello Shaktismo e nel Tantrismo Non Duale, incentrato sul culto del divino femminile. E’ una pratica di riconnessione con il proprio corpo e la natura.  Asana, mudra e kriya si incontrano per una pratica completa. 160 ore di formazione certificate YOGA ALLIANCE ITALIA insegnante Lila Devi Marialaura Bonfanti",
+    date: "2021"
+  },
+  {
+    title: "Corso YOGA NIDRA - Lo yoga del sonno",
+    subtitle: "Presso RAMA YOGA con certificazione YOGA ALLIANCE ITALIA. Insegnante Lila Devi Marialaura Bonfanti.",
+    description: "o Yoga Nidra è una pratica accessibile a tutti ed è particolarmente adatta nei momenti in cui si ha bisogno di recuperare energia e calma. Non richiede niente, se non lo stare sdraiati sul tappetino mentre si viene guidati con la voce. 60 ore di formazione certificate",
+    date: "2022"
+  },
+  {
+    title: "Corso intensivo Riflessologia Plantare Zu",
+    subtitle: "Zu Center",
+    description: "Centro Specialistico per lo Studio e l’Applicazione della Reflessologia del Piede è stato il primo centro in Italia a operare ufficialmente. Corso intensivo e aggiornamento Professionale Riflessologia Plantare Zu riservato agli operatori delle Discipline Bionaturali. Identificazione Aree Riflesse Sensibili, tecniche di massaggio,morfologia psicosomatica riflessa e diagnostica morfologica. 150 ore",
+    date: "2019/2020"
+  },
+  {
+    title: "Corso 1°anno operatore professionale di tuina",
+    subtitle: "IOME - Istituto Orientale di Medicina Energetica",
+    description: "Corso con 12 ore di ANATOMIA, 24 ore di MEDICINA TRADIZIONALE CINESE, 60 ore di PRATICA GUIDATA MASSAGGIO TRADIZIONALE CINESE TUINA. Il massaggio tradizionale cinese TUINA è una delle Discipline Bio Naturali (D.B.N.) riconosciute dal Comitato Tecnico Scientifico di Regione Lombardia.",
+    date: "2018/2019"
+  }
+];
+const pageTitle = "Chi sono | Marta Zola";
+const pageDescription = "Accompagno le donne a sentire le proprie radici, riscoprire i propri ritmi e sentirsi a casa nel corpo e nelle emozioni, attraverso un approccio integrato.";
 ---
 
-<BaseLayout
-    title="Chi Sono - Marta Zola"
-    description="Scopri il mio approccio alla naturopatia integrata per il benessere femminile."
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription} 
 >
     <!-- HERO SECTION -->
     <section class="about-hero">
@@ -251,6 +305,38 @@ const base = import.meta.env.BASE_URL;
         <WavyDivider position="bottom" color="var(--bg-light)" />
     </section>
 
+    <!-- FORMAZIONE -->
+    <section class="education-section">
+        <div class="container container-narrow">
+            <div class="education-intro text-center">
+                <span class="section-overline">Radici e Competenze</span>
+                <h2 class="section-title">Il mio percorso formativo</h2>
+                <p class="education-lead">
+                    Il mio lavoro nasce da un percorso fatto di ricerca, esperienza e trasformazione personale.
+La mia formazione in Sociologia sotto Scienze Politiche e un passato come project manager nel sanitario nella Cooperazione Internazionale hanno arricchito il mio sguardo sulla persona e sui sistemi, e non posso che esserne grata. 
+Integro naturopatia, coaching, tecniche corporee e yoga con uno sguardo sistemico ispirato alle costellazioni familiari; continuo a formarmi per offrire uno spazio sempre più profondo a me e alle persone che incontro.
+
+                </p>
+            </div>
+
+            <div class="education-timeline">
+                {formazione.map((item) => (
+                    <div class={`education-item ${item.highlight ? 'is-current' : ''}`}>
+                        <div class="education-meta">
+                            <span class="education-date">{item.date}</span>
+                            {item.highlight && <span class="current-badge">In corso</span>}
+                        </div>
+                        <div class="education-card">
+                            <h3>{item.title}</h3>
+                            <h4>{item.subtitle}</h4>
+                            {item.description && <p>{item.description}</p>}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
     <!-- COSA MI GUIDA SECTION -->
     <section class="values-section">
         <div class="container">
@@ -460,6 +546,121 @@ const base = import.meta.env.BASE_URL;
             border-left: none;
             border-top: 4px solid var(--brand-gold);
         }
+    }
+    /* --- EDUCATION SECTION --- */
+    .education-section {
+        padding: 6rem 1.5rem;
+        background-color: var(--bg-light);
+    }
+
+    .education-intro {
+        max-width: 750px;
+        margin: 0 auto 4rem;
+    }
+
+    .education-lead {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-dark);
+        margin-top: 1.5rem;
+    }
+
+    .education-timeline {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        padding-left: 2rem;
+        border-left: 2px solid var(--accent-3); /* La linea verticale dell'albero */
+    }
+
+    .education-item {
+        position: relative;
+        margin-bottom: 3rem;
+    }
+
+    .education-item:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Il "punto/seme" sulla linea temporale */
+    .education-item::before {
+        content: "";
+        position: absolute;
+        left: calc(-2rem - 7px);
+        top: 6px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--brand-gold);
+        border: 2px solid var(--bg-light);
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    /* Stile speciale per il corso attivo */
+    .education-item.is-current::before {
+        background-color: var(--brand-primary);
+        transform: scale(1.3);
+        box-shadow: 0 0 0 4px var(--accent-3);
+    }
+
+    .education-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .education-date {
+        font-family: var(--font-headings);
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--brand-primary);
+        letter-spacing: 1px;
+    }
+
+    .current-badge {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        background-color: var(--brand-gold);
+        color: white;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .education-card {
+        background: var(--bg-lighter);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .education-card h3 {
+        font-family: var(--font-headings);
+        font-size: 1.35rem;
+        color: var(--brand-primary);
+        margin: 0 0 0.4rem 0;
+        line-height: 1.4;
+    }
+
+    .education-card h4 {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin: 0 0 0.8rem 0;
+        opacity: 0.9;
+    }
+
+    .education-card p {
+        font-size: 0.98rem;
+        line-height: 1.6;
+        color: var(--text-dark);
+        margin: 0;
+        opacity: 0.85;
     }
 
     /* VALUES SECTION */
