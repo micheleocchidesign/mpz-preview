@@ -1,14 +1,17 @@
 import { defineCollection, z } from 'astro:content';
+// In Astro 6 è obbligatorio importare il loader per i file locali
+import { glob } from 'astro/loaders'; 
 
-// Definiamo la collezione del Blog
+// Definiamo la collezione del Blog adattata ad Astro 6
 const blogCollection = defineCollection({
-  type: 'content',
+  // Il loader sostituisce il vecchio "type: 'content'" e dice ad Astro dove cercare i file
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/blog" }),
   schema: ({ image }) => z.object({
     title: z.string(),                                      // Titolo dell'articolo
     description: z.string(),                                // Breve riassunto per l'anteprima
     pubDate: z.coerce.date(),                               // Data di pubblicazione
     heroImage: image(),                                     // Immagine di copertina (ottimizzata da Astro)
-    category: z.enum(['Naturopatia', 'Riflessologia', 'Benessere Femminile', 'Inspirazione']), // Le tue categorie
+    category: z.enum(['Naturopatia', 'Riflessologia', 'Benessere Femminile', 'Inspirazione']), // Le tue categorie salvate!
     draft: z.boolean().default(false),                      // Stato di bozza
   }),
 });
