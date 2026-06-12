@@ -1,4 +1,4 @@
-local_backend: true
+#local_backend: true
 # Configurazione del backend (Decap si collegherà a GitHub tramite Netlify)
 backend:
   name: git-gateway
@@ -20,12 +20,14 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     fields:
-      - { label: "Titolo", name: "title", widget: "string" }
-      - { label: "Breve Descrizione (Anteprima)", name: "description", widget: "text" }
+      - { label: "Titolo Principale (H1)", name: "title", widget: "string" }
+      - { label: "Titolo SEO (Google)", name: "metaTitle", widget: "string", required: false, hint: "Appare nei risultati di Google. Massimo 60 caratteri. Se vuoto, usa il Titolo Principale." } 
+      - { label: "Meta Description (SEO)", name: "description", widget: "text", hint: "Il riassunto che si legge su Google e sui social. Consigliato tra i 140 e i 160 caratteri." } 
       - { label: "Data di Pubblicazione", name: "pubDate", widget: "datetime" }
       - { label: "Immagine di Copertina", name: "heroImage", widget: "image" }
+      - { label: "Testo Alternativo Immagine (Alt)", name: "heroImageAlt", widget: "string", required: false, hint: "Descrivi cosa si vede nella foto per aiutare il posizionamento su Google Immagini." }
       - { label: "Categoria", name: "category", widget: "select", options: ["Naturopatia", "Riflessologia", "Benessere Femminile", "Inspirazione"] }
-      - { label: "Bozza", name: "draft", widget: "boolean", default: false }
+      - { label: "Bozza", name: "draft", widget: "boolean", default: false, hint: "Attiva per salvare come bozza senza pubblicare sul sito." }
       - label: "Testo dell'Articolo"
         name: "body"
         widget: "markdown"

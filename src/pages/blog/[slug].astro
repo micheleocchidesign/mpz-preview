@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content'; // 🌟 Aggiornato: importato 'render'
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import WavyDivider from '../../components/WavyDivider.astro';
+import { Image } from 'astro:assets';
 
 const base = import.meta.env.BASE_URL;
 
@@ -20,9 +21,12 @@ const { post } = Astro.props;
 // 3. 🌟 Nuova sintassi Astro 6 per estrarre il contenuto HTML
 const { Content } = await render(post);
 
-const pageTitle = `${post.data.title} | Marta Zola`;
-const pageDescription = post.data.description; // Recuperiamo la descrizione per i social
-const pageImage = post.data.heroImage.src;     // Recuperiamo il percorso immagine per i social
+// Gestione dei titoli SEO differenziati (se inseriti nel CMS, altrimenti fallback sul titolo normale)
+const pageTitle = post.data.metaTitle ? `${post.data.metaTitle} | Marta Zola` : `${post.data.title} | Marta Zola`;
+const pageDescription = post.data.description;
+// Gestione dell'immagine per i tag Open Graph dei social
+const pageImage = typeof post.data.heroImage === 'string' ? post.data.heroImage : post.data.heroImage?.src;
+const altText = post.data.heroImageAlt || post.data.title; // Fallback sull'alt text
 ---
 
 <BaseLayout 
@@ -52,7 +56,15 @@ const pageImage = post.data.heroImage.src;     // Recuperiamo il percorso immagi
       <div class="container container-narrow">
         
         <div class="post-hero-image-wrapper">
-          <img src={post.data.heroImage.src} alt={post.data.title} class="post-hero-img" />
+          <Image 
+            src={post.data.heroImage} 
+            alt={altText} 
+            class="post-hero-img"
+            width={960}
+            height={540}
+            format="webp"
+            quality="high"
+          />
         </div>
 
         <article class="post-body">
