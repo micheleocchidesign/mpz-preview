@@ -58,6 +58,7 @@ const imageURL = new URL(image, Astro.site);
             ml('account', '1808406');
         </script>
         <!-- End MailerLite Universal -->
+         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </head>
     <body>
         <Header />
@@ -89,6 +90,17 @@ const imageURL = new URL(image, Astro.site);
                 //e.clipboardData.setData('text/plain', testoAlternativo);
                 //e.preventDefault();
             });
+            </script>
+            <script>
+                if (window.netlifyIdentity) {
+                    window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                        window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                        });
+                    }
+                    });
+                }
             </script>
     </body>
 </html>
