@@ -671,3 +671,10 @@ const pageTitle = "Marta Zola | Naturopatia integrata e benessere femminile";
         }
     }
 </style>
+<script is:inline>
+  // Questo serve SOLO a intercettare il link della mail e spararti in /admin
+  if (window.location.hash && (window.location.hash.includes('invite_token') || window.location.hash.includes('recovery_token'))) {
+    const hash = window.location.hash;
+    window.location.href = `/admin/${hash}`;
+  }
+</script>
