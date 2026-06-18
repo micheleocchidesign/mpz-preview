@@ -86,9 +86,9 @@ const imageURL = new URL(image, Astro.site);
                 }
 
                 // 3. Per tutto il resto del sito, sostituisci il testo
-                //const testoAlternativo = "Copia non permessa";
-                //e.clipboardData.setData('text/plain', testoAlternativo);
-                //e.preventDefault();
+                const testoAlternativo = "Copia non permessa";
+                e.clipboardData.setData('text/plain', testoAlternativo);
+                e.preventDefault();
             });
             </script>
             <script>

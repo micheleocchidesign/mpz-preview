@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WavyDivider from "../components/WavyDivider.astro";
+import BookCallBanner from "../components/BookCallBanner.astro";
+import pane from "../img/pane.jpg";
+
+const pageTitle = "Serata Gratuita Online: Immergiti nel Solstizio d’Estate | Marta Zola";
+---
+
+<BaseLayout title={pageTitle}>
+    <main>
+        <!-- HERO SECTION (Stile identico a Servizi) -->
+        <section class="services-hero">
+            <div class="container-narrow text-center">
+                <span class="section-overline">Serata Gratuita Online</span>
+                <h1 class="hero-title">Immergiti nel Solstizio d’Estate</h1>
+                <p class="hero-description">
+                    Ciao! Sono felice che tu abbia deciso di riservare il tuo spazio per questa <strong>serata dedicata al Solstizio d'Estate</strong>. 
+                    Ci ritroveremo per esplorare i simboli di questa fase dell'anno e rallentare.
+                </p>
+                 <!-- Dettagli stile lista servizi, centrati nel layout -->
+                <ul class="service-features justify-center-list">
+                    <li><strong>📅 Quando:</strong> 22 giugno dalle ore 19:00 alle 19:30 circa.</li>
+                    <li><strong>💻 Come:</strong> Online (riceverai il link d'accesso via email).</li>
+                    <li><strong>🛋️ Dove:</strong> Comodamente dal divano o dal letto di casa tua!</li>
+                </ul>
+                <p class="cta-notice text-center">
+                    I posti sono limitati. Compila il form qui sotto per bloccare il tuo posto gratuito.
+                </p>
+                <div class="container-narrow">
+                
+                <div class="event-content-wrapper">
+                    <!-- EMBED FORM MAILERLITE -->
+                    <div class="form-container">
+                        <div class="ml-embedded" data-form="jRhwhu"></div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    section { padding: 6rem 1.5rem; }
+
+    /* Utilità veloci per allineamenti */
+    .text-center { text-align: center; }
+    .block { display: block; }
+
+    /* Hero */
+    .services-hero {
+        background-color: var(--bg-light);
+        position: relative;
+        padding: 10rem 0 3rem;
+    }
+    .hero-title { 
+        font-family: var(--font-headings); 
+        color: var(--brand-primary); 
+        font-size: 3rem; 
+        margin: 1.5rem 0; 
+    }
+    .hero-description {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    /* Struttura a colonna singola */
+    .services-list-section { 
+        background-color: var(--accent-1-bg); 
+    }
+    
+    .event-content-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .service-type { 
+        text-transform: uppercase; 
+        font-size: 0.85rem; 
+        letter-spacing: 1.5px; 
+        color: var(--brand-gold); 
+        font-weight: bold;
+    }
+    
+    .service-name { 
+        font-size: 2.8rem; 
+        margin: 0.5rem 0 2rem; 
+        color: var(--brand-primary); 
+    }
+    
+    /* Elenco puntato ereditato dai servizi */
+    .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+        margin: 2rem auto; /* Centra l'intero blocco della lista */
+        text-align:center;
+    }
+    
+    .service-features li {
+        margin-bottom: 0.8rem;
+        gap: 10px;
+        font-size: 1.1rem;
+    }
+
+
+    .cta-notice {
+        font-size: 1.15rem;
+        font-weight: 500;
+        margin: 2.5rem 0 1.5rem;
+        color: var(--brand-primary);
+    }
+
+    /* Container del Form MailerLite */
+    .form-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        min-height: 250px;
+    }
+
+    @media (max-width: 768px) {
+        .service-name { font-size: 2.2rem; }
+        .service-features { padding-left: 1rem; }
+    }
+</style>
