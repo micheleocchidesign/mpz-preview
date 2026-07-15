@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content'; // 🌟 Aggiornato: impor
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import WavyDivider from '../../components/WavyDivider.astro';
 import { Image } from 'astro:assets';
+import ShareButtons from "../../components/ShareButtons.astro";
 
 const base = import.meta.env.BASE_URL;
 
@@ -69,6 +70,7 @@ const altText = post.data.heroImageAlt || post.data.title; // Fallback sull'alt 
 
         <article class="post-body">
           <Content />
+          <ShareButtons title={pageTitle}  />
         </article>
 
         <div class="post-footer text-center">

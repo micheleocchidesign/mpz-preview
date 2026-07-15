@@ -306,19 +306,25 @@ const pageDescription = "Accompagno le donne a sentire le proprie radici, riscop
     </section>
 
     <!-- FORMAZIONE -->
-    <section class="education-section">
-        <div class="container container-narrow">
-            <div class="education-intro text-center">
-                <span class="section-overline">Radici e Competenze</span>
-                <h2 class="section-title">Il mio percorso formativo</h2>
-                <p class="education-lead">
-                    Il mio lavoro nasce da un percorso fatto di ricerca, esperienza e trasformazione personale.
-La mia formazione in Sociologia sotto Scienze Politiche e un passato come project manager nel sanitario nella Cooperazione Internazionale hanno arricchito il mio sguardo sulla persona e sui sistemi, e non posso che esserne grata. 
-Integro naturopatia, coaching, tecniche corporee e yoga con uno sguardo sistemico ispirato alle costellazioni familiari; continuo a formarmi per offrire uno spazio sempre più profondo a me e alle persone che incontro.
+<section class="education-section">
+    <div class="container container-narrow">
+        <div class="education-intro text-center">
+            <span class="section-overline">Radici e Competenze</span>
+            <h2 class="section-title">Il mio percorso formativo</h2>
+            <p class="education-lead">
+                Il mio lavoro nasce da un percorso fatto di ricerca, esperienza e trasformazione personale.
+                La mia formazione in Sociologia sotto Scienze Politiche e un passato come project manager nel sanitario nella Cooperazione Internazionale hanno arricchito il mio sguardo sulla persona e sui sistemi, e non posso che esserne grata. 
+                Integro naturopatia, coaching, tecniche corporee e yoga con uno sguardo sistemico ispirato alle costellazioni familiari; continuo a formarmi per offrire uno spazio sempre più profondo a me e alle persone che incontro.
+            </p>
+            
+            <!-- 🌟 Il nuovo bottone per mostrare/nascondere -->
+            <button id="toggle-timeline-btn" class="toggle-education-btn">
+                Scopri tutto il mio percorso formativo <span class="btn-icon">↓</span>
+            </button>
+        </div>
 
-                </p>
-            </div>
-
+        <!-- 🌟 Il wrapper per gestire l'effetto espansione -->
+        <div id="education-wrapper" class="timeline-wrapper is-collapsed">
             <div class="education-timeline">
                 {formazione.map((item) => (
                     <div class={`education-item ${item.highlight ? 'is-current' : ''}`}>
@@ -335,7 +341,8 @@ Integro naturopatia, coaching, tecniche corporee e yoga con uno sguardo sistemic
                 ))}
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- COSA MI GUIDA SECTION -->
     <section class="values-section">
@@ -563,6 +570,55 @@ Integro naturopatia, coaching, tecniche corporee e yoga con uno sguardo sistemic
         line-height: 1.8;
         color: var(--text-dark);
         margin-top: 1.5rem;
+    }
+
+    /* --- NUOVI STILI PER IL BOTTONE E IL WRAPPER --- */
+    .toggle-education-btn {
+        background: none;
+        border: 2px solid var(--brand-gold);
+        color: var(--brand-primary);
+        font-family: var(--font-headings);
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-top: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .toggle-education-btn:hover {
+        background-color: var(--brand-gold);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .toggle-education-btn .btn-icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+        line-height: 1;
+    }
+
+    /* Quando il bottone è attivo, la freccia ruota verso l'alto */
+    .toggle-education-btn.is-active .btn-icon {
+        transform: rotate(180deg);
+    }
+
+    /* Il contenitore invisibile di base */
+    .timeline-wrapper {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+    }
+
+    /* Stato aperto controllato da JS */
+    .timeline-wrapper.is-expanded {
+        opacity: 1;
+        margin-top: 3rem; /* Dà spazio quando appare */
     }
 
     .education-timeline {
@@ -912,6 +968,41 @@ Integro naturopatia, coaching, tecniche corporee e yoga con uno sguardo sistemic
                 pinSpacing: false, // Evita che GSAP crei spazi bianchi extra
                 scrub: true,       // Rende il movimento fluido
                 // markers: true,  // Togli il commento a questa riga per vedere i punti di inizio/fine durante i test
+            });
+        }
+    });
+
+    // Aspettiamo che Astro carichi la pagina nel browser
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('toggle-timeline-btn');
+        const wrapper = document.getElementById('education-wrapper');
+
+        if (btn && wrapper) {
+            btn.addEventListener('click', () => {
+                // Controlliamo se è già aperto
+                const isExpanded = wrapper.classList.contains('is-expanded');
+
+                if (!isExpanded) {
+                    // APERTURA
+                    wrapper.classList.add('is-expanded');
+                    btn.classList.add('is-active');
+                    
+                    // Calcola l'altezza reale del contenuto interno e la imposta
+                    wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+                    
+                    // Opzionale: cambia il testo del bottone quando è aperto
+                    btn.innerHTML = 'Chiudi il percorso formativo <span class="btn-icon">↓</span>';
+                } else {
+                    // CHIUSURA
+                    wrapper.style.maxHeight = "0";
+                    wrapper.classList.remove('is-expanded');
+                    btn.classList.remove('is-active');
+                    
+                    btn.innerHTML = 'Scopri tutto il mio percorso formativo <span class="btn-icon">↓</span>';
+                    
+                    // Riporta lo scroll all'inizio della sezione formazione se si chiude e l'utente era sceso molto
+                    wrapper.closest('.education-section')?.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         }
     });
